@@ -1,1153 +1,511 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
-<head>
-<title>YUP-menu</title>
-
-<meta property="og:site_name" content="yup.com"/>
-<meta property="og:title" content="yup-menu" />
-<meta property="og:description" content="yup-menu" />
-<meta property="og:url" content="http://yupmenu.appspot.com"/>
-<meta property="og:image" content="http://yupmenu.appspot.com/images/yup_r.png"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-
-<!--
-<link rel="stylesheet" type="text/css" href="/xlive/cssjs-build/css/flips.css" />
-<link rel="stylesheet" type="text/css" href="/xlive/cssjs-build/css/abox.css" />
-<link rel="stylesheet" type="text/css" href="/xlive/cssjs-build/css/alive.css" />
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-40398500-1']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-<script src="/xlive/cssjs-build/js/lib/modernizr.js"></script>
-<script data-main="/xlive/cssjs-build/js/main.js" src="/xlive/cssjs-build/js/require.js"></script>
--->
-
-<link rel="stylesheet" type="text/css" href="/xlive/cssjs/css/flips.css" />
-<link rel="stylesheet" type="text/css" href="/xlive/cssjs/css/abox.css" />
-<link rel="stylesheet" type="text/css" href="/xlive/cssjs/css/alive.css" />
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-<script src="/xlive/cssjs/js/lib/modernizr.js"></script>
-<script data-main="/xlive/cssjs/js/main.js" src="/xlive/cssjs/js/require.js"></script>
+<!doctype html>
+<html>
+<head> 
+<meta charset="UTF-8">
+<link href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="http://probe-home.appspot.com/css/probe_home.css" rel="stylesheet" type="text/css"/>
+<link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
+<script src="http://probe-home.appspot.com/xlive/script/iscroll-min.js" type="text/javascript"></script>
+<script src="http://probe-home.appspot.com/xlive/script/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="http://probe-home.appspot.com/script/alive.js" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<script>
+	$(document).ready(function(){		
+		var $probe_main=$('#probe_main');	
+		var $mason=$('#probe_main .ui-mason-3');			
+			$mason.masonry({isAnimated: true});
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});	
+		//以下是共用MENU的模組	
+		$probe_main.data('menu',$probe_main.find('#probe_header #menu'));
+		$probe_main.data('popup1',$probe_main.find('#popupMenu-screen'));
+		$probe_main.data('popup2',$probe_main.find('#popupMenu-popup'));
+		$probe_main.data('footer',$probe_main.find('#probe_footer'));
+		$probe_main.bind('pagebeforeshow',function(event2){
+				if($probe_main.find('#probe_header #menu').length>0)return;
+				var $menu=$probe_main.data('menu').detach();
+				$menu.appendTo($probe_main.find('#probe_header'));
+				$probe_main.append($probe_main.data('popup1').detach()).append($probe_main.data('popup2').detach());
+				
+				//以下是更新MENU的顏色
+				$probe_main.find('#menu>div>a').removeClass('probe_current');				
+				$probe_main.find("#menu>div>a[href='#probe_main']").addClass('probe_current');
+				$probe_main.find("#menu #probe_popupMenu a>span>span:first-child").html("首頁");
+			});
+			
+		$(document).bind("pageload",function(event,data){
+			var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+			if($_page.length==0){
+				var $menu=$probe_main.data('menu').detach();
+				$menu.appendTo($probe_main.find('#probe_header'));
+				$probe_main.append($probe_main.data('popup1').detach()).append($probe_main.data('popup2').detach());		
+				return;
+			}			
+				
+			$_page.bind('pagebeforeshow',function(event2){
+				if($_page.find('#probe_header #menu').length>0)return;
+				var $menu=$probe_main.data('menu').detach();
+				$menu.appendTo($_page.find("div[data-role='header']").empty().attr("id","probe_header").css('background','#666666'));
+				$_page.append($probe_main.data('popup1').detach()).append($probe_main.data('popup2').detach());
+				//以下是更新MENU的顏色
+				
+				var $a=$_page.find("#menu>div>a[href='"+data.dataUrl+"']");
+				if($a.length==1){
+					$_page.find('#menu>div>a').removeClass('probe_current');				
+					$a.addClass('probe_current');
+				}
+				var $a2=$_page.find("#popupMenu>ul>li a[href='"+data.dataUrl+"']");
+				if($a2.length==1)$_page.find("#menu #probe_popupMenu a>span>span:first-child").html($a2.html());
+				
+				$_page.find("#probe_footer").remove();
+				$_page.append($probe_main.data('footer').clone());
+			});
+			
+		});
+		//以上是共用	
+			
+	});	
+	
+</script> 
 
 
 <style>
-.tag_content{
-	position:absolute;
-	top:3%;
-	bottom:3%;
-	left:3%;
-	right:3%;
-	filter:alpha(opacity=90); 
-	opacity:0.9;
-	background-image:url(images/rst/admin.png);	
-	background-position:50% 50%;
-	background-position-x:50%;
-	background-position-y:50%; 
-	background-size:cover;
-	 -webkit-border-radius: 2px;
-     -moz-border-radius: 2px;
-     border-radius: 2px;
-	 border:1px solid rgba(0,0,0,0.3);
-	 cursor:pointer;	
+
+#probe_main{
+	background-color:white;
 }
-.tag_content:hover{
-	filter:alpha(opacity=100); 
-	opacity:1;
+#probe_main .probe_font{
+	font-family:'MJNgai HK Medium';
 }
-.tag_content h1{
- 	color:white;
-	text-shadow: 0 0 12px black, 0 1px 0 black;
-	text-align:	center;	
-	font-size:1.5em;
-	overflow:hidden;
+#probe_main div[class^="ui-mason"]{
+	margin-top:40px;
+	background:white;	 
 }
-.tag_page{
-	border-top:1px solid #f2f2f2;
-	padding-top:10px;
-}
-.f-page .f-cover{
-	width:100%;
-	height:100%;
-}
-.f-page #right-cover,
-.f-page #left-cover {
-	width:50%;
-	height:100%;
-}
-.vflips .f-page #left-cover {
-	width:100%;
-	height:25%;
-}
-.vflips .f-page #right-cover{
-	width:100%;
-	height:75%;
-}
-.logo{
-	width: 180px;
-	height: 180px;
-	position: absolute;
-	top: 20px;
-	left: 30px;
-	line-height: 428px;
-	color: white;
-	font-size: 59px;
-	font-weight: bold;
-	text-indent: -3px;
-	cursor: default;
-}
-.logo:before{
-	position: absolute;
-	width: 49%;
-	height: 50%;
-	content: '';
-	top: 0px;
-	left: 0px;
-	background: rgba(255,255,255,0.4);
-	box-shadow: 0 95px 0px rgba(255,255,255,0.6);
-}
-.logo:after{
-	position: absolute;
-	width: 49%;
-	height: 50%;
-	content: '';
-	top: 0px;
-	right: 0px;
-	background: rgba(255,255,255,0.6);
-	box-shadow: 0 95px 0px rgba(255,255,255,0.4);
-}
-.backto-yup {
-	position:absolute;
-	left:0.1em;
-	bottom:94%;
-	opacity:0.8;
-	filter:alpha(opacity=80);
-	coloe:white;
-	/*text-shadow: 0 0 12px black, 0 1px 0 black;*/
-	font-size:1em;
-	background:white;
-	padding:0 0.5em;
-	display:none;
-}
-.vflips .backto-yup {
-	position:absolute;
-	right:0em;
-	top:1em;
-	opacity:0.8;
-	filter:alpha(opacity=80);
-	coloe:white;
-	/*text-shadow: 0 0 12px black, 0 1px 0 black;*/
-	font-size:1em;
-	background:white;
-	padding:0 0.5em;
-	display:none;
-}
-.vflips .backto-yup>div{
-	float:right;
-	background:white;
-	padding: 0 0.2em;
+#probe_main div[class*="ui-col"]>div{
+	margin:5px;
+	border:1px solid #CCC;
 	
 }
-.shop-logo{
+#probe_main div.ui-col-a>div{
+	height:160px;
+	-webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+     border-radius: 3px;
+	 box-shadow:rgb(200,200,200) 1px 1px 5px;
+	-webkit-box-shadow:rgb(200,200,200) 1px 1px 5px;
+	-o-box-shadow:rgb(200,200,200) 1px 1px 5px;
+	-ms-box-shadow:rgb(200,200,200) 1px 1px 5px;
+	-moz-box-shadow:rgb(200,200,200) 1px 1px 5px;
+}
+
+#probe_main div.ui-col-a>div h4{
+	line-height:18px;
+}
+
+#probe_main div.ui-col-a>div:hover{
+	border-bottom:2px solid #CCC;
+	border-right:2px solid #CCC;
+	margin-right:4px;
+	margin-bottom:4px;
+}
+#probe_main .bottom_link{
+	text-align:left;
+	
+}
+#probe_main .bottom_link a{
+	margin:5px;
+	line-height:14px;
+	font-size:12px;
+	text-decoration:none;
+}
+#probe_main .bottom_link a:hover{
+	color:red;
+}
+
+body.ui-size-l #probe_main #btn-3-group{
 	position:absolute;
-	left:10%;
-	top:10%;
-	width:120px;
-	height:120px;
-	border:1px solid white;
-	border-radius: 2px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	-ms-border-radius: 2px;
-	-o-border-radius: 2px;
-	background:no-repeat;
-	background-size:cover;
-	background-position:center center;
-	background-image:url('https://graph.facebook.com/207135909363338/picture?type=large');
+	right:-20px;
+	top:150px;
+	border:none;
+	margin:0;
+	
 }
-.vflips .shop-logo{
-	left:15%;
+body.ui-size-m #probe_main #btn-3-group{
+	position:relative;
+	width:480px;
+	border:none;
+	margin:0 auto;
+	
 }
-.ui-size-l .shop-logo{
-	left:10%;
-	top:10%;
+body.ui-size-s #probe_main #btn-3-group{
+	position:relative;
+	width:100%;
+	border:none;
+	margin:0 auto;
+	
+}
+body.ui-size-l #btn-3-group div{
+	margin:20px;
+	width:160px;
+	height:40px;
+	box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-webkit-box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-o-box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-ms-box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-moz-box-shadow:rgb(150,150,150) 2px 2px 5px;
+}
+body.ui-size-m #btn-3-group div{
+	float:left;
+	margin:10px;
 	width:140px;
-	height:140px;
+	height:40px;
+	box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-webkit-box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-o-box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-ms-box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-moz-box-shadow:rgb(150,150,150) 2px 2px 5px;
 }
-.ui-size-s .shop-logo{
-	left:10%;
-	top:10%;
-	width:100px;
-	height:100px;
+body.ui-size-s #btn-3-group div{
+	margin:10px auto 10px auto;
+	width:90%;
+	height:40px;
+	background-size:100% auto;
+	box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-webkit-box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-o-box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-ms-box-shadow:rgb(150,150,150) 2px 2px 5px;
+	-moz-box-shadow:rgb(150,150,150) 2px 2px 5px;
 }
-#index #back-1 {
-	position:absolute;z-index: 0;left:0px;width:50%;height:100%;text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
-	padding:5% 0 0 5%;
-}
-#index #back-2 {
-	position:absolute;z-index: 0;right:0px;width:50%;height:100%;text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
-	padding:5% 5% 0 0;
-	text-align:right;
-}
-.ui-size-s #index #back-1{
-	position:absolute;z-index: 0;top:0px;width:100%;height:50%;text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
-	padding:5% 0 0 0;
-	text-align:center;
-}
-.ui-size-s #index #back-2{
-	position:absolute;z-index:0;top:50%;width:100%;height:50%;text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
-}
-.ui-size-s #index #back-2 #frame{
-	position:absolute;
-	left:0px;bottom:0px;
-	width:100%;
-	text-align:center;
-	padding:0 0 5% 0;
-}
-.f-page .cover-like:after{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width:0.625em;
-	height: 100%;
-	content: ' ';
-	background: -webkit-linear-gradient(left, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.01) 16%,rgba(0,0,0,0) 17%,rgba(0,0,0,0) 44%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.09) 61%,rgba(0,0,0,0.35) 100%);
-	background:    -moz-linear-gradient(left, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.01) 16%,rgba(0,0,0,0) 17%,rgba(0,0,0,0) 44%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.09) 61%,rgba(0,0,0,0.35) 100%);
-	background:     -ms-linear-gradient(left, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.01) 16%,rgba(0,0,0,0) 17%,rgba(0,0,0,0) 44%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.09) 61%,rgba(0,0,0,0.35) 100%);
-	background:      -o-linear-gradient(left, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.01) 16%,rgba(0,0,0,0) 17%,rgba(0,0,0,0) 44%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.09) 61%,rgba(0,0,0,0.35) 100%);
-	opacity: 0.2;
-}
-
-.vflips .f-page .cover-like:after{
-	position: absolute;
-	top:0px;
-	left:0px;
-	width:100%;
-	height:0.625em;
-	content: ' ';
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.01) 16%,rgba(0,0,0,0) 17%,rgba(0,0,0,0) 44%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.09) 61%,rgba(0,0,0,0.35) 100%);
-	background:    -moz-linear-gradient(top, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.01) 16%,rgba(0,0,0,0) 17%,rgba(0,0,0,0) 44%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.09) 61%,rgba(0,0,0,0.35) 100%);
-	background:     -ms-linear-gradient(top, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.01) 16%,rgba(0,0,0,0) 17%,rgba(0,0,0,0) 44%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.09) 61%,rgba(0,0,0,0.35) 100%);
-	background:      -o-linear-gradient(top, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.01) 16%,rgba(0,0,0,0) 17%,rgba(0,0,0,0) 44%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.09) 61%,rgba(0,0,0,0.35) 100%);
-}
-.f-page #store-namebox {
-	position: absolute;
-	left:10%;
-	top:10%;
-	right:1em;
-}
-
-.f-page #toolbox {
-	position:absolute;
-	right:2em;
-	bottom:90%;	
-}
-.f-page #toolbox #u-setting,
-.f-page #style_box #label,
-.f-page #style_box #vlabel,
-.f-page #style_box #digest {
-	float:left;
-	width:2.1em;
-	height:2em;
-	padding:0.4em;
-	background-size:contain;
-	background-repeat:no-repeat;
-	background-origin:content-box;
-	background-image:url('/xlive/images/holo_light/mdpi/2-action-settings.png');
-}
-.f-page #style_box #label{
-	background-image:url('/xlive/images/holo_dark/mdpi/10-device-access-storage.png');
-}
-.f-page #style_box #label.selected,
-.f-page #style_box #label:hover{
-	background-image:url('/xlive/images/holo_light/mdpi/10-device-access-storage.png');
-}
-.f-page #style_box #vlabel{
-	background-image:url('/xlive/images/holo_dark/mdpi/4-collections-view-as-grid.png');
-}
-.f-page #style_box #vlabel.selected,
-.f-page #style_box #vlabel:hover{
-	background-image:url('/xlive/images/holo_light/mdpi/4-collections-view-as-grid.png');
-}
-.f-page #style_box #digest{
-	background-image:url('/xlive/images/holo_dark/mdpi/4-collections-go-to-today.png');
-}
-.f-page #style_box #digest.selected,
-.f-page #style_box #digest:hover{
-	background-image:url('/xlive/images/holo_light/mdpi/4-collections-go-to-today.png');
-}
-.f-page #style_box :after{
-	clear:both;
-}
-
-#flip.xfb .f-page #toolbox #u-setting{
-	display:none;
-}
-#u-setting-popup-popup {
-    right: 0 !important;
-    left: auto !important;
-}
-#u-setting-popup {
-    width: 12em;
-    border: 1px solid #000;
-    border-right: none;
-    background: rgba(0,0,0,.5);
-    margin: -1px 0;
-}
-#u-setting-popup .ui-btn {
-    margin: 1em 1em;
-}
-
-.f-page #cover-flip{
-	background: rgba(0,0,0,0.3);
-	color: #ddd;
-	position: absolute;
-	right: 0px;
-	padding: 5px 30px 5px 20px;
-	font-size: 30px;
-	text-transform: uppercase;
-	font-weight: 500;
-	top: 50%;
-	margin-top: -25px;
-	cursor: default; 
-}
-.vflips .f-page #cover-flip{
-	display:none;
-}
-.f-page #cover-tags{
-	position:absolute;left:0.625em;bottom:0px;right:0px;
-	height:25%;
-}
-.vflips .f-page #cover-tags{
-	left:0px;
-	height:33.3%;
-}
-.f-page #tag-story {
-	position:relative;
-	float:left;
-	width:60%;
-	height:100%;
-}
-.f-page #tag-news {
-	position:relative;
-	float:left;
-	width:40%;
-	height:100%;
-}
-.vflips .f-page #tag-story,
-.vflips .f-page #tag-news {
-	width:50%;
-}
-
-.f-page .shop-tag {
-	position:relative;
-	width:100%;
-	height:100%;
-	border:1px solid rgba(0,0,0,0.3);
-	border-radius: 2px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	-ms-border-radius: 2px;
-	-o-border-radius: 2px;
-	filter:alpha(opacity=90); 
-	opacity:0.9;
-}
-.f-page .shop-tag:hover {
-	filter:alpha(opacity=100); 
-	opacity:1;
-}
-#index #back-2 {
-	display:none;
-}
-.ui-size-s #index #back-2,
-.ui-size-m #index #back-2,
-.ui-size-l #index #back-2{
-	display:block;
-}
-
-/****/
-#yup_index,
-#yup_page {
-	position:relative;
-	width:100%;
-	height:100%;
-}
-#yup_index #yup_store_area{
-	position:absolute;
-	left:0px;
-	top:0px;
-	width:68%;
-	height:100%;
-	padding-top:0.5em;
-	padding-bottom:2em;
-}
-#yup_index #yup_area {
-	position:absolute;
-	left:68%;
-	top:0px;
-	width:32%;
-	height:100%;
-	padding-top:1em;
-	padding-bottom:2em;
-}
-#yup_index #yup_footer_area{
-	position:absolute;
-	left:0px;
-	bottom:0px;
-	width:68%;
-	height:2em;
-}
-
-#yup_page #yup_header_area{
-	position:absolute;
-	left:0px;
-	top:0px;
-	width:100%;
-	height:3em;
-}
-#yup_page #yup_store_area{
-	position:absolute;
-	left:0px;
-	top:0px;
-	width:100%;
-	top:3em;
-	bottom:2em;
-}
-#yup_page #yup_footer_area{
-	position:absolute;
-	left:0px;
-	bottom:0px;
-	width:100%;
-	height:2em;
-}
-
-#yup_page #user_setting,
-#yup_index #user_setting{
-	position:relative;
-	float:right;width:3em;height:2.8em;
-	padding:0.4em 0;
-	margin-right:1em;
-	border-right:1px solid #ddd;
-	overflow:hidden;
+body.ui-size-l #btn-3-group div:hover{
+	width:170px;
+	margin-left:10px;
 	cursor:pointer;
+	box-shadow:rgb(200,100,200) 0 0 5px;
+	-webkit-box-shadow:rgb(200,100,200) 0 0 5px;
+	-o-box-shadow:rgb(200,100,200) 0 0 5px;
+	-ms-box-shadow:rgb(200,100,200) 0 0 5px;
+	-moz-box-shadow:rgb(200,100,200) 0 0 5px;
 }
-#yup_page #setting_ribbon,
-#yup_index #setting_ribbon{
+body.ui-size-m #btn-3-group div:hover{
 	position:relative;
-	width:3em;height:2em;
-	background: rgb(199,59,60);
-	background: -moz-linear-gradient(top,  rgba(199,59,60,1) 0%, rgba(184,32,31,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(199,59,60,1)), color-stop(100%,rgba(184,32,31,1)));
-	background: -webkit-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	background: -o-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	background: linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c73b3c', endColorstr='#b8201f',GradientType=0 );
-}
-#yup_page #setting_ribbon:before,
-#yup_index #setting_ribbon:before{
-	position: absolute;
-	content:'';
-	left: 2.9em;
-	top: -1.4em;
-	width:3em;
-	height:4.8em;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	border-radius: 50%;
-	background: rgba(0,0,0,0.3);
-	box-shadow: -0px 0px 10px 0px rgba(0,0,0,0.3);
-	-moz-box-shadow: -0px 0px 10px 0px rgba(0,0,0,0.3);
-	-webkit-box-shadow: -0px 0px 10px 0px rgba(0,0,0,0.3);
-}
-#yup_page #setting_ribbon:after,
-#yup_index #setting_ribbon:after{
-	position:absolute;
-	content:'';
-	width: 0; 
-	height: 0; 
-	border-top: 1em solid transparent;
-	border-bottom: 1em solid transparent;
-	border-left: 1em solid white;
-}
-.vflips #yup_index,
-.vflips #yup_page {
-	position:relative;
-	width:100%;
-	height:100%;
-}
-.vflips #yup_index #yup_area {
-	position:absolute;
-	left:0px;
-	top:0px;
-	width:100%;
-	height:33.3%;
-	padding-top:1em;
-	padding-bottom:2em;
-}
-.vflips #yup_index #yup_store_area{
-	position:absolute;
-	top:33.3%;
-	left:0px;
-	width:100%;
-	height:66.6%;
-	padding-top:0.5em;
-	padding-bottom:2em;
-
-}
-.vflips #yup_index #yup_footer_area{
-	position:absolute;
-	left:0px;
-	bottom:0px;
-	width:100%;
-	height:2em;
-}
-
-.vflips #yup_page #yup_header_area{
-	position:absolute;
-	left:0px;
-	top:0px;
-	width:100%;
-	height:3em;
-}
-.vflips #yup_page #yup_store_area{
-	position:absolute;
-	left:0px;
-	top:3em;
-	width:100%;
-	bottom:2em;
-}
-.vflips #yup_page #yup_footer_area{
-	position:absolute;
-	left:0px;
-	bottom:0px;
-	width:100%;
-	height:2em;
-}
-
-
-.vflips #yup_page #user_setting,
-.vflips #yup_index #user_setting{
-	float:right;
-	width:2.8em;height:3em;
-	padding:0 0.4em;
-	margin:0;
-	margin-top:0.1em;
-	border:0;
-	border-top:1px solid #ddd;
+	top:-5px;
+	margin-left:10px;
 	cursor:pointer;
-	overflow:hidden;
+	box-shadow:rgb(200,100,200) 0 0 5px;
+	-webkit-box-shadow:rgb(200,100,200) 0 0 5px;
+	-o-box-shadow:rgb(200,100,200) 0 0 5px;
+	-ms-box-shadow:rgb(200,100,200) 0 0 5px;
+	-moz-box-shadow:rgb(200,100,200) 0 0 5px;
 }
-
-.vflips #yup_page #setting_ribbon,
-.vflips #yup_index #setting_ribbon{
-	position:relative;
-	width:2em;height:3em;
-	background: rgb(199,59,60);
-	background: -moz-linear-gradient(top,  rgba(199,59,60,1) 0%, rgba(184,32,31,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(199,59,60,1)), color-stop(100%,rgba(184,32,31,1)));
-	background: -webkit-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	background: -o-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	background: linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c73b3c', endColorstr='#b8201f',GradientType=0 );
-}
-.vflips #yup_page #setting_ribbon:before,
-.vflips #yup_index #setting_ribbon:before{
-	position: absolute;
-	content:'';
-	top: -2.9em;
-	left: -1.4em;
-	width:4.8em;
-	height:3em;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	border-radius: 50%;
-	background: rgba(0,0,0,0.3);
-	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
-	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
-	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
-}
-.vflips #yup_page #setting_ribbon:after,
-.vflips #yup_index #setting_ribbon:after{
-	position:absolute;
-	content:'';
-	width: 0; 
-	height: 0;
-	bottom:0; 
-	border-left: 1em solid transparent;
-	border-right: 1em solid transparent;
-	border-bottom: 1em solid white;
-}
-
-
-#yup_index .yup-store {
-	position:relative;
-	float:left;
-	width:33.3%;
-	height:33.3%;
-}
-.vflips #yup_index .yup-store {
-	position:relative;
-	float:left;
-	width:50%;
-	height:50%;
-}
-
-#yup_page .yup-store {
-	position:relative;
-	float:left;
-	width:25%;
-	height:33.3%;
-}
-.vflips #yup_page .yup-store {
-	position:relative;
-	float:left;
-	width:50%;
-	height:33.3%;
-}
-
-.yup-store #outer{
-	position:relative;
-	width:100%;
-	height:100%;
-}
-.yup-store #inner{
-	position:absolute;
-	top:0.2em;
-	bottom:0.2em;
-	left:0.2em;
-	right:0.2em;
-	filter:alpha(opacity=90); 
-	opacity:0.9;
-	background-image:url(images/rst/admin.png);	
-	background-position:50% 50%;
-	background-position-x:50%;
-	background-position-y:50%; 
-	background-size:cover;
-	 -webkit-border-radius: 2px;
-     -moz-border-radius: 2px;
-     border-radius: 2px;
-	 border:1px solid rgba(0,0,0,0.3);
-	 cursor:pointer;	
-}
-.yup-store #inner:hover{
-	filter:alpha(opacity=100); 
-	opacity:1;
-}
-.yup-store #inner h1{
- 	color:white;
-	text-shadow: 0 0 12px black, 0 1px 0 black;
-	text-align:	center;	
-	font-size:1.5em;
-	overflow:hidden;
-}
-
-#yup_header_area #backbox{
-	display:block;
-	position: absolute;
-	border:0;
-  	top:0px;
-	margin:8px;
-	float: left;
-	height: 34px;
-	width:4em;
-	font-size: 12px;
-	line-height: 34px;
-	padding: 0px 32px;
+body.ui-size-s #btn-3-group div:hover{
+	width:92%;	
 	cursor:pointer;
-	background: url(/xlive/images/holo_light/mdpi/1-navigation-previous-item.png) no-repeat top left !important;
+	box-shadow:rgb(200,100,200) 0 0 5px;
+	-webkit-box-shadow:rgb(200,100,200) 0 0 5px;
+	-o-box-shadow:rgb(200,100,200) 0 0 5px;
+	-ms-box-shadow:rgb(200,100,200) 0 0 5px;
+	-moz-box-shadow:rgb(200,100,200) 0 0 5px;
 }
-
-#user_setting_panel .title{
-	padding:1em 0 0.4em 1em;
-	font-size:0.7em;
-	line-height:1em;
-	color:lightgray;
-	font-weight:bold;
-	border-bottom:1px solid #ddd;
-	cursor:default;
-	text-shadow:none;
+h1 {
+       font-size:40px !important;
+	   line-height:150%;
 }
-#user_setting_panel .item{
-	padding:1em 0 0.8em 1em;
-	font-size:1em;
-	line-height:1.2em;
-	border-bottom:1px solid #ddd;
-	cursor:pointer;
-	text-shadow:none;
-	overflow:hidden;
+h2 {
+       font-size:30px !important;
+	   line-height:150%;
 }
-#user_setting_panel .subitem{
-	padding:1em 0 0.8em 1em;
-	font-size:1em;
-	line-height:1.2em;
-	border-bottom:1px solid #ddd;
-	cursor:pointer;
-	text-shadow:none;
-	overflow:hidden;
-	background: url('/xlive/images/holo_light/mdpi/1-navigation-next-item.png') no-repeat;
-	background-position-x:100%;
-	background-position-y:50%; 
-	
+h3 {
+       font-size:24px !important;
+	   line-height:150%;
 }
-#user_setting_panel .item.selected {
-	color:white;
-	background: rgb(199,59,60);
-	background: -moz-linear-gradient(top,  rgba(199,59,60,1) 0%, rgba(184,32,31,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(199,59,60,1)), color-stop(100%,rgba(184,32,31,1)));
-	background: -webkit-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	background: -o-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	background: linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c73b3c', endColorstr='#b8201f',GradientType=0 );
+h4 {
+       font-size:16px !important;
+	   line-height:200%;
 }
-#user_setting_panel #name{
-	width:100%;
-	text-overflow:ellipsis;
-	overflow:hidden;
-	white-space: nowrap;
+h5 {
+       font-size:12px !important;
+	   line-height:200%;
 }
-#user_setting_panel #desc{
-	width:100%;
-	font-size:0.6em;
-	text-overflow:ellipsis;
-	overflow:hidden;
-	white-space: nowrap;
-}
-#user_setting_panel #detail_pane #title{
-	position:relative;
-	margin-left:1em;
-	padding:0.5em;
-	border-left:1px solid #ddd;
-	border-bottom:1px solid #ddd;
-}
-#user_setting_panel #detail_pane #title #name{
-	font-size:2em;
-	text-align:center;
-	padding:1em 0.2em 0.5em 0.2em;
-}
-#user_setting_panel #detail_pane #title #desc{
-	font-size:0.8em;
-	text-align:center;
-	padding:0.5em 0.2em 0.5em 0.2em;
-}
-#user_setting_panel #detail_pane #content{
-	position:relative;
-	margin-left:1em;
-	padding:0.5em;
-	border-left:1px solid #ddd;
-}
-#user_setting_panel .store_pattern {
-	position:relative;
-	margin:0.5em 0;
-	padding:0;
-	border-bottom:1px solid #ddd;
-	cursor:pointer;
-}
-#user_setting_panel .store_pattern #img{
-	position:relative;
-	float:left;
-	width :3em;
-	height:3em;
-	margin-right:0.8em;
-	background:no-repeat;
-	background-size:contain;
-	background-position:center center;
-}
-#user_setting_panel .store_pattern #store{
-	position:relative;
-	margin:0;
-	padding:0;
-	height:3em;
-	line-height:3em;
-	font-weight:bold;
-	font-size:1em;
-	text-overflow:ellipsis;
-	overflow:hidden;
-	white-space: nowrap;
+h6 {
+       font-size:10px !important;
+	   line-height:200%;
 }
 </style>
-
 </head>
-
-<body style="margin:0;padding:0;background:#E7EBF2;"> 
-	<div data-role="page" id="index" style="margin:0;padding:0">
-		<!--  
-		<div data-role="header" data-position="fixed" data-fullscreen="true" data-id="index_header" style="opacity:0.3">
-			<h1 id="title">yup menu</h1>
-		</div>
-		-->
-		<div data-role="content" style="margin:0;padding:0">
-			<div id="back-1"> 
-				<div style="font-size:3em;font-weight:400;color:#777;">yup<span style="font-size:0.6em;color: #F86738;">menu</span></div>
-				<div style="font-size:1.5em;font-weight:300;color:#777;font-style:italic;">probe technologies</div>
-				<div style="color:#1C2A47;">886-02-27321190</div>
-			</div>
-			<div id="back-2">
-				<div id="frame">
-					<div style="font-size:3em;font-weight:400;color: #777;">yup<span style="font-size:0.6em;color:#F86738;">menu</span></div>
-					<div style="font-size:1.5em;font-weight:300;color:#777;font-style:italic;">probe technologies</div>
-					<div style="color:#1C2A47;">886-02-27321190</div>
-				</div>
-			</div>
-			<div id="flip" class="f-container"></div>
-		</div><!-- /content -->
-		<!--
-		<div data-role="popup" id="u-setting-popup" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
-		    <a href="/tag_main.html" data-transition="flip"><button data-theme="a" data-icon="back" data-mini="true">tag</button></a>
-		    <button data-theme="a" data-icon="grid" data-mini="true">product</button>
-		    <button data-theme="a" data-icon="search" data-mini="true">attribute</button>
-		</div>
-		-->
-		<!--
-		<div data-role="footer" data-position="fixed"  data-fullscreen="true" data-id="index_header" style="opacity:0.5"></div>
-		-->		
-	</div><!-- /page -->
-	<div data-role="data" style="display:none">
-		
-			<div id="yup_index">
-				<div id="yup_store_area">
-					<div class="yup-store">
-						<div id="outer"><div id="inner"><h1></h1></div></div>
-					</div>
-				</div>
-				<div id="yup_area">
-					<div id="header" style="position:relative;">
-						<div id="user_setting"><div id="setting_ribbon"></div></div>
-					</div>
-					<div id="content" style=""></div>
-					<div id="footer" style="position:absolute;bottom:2em;padding:0 0.5em">
-						<div id="user" style="padding:0.5em;"></div>
-						<div id='yup_logo' style="padding:0.5em;">
-							<div style="font-size:2em;font-weight:400;color:#777;">yup<span style="font-size:0.6em;color: #F86738;">menu</span></div>
-						</div>
-					</div>
-				</div>
-				<div id="yup_footer_area">
-					<div id="edit" style="float:right;padding:0.2em 0.4em;margin:0.2em;border:1px solid #ddd;cursor:pointer">edit</div>
-					<div id="pages" style="text-align:center;line-height:2em;color:gray"></div>
-				</div>
-			</div>
-			<div id="yup_page">
-				<div id="yup_header_area">
-					<div id="backbox" style="float:left;"></div> 
-					<div id="user_setting" class="noSwipe"><div id="setting_ribbon" class="noSwipe"></div></div>
-					<div id="pages" style="text-align:center;line-height:3em;color:gray;text-valign:middle">
-						<div style="font-size:1.6em;font-weight:400;color:#777;">yup<span style="font-size:0.6em;color: #F86738;">menu</span></div>
-					</div>
-				</div>
-				<div id="yup_store_area"></div>
-				<div id="yup_footer_area">
-					<div id="edit" style="float:right;padding:0.2em 0.4em;margin:0.2em;border:1px solid #ddd;cursor:pointer;">edit</div>
-					<div id="pages" style="text-align:center;line-height:2em;color:gray">2/3</div>
-				</div>
-			</div>
-		
-			<div class="f-cover">
-				<div id="left-cover" class="f-plainbox" style="background:no-repeat;background-size:cover">
-					<div class="backto-yup">
-						<div style="font-size:1.4em;font-weight:400;color:gary;">yup<span style="font-size:0.6em;color: #F86738;">menu</span></div>
-					</div>
-					<div class="shop-logo"></div>
-				</div>
-				<div id="right-cover" class="f-plainbox" style="background:no-repeat;background-size:cover">
-					<div id="toolbox" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal ui-mini">
-						<div id="u-setting" class="ui-btn ui-btn-up-c selected ui-corner-right ui-controlgroup-last" title="後台管理"></div>
-					</div>
-					<div id="store-namebox">
-						<div id="name" style="color:rgba(255,255,255,0.9);font-weight:300;font-size:34px;line-height:34px;padding-bottom:10px;cursor: default;text-shadow: 0 0 12px black, 0 1px 0 black">
-							<span></span><span style="font-size:28px;"></span>
-						</div> 
-						<div id="store-name" style="font-size:14px;line-height:24px;color:white;text-shadow: 0 0 12px black, 0 1px 0 black;font-weight:normal;margin-top:0;"></div>
-						<div id="addr" style="font-size:14px;line-height:24px;color:white;text-shadow: 0 0 12px black, 0 1px 0 black;"></div>
-						<div id="phone" style="font-size:14px;line-height:24px;color:white;text-shadow: 0 0 12px black, 0 1px 0 black;"></div>
-						<div id="fb-like"></div>
-					</div>
-					<div id="cover-flip">&lt; Flip</div>
-					<div id="cover-tags">
-						<div id="tag-story">
-							<div class="shop-tag" style="background-repeat:no-repeat;background-position:center center;background-size:cover !important">
-								<div style="position:absolute;top:1em;left:1em;text-align:center;font-size:1.5em;color:white;text-shadow: 0 0 12px black, 0 1px 0 black;">封面故事 </div>
-								<div id="desc" style="position:absolute;overflow:hidden;width:100%;height:60%;top:40%;text-align:center;font-size:1.2em;color:white;text-shadow: 0 0 12px black, 0 1px 0 black;"></div>
-							</div>
-						</div>
-						<div id="tag-news">
-							<div class="shop-tag" style="background-repeat:no-repeat;background-position:center center;background-size:cover !important">
-								<div style="position:absolute;top:1em;left:1em;text-align:center;font-size:1.5em;color:white;text-shadow: 0 0 12px black, 0 1px 0 black;">最新消息</div>
-								<div id="desc" style="position:absolute;overflow:hidden;width:100%;height:60%;top:40%;text-align:center;font-size:1.2em;color:white;text-shadow: 0 0 12px black, 0 1px 0 black;"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="f-page-pattern" class="f-padding">
-				<div class="f-title"> 
-					<div style="position:absolute;left:0px;top:0px;height:100%;min-width:10em;">
-						<div class="f-backbox">返回目錄</div>
-						<div id="vert" class="f-backbox"></div>
-						<div id="horz" class="f-booking box-color-1">+訂閱</div>
-						<div id="vert" class="f-booking  box-color-1" title="訂閱">+</div>
-					</div> 
-					<h2></h2>
-					<div style="position:absolute;right:2em;top:0.8em;height:100%;">
-						<div id="style_box" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal ui-mini" style="display:none">
-							<div id="vlabel" class="layout-style ui-btn ui-btn-up-c ui-corner-left" title="直式"></div>
-							<div id="label" class="layout-style ui-btn ui-btn-up-c" title="橫式"></div>
-							<div id="digest" class="layout-style ui-btn ui-btn-up-c selected  ui-corner-right" style="border-right-width:1px" title="雜誌式"></div>
-						</div>
-					</div>
-				</div>
-				<div class="f-box-container">
-					<div class="f-box">
-						<div class="f-imgbox"></div>
-						<div class="f-namebox">
-							<h3></h3>
-							<span class="rating-4"></span>
-							<span class="price"></span>
-							<span id="cart"></span>
-						</div>
-						<p></p>
-					</div>
-				</div>
-			</div>				
-			<div id="box_expand_pattern" class="f-box">
-				<div class="box-expand-container clearfix">
-					<div class="clearfix" style="position:relative;width:100%">
-						<div class="f-imgbox"></div>
-						<div class="f-namebox">
-							<h3></h3>
-							<span class="rating-4"></span>
-							<span class="price"></span>
-							<span id="cart"></span>
-						</div>
-						<div id="fb-like" style="position:absolute;bottom:2em;left:2em;"></div>
-					</div>
-					<p id="desc"></p>
-					<div id="masonry" style="position:relative">
-						<div id="pbox_pattern" class="pbox">
-							<div class="inner clearfix">
-								<div id="title"></div>
-								<div id="content"></div>
-							</div>
-						</div>
-						<div id="pbox_setmenu_pattern" class="pbox">
-							<div class="inner clearfix">
-								<div id="title">
-									<img id="tag"></img><span id="name"></span><span id="desc"></span>
-								</div>
-								<div style="border-bottom:1px solid #ddd;margin:0.5em 0 0.5em;height:0.5em;clear:both"></div>
-								<div id="size_number">
-									<span id="size_number_pattern"><span id="size"></span><span id="number"></span></span>
-								</div>
-								<div id="content">
-									<div id="product_pattern">
-										<img id="img"></img><span id="name"></span><span id="sel_size"></span>
-										<div id="sel_essential_pattern">
-											<span id="name"></span><span id="sel_essential"></span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="box-expand-title" class="f-title">
-					<div style="width:18%;float:left;"> 
-						<div class="f-backbox"> 返回 </div>
-					</div>
-					<h2 style="width:64%;float:left"></h2>
-					<div style="width:18%;float:left"></div>
-					<div style="position:absolute;bottom:0px;left:1em;right:1em;border-bottom:1px solid #f2f2f2;height:1px;"></div>
-				</div>
-			</div>
-			<div id="product-tag-text" style="display:none;">
-					<div id="backbox-text">返回首頁</div>
-					<div id="tag-page-text">商品目錄</div>
-			</div>			
-	</div>
-	
-	<script id="template-user-setting-panel" type="text.template">
-		<div data-role="panel" id="user_setting_panel" data-display="overlay" data-position="right" style="width:100%;max-width:560px">
-			<div style="position:relative;">
-				<div id="dir_pane" style="position:relative;float:left;width:33.3%;">
-					<div id="name" class="user title" data-ctext="尚未登入">尚未登入</div>
-					<div id="login" class="user item" data-ctext1="登入" data-ctext2="登出">登入</div>
-					<div id="myyup" class="user item">我的 <span style="font-size:1.1em;font-weight:400;color:gary;">yup<span style="font-size:0.6em;color: #F86738;"> menu</span></span></div>
-					<div id="account" class="user item">帳號</div>
-					<div  style="height:2em;width:100%"></div>
-					<div id="tag" class="tag title">精選名店</div> 
-					<div id="catalog_pattern" class="tag item"><div id="name"></div><div id="desc"></div></div>
-				</div>
-				<div id="detail_pane" style="position:relative;float:left;width:66.6%;">
-					<div id="title">
-						<div id="name">我的 <span style="font-size:1.1em;font-weight:400;color:gary;">yup<span style="font-size:0.6em;color: #F86738;"> menu</span></span></div>
-						<div id="desc"></div>
-					</div>
-					<div id="content">
-						<div class="store_pattern">
-							<div id="img"></div>
-							<div id="store"></div>
-						</div>
-					</div>
-				</div>
-			</div>	
-		</div>
-	</script>
-	
-	<script id="template-u-setting-panel" type="text.template">
-		<div data-role="panel" id="u-setting-panel" data-display="reveal" data-position="right">
-			<div data-role="collapsible-set" data-content-theme="c">
-				<div data-role="collapsible" data-theme="b" data-content-theme="a">
-					<h3>Sales</h3>
-					<p>Sales info manage</p>
-					<ul data-role="listview" data-theme="c" data-content-theme="c">
-						<li><a href="">sales info</a></li>
-						<li><a href="">point info</a></li>
-					</ul>
-				</div>
-				<div data-role="collapsible" data-theme="b" data-content-theme="a">
-					<h3>Order</h3>
-					<p>Sales info manage</p>
-					<ul data-role="listview" data-theme="c" data-content-theme="c">
-						<li><a href="">order status</a></li>
-						<li><a href="">voucher info</a></li>
-						<li><a href="">credit card</a></li>
-					</ul>
-				</div>
-				<div data-role="collapsible" data-theme="b" data-content-theme="a">
-					<h3>Message</h3>
-					<p>Sales info manage</p>
-					<ul data-role="listview" data-theme="c" data-content-theme="c">
-						<li><a href="">new mail</a></li>
-						<li><a href="">sent box</a></li>
-						<li><a href="">draft</a></li>
-						<li><a href="">send later</a></li>
-					</ul>
-				</div>
-				<div id="management" data-role="collapsible" data-theme="b" data-content-theme="c">
-					<h3>Management</h3>
-					<p>Yup,Company,Store</p>
-					<div data-role="collapsible-set" data-content-theme="c" >	
-						<div id="customer" data-role="collapsible" data-theme="b" data-content-theme="a">
-							<h3>Yup</h3>
-							<p>Yup</p>
-							<ul data-role="listview" data-theme="c" data-content-theme="c">
-								<li><a href="/xlive/yup/setting/create_customer.html" data-transition="flip">create customer</a></li>
-								
-							</ul>
-						</div>					
-						<div id="company" data-role="collapsible" data-theme="b" data-content-theme="a">
-							<h3>company</h3>
-							<p>company</p>
-							<ul data-role="listview" data-theme="c" data-content-theme="c">
-								<li><a href="/xlive/yup/setting/set_company.html" data-transition="flip">公司基本資料</a></li>
-								<li><a href="/xlive/yup/setting/set_company_stores.html" data-transition="flip">各分店管理</a></li>
-								<li><a href="/xlive/yup/setting/set_company_admins.html" data-transition="flip">公司管理者維護</a></li>
-							</ul>
-						</div>
-						<div id="store" data-role="collapsible" data-theme="b" data-content-theme="a">
-							<h3>store</h3>
-							<p>store</p>
-							<ul data-role="listview" data-theme="c" data-content-theme="c">
-								<li><a href="/xlive/yup/setting/set_store.html" data-transition="flip">分店基本資料</a></li>
-								<li><a href="/xlive/yup/setting/set_store_salerule.html" data-transition="flip">商品販賣設定</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div data-role="collapsible" data-theme="b" data-content-theme="a">
-					<h3>Member</h3>
-					<p>Sales info manage</p>
-					<ul data-role="listview" data-theme="c" data-content-theme="c">
-						<li><a href="">customer list</a></li>
-						<li><a href="">rank</a></li>
-						<li><a href="">sign off</a></li>
-					</ul>
-				</div>
-				<div data-role="collapsible" data-theme="b" data-content-theme="c">
-					<h3>Master</h3>
-					<p>Sales info manage</p>
-					<div data-role="collapsible-set" data-content-theme="c" >
-						<div data-role="collapsible" data-theme="b" data-content-theme="a">
-							<h3>product</h3>
-							<p>Sales info manage</p>
-							<ul data-role="listview" data-theme="c" data-content-theme="c">
-								<li><a href="/xlive/yup/setting/tags.html" data-transition="flip">tags</a></li>
-								<li><a href="/xlive/yup/setting/properties.html" data-transition="flip">property group</a></li>
-								<li><a href="/xlive/yup/setting/set_allergy.html" data-transition="flip">allergy</a></li>
-								<li><a href="/xlive/yup/setting/products.html" data-transition="flip">product info</a></li>
-								<li><a href="">display setting</a></li>
-								<li><a href="">half &amp; half</a></li>
-							</ul>
-						</div>
-						<div data-role="collapsible" data-theme="b" data-content-theme="a">
-							<h3>area</h3>
-							<p>Sales info manage</p>
-							<ul data-role="listview" data-theme="c" data-content-theme="c">
-								<li><a href="">area info</a></li>
-								<li><a href="">upload CSV</a></li>
-							</ul>
-						</div>
-						<div data-role="collapsible" data-theme="b" data-content-theme="a">
-							<h3>member</h3>
-							<p>Sales info manage</p>
-							<ul data-role="listview" data-theme="c" data-content-theme="c">
-								<li><a href="/xlive/yup/setting/set_company.html" data-transition="flip">company</a></li>
-								<li><a href="/xlive/yup/setting/set_store.html" data-transition="flip">store</a></li>
-								<li><a href="/xlive/yup/setting/set_member.html" data-transition="flip">member</a></li>
-							</ul>
-						</div>
-						<div data-role="collapsible" data-theme="b" data-content-theme="a">
-							<h3>coupon . point</h3>
-							<p>Sales info manage</p>
-							<ul data-role="listview" data-theme="c" data-content-theme="c">
-								<li><a href="">point setting</a></li>
-								<li><a href="">coupon setting</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div data-role="collapsible" data-theme="b" data-content-theme="a">
-					<h3>Operation</h3>
-					<p>Sales info manage</p>
-					<ul data-role="listview" data-theme="c" data-content-theme="c">
-						<li><a href="">basic info</a></li>
-						<li><a href="">mail template</a></li>
-						<li><a href="">owner info</a></li>
-						<li><a href="">store list</a></li>
-						<li><a href="">credit available</a></li>
-					</ul>
-				</div>
-				<div data-role="collapsible" data-theme="b" data-content-theme="a">
-					<h3>Help</h3>
-					<p>Sales info manage</p>
-					<ul data-role="listview" data-theme="c" data-content-theme="c">
-						<li><a href="">store</a></li>
-						<li><a href="">headquarter</a></li>
-					</ul>
-				</div>
-			</div>
+<body>
+<div data-role="page" id="probe_main" data-fullscreen="true">	
+	<div data-role="header" id="probe_header" data-position="fixed">    	
+		<div id="menu" >
+            <div id="probe_logo" class="ui-float-left">
+            	<img src="/images/probeweb/probe_logo.gif" style="float:left;margin:5px;width:40px;height:30px;">probe
+            </div>            
+            <div id="probe_popupMenu" class="ui-float-right" >
+                <a href="#popupMenu" data-rel="popup" data-theme="b" data-role="button" data-icon="arrow-r" data-iconpos="right">首頁</a>
+            </div>            
+            <div id="probe_contact" class="ui-float-right">
+                <a href="/contact.html" data-rel="dialog">聯絡方式</a>
+            </div> 
+            <div id="probe_about" class="ui-float-right">
+                <a href="/aboutus.html">關於波峰</a>
+            </div>
+            <div id="probe_solution" class="ui-float-right">
+                <a href="/solution.html">解決方案</a>
+            </div> 
+            <div id="probe_product" class="ui-float-right">
+                <a href="/product.html">產品資訊</a>
+            </div>                 
+            <div id="probe_home" class="ui-float-right">
+                <a href="#probe_main" class="probe_current">首頁</a>
+            </div>
+            <div data-role="popup" id="popupMenu" data-theme="b" class="ui-content" style="width:240px;">
+                <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
+                    <li data-role="divider" data-theme="a">請選擇...</li>
+                    <li><a href="#probe_main">首頁</a></li>
+                    <li><a href="/product.html">產品資訊</a></li>
+                    <li><a href="/solution.html">解決方案</a></li>
+                    <li><a href="/aboutus.html">關於波峰</a></li>
+                    <li><a href="/contact.html" data-rel="dialog" data-transition="pop">聯絡方式</a></li>
+                </ul>
+        	</div>                                         
+        </div>                
+	</div>	
+	<div data-role="content" style="background:white;">          
+    	<div class="ui-mason-3">
+            <div class="mbox ui-col-c">
+            	<div class="auto_pic" style="background-image:url('/images/probeweb/home/home-pos.jpg');height:550px;">                  
+            		<div style="position:relative;text-align:center;">
+                    	<h2 class="probe_font">UPOS-零售(retail)商店再進化</h2>
+                	</div>                                    
+                	<div style="position:relative;line-hight:0px;top:-30px;text-align:center;">
+                		<h3 class="probe_font" style="line-hight:0px;">任何時間.任何地點.任何商品.</h3>
+                	</div>
+                </div>
+                <div id="btn-3-group">
+                    <div class="auto_pic" style="background-image:url('/images/probeweb/upos/btn-try.png');" ></div> 
+                    <a href="/probeweb/upos/upos_overview.html"><div class="auto_pic" style="background-image:url('/images/probeweb/upos/btn-more.png');" ></div></a>
+                    <div class="auto_pic" style="background-image:url('/images/probeweb/upos/btn-buy.png');" ></div>
+                </div>
+            </div>
+          
+            
+            <div class="mbox ui-col-a">
+                <div>
+                    <div style="border-top:3px solid #7AC0E4"></div>
+                    <div style="position:relative;float:left;padding:10px;width:20%;">
+                        <img src="/images/probeweb/home/icon_sales.jpg">
+                    </div>
+                    <div style="position:relative;float:left;color:#585858;width:80%;">
+                        <h4>iMall</h4>
+                        <h4 style="color:#787878;">
+                            利用與 facebook 緊密結合的購物平台，大大提高銷售。
+                        </h4>
+                        
+                        <div class="bottom_link">
+                    	<a href="/probeweb/imall/imall.html">詳細資料</a>|
+                        <a href="http://apps.facebook.com/iiimall/">加入iMall</a>|
+                        <a href="http://youtu.be/IIbcnOQ47dA">觀看示範</a>
+                        
+                    </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>                         
+            </div>
+            
+            
+            <div class="mbox ui-col-a">
+                <div>
+                    <div style="border-top:3px solid #0476BF"></div>
+                    <div style="position:relative;float:left;padding:10px;width:20%;">
+                        <img src="/images/probeweb/home/icon_platform.jpg">
+                    </div>
+                    <div style="position:relative;float:left;color:#585858;width:80%;">
+                        <h4>jLIVE</h4>
+                        <h4 style="color:#787878;">
+                              讓程式設計師因應商務需求，快速地開發企業應用程式。
+                        </h4>
+                        
+                        <div class="bottom_link">
+                    	<a href="/probeweb/product/jlive.html">詳細資料</a>|
+                        <a href="/solution.html">成果展示</a>
+                    </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>                         
+            </div>                  
+            
+            
+            <div class="mbox ui-col-a">
+                <div>
+                    <div style="border-top:3px solid #E29C00"></div>
+                    <div style="position:relative;float:left;padding:10px;width:20%;">
+                        <img src="/images/probeweb/home/icon_work.jpg">
+                    </div>
+                    <div style="position:relative;float:left;color:#585858;width:80%;">
+                        <h4>UPOS</h4>
+                        <h4 style="color:#787878;">
+                            嶄新的使用經驗，銷售員與顧客滿意度大大增加。
+                        </h4>
+                        
+                        <div class="bottom_link">
+                    	<a href="/probeweb/upos/upos_overview.html">詳細資料</a>|
+                        <a href="/null.html">觀看示範</a>|
+                        <a href="/probeweb/upos/upos-price.html">方案與價格</a>
+                    </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>                         
+            </div>
+            
+            
+            <div class="mbox ui-col-a">
+                <div>
+                    <div style="border-top:3px solid #0DBD6C"></div>
+                    <div style="position:relative;float:left;padding:10px;width:20%;">
+                        <img src="/images/probeweb/home/icon_market.jpg">
+                    </div>
+                    <div style="position:relative;float:left;color:#585858;width:80%;">
+                        <h4>GAE</h4>
+                        <h4 style="color:#787878;">
+                            採用google最可靠的雲端服務，最彈性的頻寬配置。
+                        </h4>
+                        
+                        <div class="bottom_link">
+                    	<a href="/gae_info.html">詳細資料</a>
+                    </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>                         
+            </div>
+            
+            
+            <div class="mbox ui-col-a">
+                <div>
+                    <div style="border-top:3px solid #B282C0"></div>
+                    <div style="position:relative;float:left;padding:10px;width:20%;">
+                        <img src="/images/probeweb/home/icon_service.jpg">
+                    </div>
+                    <div style="position:relative;float:left;color:#585858;width:80%;">
+                        <h4>cloud ERP</h4>
+                        <h4 style="color:#787878;">
+                            多種行業的雲端ERP系統導入，迅速增進企業體質。
+                        </h4>
+                        
+                        <div class="bottom_link">
+                    	<a href="/solution.html">詳細資料</a>
+                    </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>                         
+            </div>
+            
+            
+            <div class="mbox ui-col-a">
+                <div>
+                    <div style="border-top:3px solid #F0D81C"></div>
+                    <div style="position:relative;float:left;padding:10px;width:20%;">
+                        <img src="/images/probeweb/home/icon_chatter.jpg">
+                    </div>
+                    <div style="position:relative;float:left;color:#585858;width:80%;">
+                        <h4>cloud service</h4>
+                        <h4 style="color:#787878;">
+                            掌握雲端服務與行動化的高尖技術，歡迎行銷合作提案。
+                        </h4>
+                        
+                        <div class="bottom_link">
+                    	<a href="#popup_contact" data-rel="popup" data-transition="slideup" data-position-to="window">聯絡我們</a>
+                    </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>                         
+            </div>
+            <div class="mbox ui-col-c" style="margin-top:20px;">
+            	<img src="/images/probeweb/home/gray-divider.png">
+        	</div>
     	</div>
-	</script>
-	<script id="template-account" type="text.template">
-		<div id="basc_info" class="account subitem"><div id="name">會員基本資料</div><div id="desc"></div></div>
-		<div class="account subitem"><div id="name">參觀記錄</div><div id="desc"></div></div>
-		<div class="account subitem"><div id="name">訂單記錄</div><div id="desc"></div></div>
-		<div class="account subitem"><div id="name">折價卷</div><div id="desc"></div></div>
-		<div class="subitem"><div id="name">後台管理登入</div><div id="desc"></div></div>		
-	</script>
-
-	
+	</div>
+    <div id="probe_footer" data-role="footer">       
+        <ul>
+            <li><strong><span>產品 . Product</span></strong>
+                <ul>
+                    <li><a href="#">
+                    	UPOS</a>
+                    </li>
+                    <li><a href="#">
+                    	iMall</a>
+                    </li>
+                    <li><a href="#" >
+                    	jLIVE Builder</a>
+                    </li>
+                    <li><a href="#" >
+                    	Probe middleware</a>
+                    </li>
+                </ul>
+            </li>
+            <li><strong><span>服務項目 . service</span></strong>
+                <ul>
+                    <li><a href="#">
+                    	SoLoMo</a>
+                    </li>
+                    <li><a href="#">
+                    	行動app(mobile/tablet app)</a>
+                    </li>
+                    <li><a href="#" >
+                    	responsive web design</a>
+                    </li>
+                    <li><a href="#" >
+                    	ERP系統導入</a>
+                    </li>
+                    <li><a href="#" >
+                    	教育訓練(training)</a>
+                    </li>
+                    <li><a href="#" >
+                    	顧問(consulting)</a>
+                    </li>
+                </ul>
+            </li>            	
+            <li><strong><span>解決方案 . Solution</span></strong>
+                <ul>
+                    <li><a href="#">
+                    	健康管理(health care)</a>
+                    </li>
+                    <li><a href="#">
+                    	文教(education)</a>
+                    </li>
+                    <li><a href="#" >
+                    	旅遊網(travel web)</a>
+                    </li>
+                    <li><a href="#" >
+                    	線上報修 (online RMA)</a>
+                    </li>
+                    <li><a href="#" >
+                    	鑄鋁業(factory)</a>
+                    </li>
+                    <li><a href="#" >
+                    	汽車連鎖業(car sales)</a>
+                    </li>
+                    <li><a href="#" >
+                    	休閒俱樂部(club)</a>
+                    </li>
+                    <li><a href="#" >
+                    	建材業(decorations)</a>
+                    </li>
+                    <li><a href="#" >
+                    	運輸業(transportation)</a>
+                    </li>
+                    <li><a href="#" >
+                    	財團法人會計系統(accounting)</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+       
+        <div id="copyright" style="clear:both;text-align:center;">Copyright &#169; probe.com.tw Design &amp; Development - All rights Reserved | 
+            <a href="http://www.probe.com.tw" title="Privacy Policy | AdaptdD.com">http://www.probe.com.tw</a>
+        </div>
+    </div>
+</div>        
 </body>
-
 </html>
