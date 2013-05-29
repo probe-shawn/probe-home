@@ -1,0 +1,223 @@
+/* 波峰GAE官網預設CSS */
+
+*{						
+	box-sizing:border-box;	
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+}
+
+.centered { margin: 0 auto; } 
+
+.radius{					
+	 -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+}
+.shadow{						
+	box-shadow:rgb(0, 0, 0) 2px 2px 2px;
+	   	-webkit-box-shadow:rgb(0, 0, 0) 2px 2px 2px;
+		-o-box-shadow:rgb(0, 0, 0) 2px 2px 2px;
+		-ms-box-shadow:rgb(0, 0, 0) 2px 2px 2px;
+		-moz-box-shadow:rgb(0, 0, 0) 2px 2px 2px;
+}
+
+div.auto_pic{		/*自動圖置中，預設原尺寸*/
+/*	background-image:url(/images/cloud_back.png);   自訂圖檔*/
+	background-repeat-x:no-repeat; 
+	background-repeat-y:no-repeat; 
+	background-repeat:no-repeat;
+	background-attachment:inherit;
+	filter:alpha(opacity=100); 
+	opacity:1;
+	background-position:50% 50%;
+	background-position-x:50%;
+	background-position-y:50%; 
+	background-size:auto auto;
+}
+div.auto_pic.match_w{ /*自動圖置中，寬漲滿*/
+	background-size:100% auto; 
+}
+div.auto_pic.match_v{	/*自動圖置中，高漲滿*/
+	background-size:auto 100%; 
+}
+div.auto_pic.match_wv{	/*自動圖置中，高漲滿*/
+	background-size:100% 100%; 
+}
+
+#nav_history{
+	position:relative;
+	height:25px;
+	margin:10px;
+}
+
+#nav_div{
+ position:absolute;
+ z-index:999;
+}
+#nav_div #home{
+	border-radius:5px 0 0 5px;
+}
+#nav_div #home.probe_current{
+	display:none;
+}
+
+#nav_div span{
+	display:inline;
+}
+#nav_div .probe_nav{
+	font-weight:100!important;
+	font-size:14px;
+	padding:2px 5px 2px 5px;	
+	background-color:#FFFFFF;
+	border:1px solid #CCCCCC;
+	margin-left:-1px;
+}
+
+#nav_div .probe_nav:hover{
+	text-decoration:underline;
+	cursor: pointer;
+}
+#nav_div .probe_nav.probe_current{
+	text-decoration:none;
+	cursor:none;
+	color:#36C;	
+	border-radius:0 5px 5px 0;
+}
+
+.ui-mason-2,.ui-mason-3{
+	max-width:960px;
+	margin:0 auto;
+
+}
+.mbox img{
+	width:100%;
+}
+
+/*有關MENU*/
+#probe_header{
+	background:#666666;
+}
+
+#probe_header #menu{
+	position:relative;
+	max-width:960px;
+	margin:0 auto;
+	height:40px;
+	line-height:40px;
+}
+
+
+#probe_footer{
+	background:#666666;
+}
+#probe_footer>ul{
+	max-width:960px;
+	margin:0 auto;
+}
+#probe_footer a{
+	text-decoration:none;	
+}
+#probe_header #menu .ui-float-left{
+	float:left;
+	margin-left:5px;
+}
+
+#probe_header #menu .ui-float-right{
+	float:right;
+	margin-right:10px;
+	margin-left:10px;
+}
+
+#menu #probe_popupMenu{
+		display:none;
+	}
+#menu #probe_popupMenu a{
+		color:white;
+		
+}
+#menu #probe_popupMenu a>span{
+	height:24px;
+}
+#menu #probe_popupMenu a>span>span:first-child{
+	top:-15px;
+}
+#menu #probe_logo{
+	font-family: 'Sonsie One', cursive;
+	text-shadow: 1px 1px 1px #EFEFEF;
+}
+#menu div a{
+	
+	cursor:pointer;
+	color:#CCC;
+	text-decoration:none;
+}
+#menu div a.probe_current{
+	text-shadow: 0 0 8px #FFF;
+	color:#FFF;
+}
+#menu div a:hover{
+	color:#FFF;
+	text-shadow: 0 0 8px #FFF;
+}
+
+#probe_footer>ul>li{
+	float:left;
+	margin:20px;
+}
+
+body.ui-size-s #menu div{
+		display:none;
+	}
+body.ui-size-s #menu #probe_logo{
+		display:block;
+	}
+body.ui-size-s #menu #probe_popupMenu{
+		display:block;
+	}
+	
+
+/*有關MENU*/
+
+body.ui-size-s .ui-mason-3 .ui-col-a,
+body.ui-size-s .ui-mason-3 .ui-col-b,
+body.ui-size-s .ui-mason-3 .ui-col-c{
+	width:100%;
+}
+
+body.ui-size-m .ui-mason-3 .ui-col-a{
+	width:50%;
+}
+
+body.ui-size-m .ui-mason-3 .ui-col-b,
+body.ui-size-m .ui-mason-3 .ui-col-c{
+	width:100%;
+}
+
+body.ui-size-l .ui-mason-3 .ui-col-a{
+	width:33.33%;
+}
+
+body.ui-size-l .ui-mason-3 .ui-col-b{
+	width:66.66%;
+}
+
+body.ui-size-l .ui-mason-3 .ui-col-c{
+	width:100%;
+}
+
+body.ui-size-s .ui-mason-2 .ui-col-a,
+body.ui-size-s .ui-mason-2 .ui-col-b{
+	width:100%;
+}
+
+body.ui-size-m .ui-mason-2 .ui-col-a,
+body.ui-size-l .ui-mason-2 .ui-col-a{
+	width:50%;
+}
+
+body.ui-size-m .ui-mason-2 .ui-col-b,
+body.ui-size-l .ui-mason-2 .ui-col-b{
+	width:100%;
+}

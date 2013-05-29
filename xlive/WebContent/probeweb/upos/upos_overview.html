@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body>
+
+        
+<div data-role="page" id="upos_overview" data-fullscreen="true">	
+		
+        <div id="probe_header" data-role="header" data-position="fixed"></div>
+        
+		<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0">
+       
+            <div class="ui-mason-2">
+                  <div class="mbox ui-col-b auto_pic" 
+                       style="background-image:url('/images/probeweb/upos/slide1.png');height:600px">
+                  </div>
+                  
+                  
+                  <div class="mbox ui-col-a">
+                  
+               	  	<div class="ui-col-33">                    	                  	
+                      <a href="upos_overview.html">
+                      <div class="icon6">
+                      <div class="auto_pic" style="background-image:url('/images/probeweb/upos/menu-overview.png');" ></div>
+                      overview
+                      </div>
+                    </div></a>
+                    
+                    <div class="ui-col-33">  
+                      <a href="upos_desk.html">
+                      <div class="icon6">
+                      <div class="auto_pic" style="background-image:url('/images/probeweb/upos/menu-pos.png');" ></div>
+                      POS
+                      </div></a>
+                    </div>
+                    
+                    <div class="ui-col-33">  
+                      <a href="upos_tablet.html">
+                      <div class="icon6">
+                      <div class="auto_pic" style="background-image:url('/images/probeweb/upos/menu-tablet.png');" ></div>
+                      tablet
+                      </div>
+                  	</div></a>
+                   </div>
+                   
+                   <div class="mbox ui-col-a" >
+                  	
+                    <div class="ui-col-33">
+                          <a href="upos_mobile.html">
+                          <div class="icon6">
+                          <div class="auto_pic" style="background-image:url('/images/probeweb/upos/menu-mobile.png');" ></div>
+                          mobile
+                          </div></a>
+                    </div>
+                    
+                    <div class="ui-col-33">
+                          <a href="upos_eCommerce.html">
+                          <div class="icon6">
+                          <div class="auto_pic" style="background-image:url('/images/probeweb/upos/menu-eCommerce.png');" ></div>
+                          eCommerce
+                          </div></a>
+                    </div>
+                    
+                    <div class="ui-col-33">
+                          <a href="upos_stores.html">
+                          <div class="icon6">
+                          <div class="auto_pic" style="background-image:url('/images/probeweb/upos/menu-stores.png');" ></div>
+                          multi-store
+                          </div></a>
+                    </div>       
+                  </div>
+                  <div id="sep" class="mbox ui-col-b"></div>
+                  
+                  <div class="mbox ui-col-b">
+                  <img src="/images/probeweb/home/gray-divider.png">
+                  </div>
+                                      
+                      
+                  <div class="mbox ui-col-b">
+                      
+                      <div style="position:relative;float:left;padding-left:20px;padding-top:50px;color:#585858;width:70%">
+                      <h4>UPOS 重新定義了以往的店面購物經驗，為了吸引新一代行動族群，UPOS打造出堅固、完全整合的POS系統，將平板電腦(apple,android,windows 8)、手機(mobile)轉變成
+                      最尖端的劃時代零售業工具。而且支援多使用者(multi-user)、多分店(multi-store)、甚至可擴充到網路購物平台(eCommerce)，讓銷售服務完全拋開任何限制。</h4>
+                      </div>
+                      
+                      <div style="position:relative;float:right;padding-left:20px;padding-top:90px;height:200px;">
+                      <img src="/images/probeweb/upos/buy-now.png">
+                      </div>
+                      
+                  </div>
+                  
+                  <div class="mbox ui-col-b">
+                  <img src="/images/probeweb/home/gray-divider.png">
+                  </div>
+         
+        
+        	</div>
+	</div>  
+<style>  
+#upos_overview #sep{
+	border-bottom:1px solid #FFF;
+	-webkit-box-shadow:rgb(136, 136, 136) 0 1px 10px; 
+	box-shadow:rgb(136, 136, 136) 0 1px 10px;  
+	-o-box-shadow:rgb(136, 136, 136) 0 0 5px; 
+	-ms-box-shadow:rgb(136, 136, 136) 0 0 5px; 
+	-moz-box-shadow:rgb(136, 136, 136) 0 0 5px; 
+}
+
+#upos_overview .ui-col-33{
+	position:relative;
+	float:left;
+	width:33.3%;
+	
+	
+}
+
+#upos_overview .ui-col-33:hover{
+	top:-10px;
+	
+}
+#upos_overview .ui-col-33:hover .icon6{
+	color:red;
+	background:-webkit-gradient(radial, center center, 0, center center, 200, from(#FFF), to(#999));
+}
+
+#upos_overview .icon6{	margin:5px;
+	position:relative;
+	height:95px;	
+	text-align:center;
+	text-decoration:none;
+	filter:alpha(opacity=60); 
+	opacity:0.6; 	
+	background-size:auto 100%; 
+}
+#upos_overview .ui-col-33 a{
+	color:#121212;	
+	bottom:2px;;
+	width:100%;
+	text-decoration:none;
+}
+#upos_overview .ui-col-33 .icon6 .auto_pic{
+	width:60%;
+	height:50px;
+	margin:5px auto;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.masonry('reload');
+		});		
+    });	
+</script>             
+</div>        
+</body>
+</html>

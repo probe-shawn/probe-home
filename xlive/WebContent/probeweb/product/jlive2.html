@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+
+</head>
+
+<body>
+<div  data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">規格簡介</h1>  
+        <div id="nav_history"></div>     
+	</div> 	
+	<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0">
+		  
+    
+       
+            <div class="ui-mason-3">
+            	  
+                  
+                  <div class="mbox ui-col-a">
+                    <div style="margin:3px;">
+                    <a href="jlive_feature.html" >
+                    <img src="/images/probeweb/product/jlive01.jpg"></a>
+                    </div>
+                  </div>
+                  
+                  <div class="mbox ui-col-a">
+                    <div style="margin:3px;">
+                    <a href="jlive_structure.html" >
+                    <img src="/images/probeweb/product/jlive02.jpg"></a>
+                    </div>
+                  </div>
+                  
+                 <div class="mbox ui-col-a">
+                    <div style="margin:3px;">
+                    <a href="jlive_cpmponent.html" >
+                    <img src="/images/probeweb/product/jlive03.jpg"></a>
+                    </div>
+                  </div>
+                  
+                  <div class="mbox ui-col-a">
+                    <div style="margin:3px;">
+                    <a href="jlive_event.html" >
+                    <img src="/images/probeweb/product/jlive04.jpg"></a>
+                    </div>
+                  </div>
+                  
+                  <div class="mbox ui-col-a">
+                    <div style="margin:3px;">
+                    <a href="probeweb/product/jlive.html" >
+                    <img src="/images/probeweb/product/jlive05.jpg"></a>
+                    </div>
+                  </div>
+                  
+                  <div class="mbox ui-col-a">
+                    <div style="margin:3px;">
+                    <a href="probeweb/product/jlive.html" >
+                    <img src="/images/probeweb/product/jlive06.jpg"></a>
+                    </div>
+                  </div>                  
+        
+        	</div> <!-- #container -->
+        
+        
+	</div>  
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script>   
+</div>
+</body>
+</html>

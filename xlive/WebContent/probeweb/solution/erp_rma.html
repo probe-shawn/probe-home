@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">線上維修</h1>  
+        <div id="nav_history"></div>     
+	</div> 	
+        <h2>線上維修系統(繁中)</h2>
+         
+    
+    <div data-role="content">
+    
+    
+<div><img class="" style="cursor:default;"  src="/images/probeweb/solution/box_rma.jpg" alt="" />
+</div>
+<div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+<h4>》系統說明</h4>
+<h5 style="line-height:24px;color:black;font-weight: normal;">
+<ul>
+<li>管理作業系統：會員基本資料維護、場地出租作業、清潔費作業系統等七個子系統。</li>
+
+<li>櫃台作業系統：POS作業系統、結帳作業、場地管理作業等五個子系統。</li>
+
+<li>報表作業：營業收入明細表、營業額分析表、營業收入日報表等十五個報表。</li>
+
+<li>基本資料維護：使用者權限設定、使用者群組設定、程式模組維護等九個子系統。</li>
+</ul></h5>
+        
+
+         </div>
+	</div>
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script>              
+</div>
+</body>
+</html>

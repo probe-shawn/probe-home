@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">旅遊網站</h1>  
+        <div id="nav_history"></div>     
+	</div>
+        <h2>旅遊網站 ERP (繁中)</h2>
+         
+    
+    <div data-role="content">
+    
+    
+<div><img class="" style="cursor:default;"  src="/images/probeweb/solution/erp_star.jpg" alt="" />
+</div>
+<div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+<h4>》 代表性客戶：燦星旅遊網</h4>
+
+<h5>
+<ul style="color:black;font-weight: normal;">
+<li>網頁流量：每天20萬人上網</li>
+
+<li>2004年9月已成台灣流量最大旅遊網，2007年1月燦星旅遊網持續為台灣網路上最大的旅遊網站。
+（根據根據創市際『ARO網路測量研究資料庫』2007年1月資料顯示）</li>
+
+<li>甫上線營業一年，營業額即破3億元，並且獲利，創台灣電子商務有史以來的紀錄。</li>
+
+<li>專業產品開發經理：60多人 (均具有15年以上旅遊專業及5年以上旅遊電子商務經驗 )</li>
+
+<li>網路技術開發團隊：30多人(5年以上電子商務系統開發經驗)</li>
+
+<li>專業Call Center：共250人 (網路客服65人，門市客服185人)</li>
+<li>2008年1月，於櫃檯買賣中心登錄為興櫃股票，行政院金融監督管理委員會核准本公司股票公開發行
+</li>
+<li>2008年3月辦理現金增資轉投資公司燦星旅遊網旅行社新台幣六仟萬元，投資總額為新台幣一億二仟萬元，(總計117家實體門市)。 
+</li>
+</ul>
+</h5>
+
+         </div>
+	</div>
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script>              
+</div>
+</body>
+</html>

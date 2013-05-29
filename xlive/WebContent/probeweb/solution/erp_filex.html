@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">文教系統</h1>  
+        <div id="nav_history"></div>     
+	</div> 	
+        <h2>文教系統 ERP (繁中)</h2>
+<div style="position:relative;width:100%; max-width:960px;padding-left:6px;">
+	<div style="left:6px ; top:6px;">
+    <img src="/images/probeweb/solution/felix01.jpg" style="" >
+	</div>
+    <div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+<h4>》 代表性客戶：菲力兒童文教機構</h4>
+<h4>》 公司簡介</h4>
+<h5>
+<div style="color:black;">
+<p>菲力兒童文教機構自民國八十一年成立至今，已經邁入第二十一個年頭。</p>
+<p>是新店地區具有優良辦學傳統，與傑出教育成效的教育機構，</p>
+<p>完整一至十二歲兒童教學系統，優秀並不斷接受訓練的教育人員，</p>
+<p>特別設計的優秀成長環境，嚴謹的校務管理，</p>
+<p>同時更以精緻、用心、認真 深獲家長肯定。</p>
+<p>我們不是財團，不是量販店式的大型連鎖園所，</p>
+<p>也不是缺乏系統管理的小型園所，</p>
+<p>更不盲目追隨流行熱潮。</p>
+<p>真心、用心、堅持的走了許多年，</p>
+<p>今天，讓我們自信滿滿、成就滿懷的，</p>
+<p>是菲力溫馨而不失規律的氣氛，</p>
+<p>和菲力孩子與眾不同的獨特氣質。</p>
+<p>期待能在孩子成長路上，</p>
+<p>有更多用心且具有前瞻思維的夥伴，</p>
+<p>與我們攜手共同努力。</p>
+</div>
+</h5>
+	</div>
+</div>
+
+<div>
+
+
+
+
+
+
+
+</div>
+
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script> 
+</div>
+</body>
+</html>

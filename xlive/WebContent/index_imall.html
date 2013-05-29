@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<body>
+
+        
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>                  
+                   <li><a href="/aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">iMall</h1>  
+        <div id="nav_history"></div>     
+	</div> 	
+	<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0">
+       
+            <div class="ui-mason-2">
+                  <div class="mbox ui-col-b auto_pic" 
+                       style="color:white;background-image:url('/images/probeweb/home/index-imall.jpg');height:400px">
+                      
+                      <div style="position:relative;left:10px;top:280px;color:white;">
+                      <h2>iMall-創新的SoLoMo產品</h2>
+                      </div>
+                                    
+                      <div style="position:relative;left:10px;top:280px;">
+                          <a href="http://apps.facebook.com/iiimall/"><h5>我要開店-></h5></a>
+                      </div>
+                  
+                  </div>
+                  
+                  
+                  <div class="mbox ui-col-b" style="height:100px;"></div>
+                  
+                  
+                  
+                  <div class="mbox ui-col-a">
+                      <img src="/images/probeweb/product/imall_free.png">
+                  </div>
+                      
+                      
+                  <div class="mbox ui-col-a">
+                      
+                      <div style="position:relative;float:left;width:80%;color:#3B5998;padding-left:10%;">
+                      <h4>iMall 是無門檻的購物平台</h4>
+                      <h5 style="color:#585858;">
+                      只要你有臉書(facebook)帳號，都可以在 iMall 上建立自己的商店(mall)，不需開店費維護費，可展售不限數量的商品。
+                      </h5>
+                      <h5>learn more</h5>
+                      </div>
+                      
+                      <div style="position:relative;float:left;width:80%;color:#3B5998;padding-left:10%">
+                      <h4>iMall 與臉書(Facebook) 緊密結合</h4>
+                      <h5 style="color:#585858;">
+                      消費者的留言與購物等行為，可以方便的貼到臉書(facebook)的塗鴉牆，分享給他的眾多好友，藉以達到病毒式行銷的威力。
+                      </h5>
+                      <h5>learn more</h5>
+                      </div>
+                      
+                  </div>
+                 
+                  <div class="mbox ui-col-b">
+                  <img src="/images/probeweb/home/gray-divider.png">
+                  </div>
+                  
+                  
+                  
+                  <div class="mbox ui-col-a">
+                      <img src="/images/probeweb/product/imall_mobile.png">
+                  </div>
+                  
+                  
+                  <div class="mbox ui-col-a">
+                      
+                      <div style="position:relative;float:left;width:80%;color:#3B5998;padding-left:10%;">
+                      <h4>iMall 獨創「生活圈」，緊扣在地商機</h4>
+                      <h5 style="color:#585858;">
+                      例如輔大生活圈，將輔大周遭的 mall集中在一起，依商家特性分類展示，方便輔大附近的消費者容易下單採購，同時也促進mall的營業額。
+                      </h5>
+                      <h5>learn more</h5>
+                      </div>
+                      
+                      <div style="position:relative;float:left;width:80%;color:#3B5998;padding-left:10%">
+                      <h4>授權經營你自己的「生活圈」</h4>
+                      <h5 style="color:#585858;">
+                      我們可以授權，讓有心的經營者自行招商，自己訂定商家參與生活圈的條件，自行經營生活圈，詳細情形請接洽我們。
+                      </h5>
+                      <h5>learn more</h5>
+                      </div>
+                      
+                  </div>
+                  
+                  <div class="mbox ui-col-b">
+                  <img src="/images/probeweb/home/gray-divider.png">
+                  </div>
+                  
+                  
+                  
+                  <div class="mbox ui-col-a">
+                      <img src="/images/probeweb/product/imall_create.png">
+                  </div>
+                  
+                  
+                  <div class="mbox ui-col-a">
+                      <div style="position:relative;float:left;width:80%;color:#3B5998;padding-left:10%">
+                          <h4>打造企業專屬的購物平台</h4>
+                          <h5 style="color:#585858;">
+                          我們可以幫你打造單店或是多分店，專屬的SoLoMo購物平台，再將平台包裝成一個行動app，讓消費者方便瀏覽購物，詳細情形請接洽我們。
+                          </h5>
+                          <h5>learn more</h5>
+                      </div>
+                  </div>
+                  
+                                        
+                      
+                                       
+        
+        	</div>
+	</div>  
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.masonry('reload');
+		});		
+    });	
+</script>             
+</div>        
+</body>
+</html>

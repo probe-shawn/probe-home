@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/probe_home.css" rel="stylesheet" type="text/css"/>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
+<script src="http://probe-home.appspot.com/xlive/script/slides.min.jquery.js" type="text/javascript"></script>
+<script src="http://probe-home.appspot.com/xlive/script/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="script/alive.js" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<script>
+	$(document).ready(function(){
+		
+		var $probe_main=$('#probe_main');	
+		var $mason=$('#probe_main .ui-mason-3');
+			
+			$mason.masonry({isAnimated: true});
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+	});	
+</script> 
+
+
+
+<style>
+div[data-role="content"]{
+	margin-top:40px;
+}
+#probe_main{
+	background-color:#f2f2f2;
+}
+
+#probe_header{
+	background:#666666;
+}
+
+#probe_header #menu{
+	position:relative;
+	max-width:960px;
+	margin:0 auto;
+	height:40px;
+	line-height:40px;
+}
+
+
+#probe_footer{
+	background:#666666;
+}
+
+#probe_header #menu .ui-float-left{
+	float:left;
+	margin-left:5px;
+}
+
+#probe_header #menu .ui-float-right{
+	float:right;
+	margin-right:10px;
+	margin-left:10px;
+}
+
+#probe_main #home_content{
+	height:1200px;
+	
+}
+#probe_main div[id^="introduction"]{
+	height:200px;
+}
+#probe_main div[class*="ui-col"]>div{
+	position:absolute;
+	top:3px;
+	left:3px;
+	right:3px;
+	bottom:3px;
+	background:#fafafa;
+	border-bottom:1px solid #EFEFEF;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	padding:5px;
+}
+#probe_main div[class*="ui-col"]>div:hover{
+	border-bottom:1px solid #CCC;
+}
+
+h1 {
+       font-size:40px !important;
+	   line-height:150%;
+}
+h2 {
+       font-size:30px !important;
+	   line-height:150%;
+}
+h3 {
+       font-size:24px !important;
+	   line-height:150%;
+}
+h4 {
+       font-size:16px !important;
+	   line-height:200%;
+}
+h5 {
+       font-size:12px !important;
+	   line-height:200%;
+}
+h6 {
+       font-size:10px !important;
+	   line-height:200%;
+}
+</style>
+</head>
+<body>         
+	<div id="probe_main" data-role="page"  data-fullscreen="true">	
+		<div id="probe_header" data-role="header" data-position="fixed">       
+			<div id="menu" >
+            	<div id="probe_logo" class="ui-float-left">
+                	probe
+                </div>
+                <div id="probe_contact" class="ui-float-right">
+                	contact
+                </div> 
+                <div id="probe_about" class="ui-float-right">
+                	about
+                </div>                
+                <div id="probe_home" class="ui-float-right">
+                	home
+                </div>                                                     
+			</div>
+		</div> 	
+		<div data-role="content">
+        	<div class="ui-mason-3">
+            	<div id="home_content" class="ui-col-b">
+                	<div>
+                    	<img src="/images/probeweb/google_app_engine.gif" style="width:100%;">                        
+                        
+                    </div>
+               	</div>
+                <div id="introduction_1" class="ui-col-a">
+                	<div>
+                    	<div style="position:absolute;width:100%;height:90%;overflow:hidden;">                    	
+                            <div id="solomo" class="auto_pic match_wv" style="float:left;width:50%;
+                            	 height:50%;margin:0 5px 5px 0;background-image:url(/images/probeweb/home/home05.png)">
+                            </div>                      	
+                            <h4 style="line-height:150%;margin:0;color:#333333">
+                                開啟SoLoMo的龐大商機
+                            </h4>
+                            <h5 style="line-height:150%;margin:0;color:#888888">
+                            	Social：開發可以跟臉書等社群網站緊密結合的 app，。透過社群網站的按讚分享，迅速傳播商品資訊，累積口碑與信任行銷，並提高顧客忠誠度。<br>
+                                </h5>
+                        </div> 
+                        <div style="position:absolute;bottom:2px;right:2px;">
+                            <a href="/probeweb/imall/imall.html">
+                                <h5 style="line-height:150%%;margin:0;">
+                                	learn more...
+                                </h5>
+                            </a>
+                        </div>                                                                  	
+                    </div>
+                </div>
+                <div id="introduction_2" class="ui-col-a">
+                	<div>
+                    	<div style="position:absolute;width:100%;height:90%;overflow:hidden;">                    	
+                            <div id="mobile" class="auto_pic match_wv" style="float:left;width:50%;
+                            	 height:50%;margin:0 5px 5px 0;background-image:url(/images/probeweb/home/home_mobile.png)">
+                            </div>                      	
+                            <h4 style="line-height:150%;margin:0;color:#333333">
+                                建立自己專有的 mobile app
+                            </h4>
+                            <h5 style="line-height:150%;margin:0;color:#888888">
+                            	接受委託製作專屬的 mobile app，提高企業形象，並可隨時隨地將最新消息送到客戶眼前。<br>
+                            </h5>
+                        </div> 
+                        <div style="position:absolute;bottom:2px;right:2px;">
+                            <a href="/mobile_app.html">
+                                <h5 style="line-height:150%;margin:0;">
+                                	learn more...
+                                </h5>
+                            </a>
+                        </div>                                                                  	
+                    </div>
+                </div>
+                <div id="introduction_3" class="ui-col-a">
+                	<div>
+                    	<div style="position:absolute;width:100%;height:90%;overflow:hidden;">                    	
+                            <div id="webapp" class="auto_pic match_wv" style="float:left;width:50%;
+                            	 height:50%;margin:0 5px 5px 0;background-image:url(/images/probeweb/home/home-service.png)">
+                            </div>                      	
+                            <h4 style="line-height:150%;margin:0;color:#333333">
+                                手機也可以輕鬆瀏覽網頁
+                            </h4>
+                            <h5 style="line-height:150%;margin:0;color:#888888">
+                            	接受委託製作企業網站，不管使用者以PC、手機、平板電腦上網瀏覽，網站版面都能重新排版，自動調整成適合瀏覽的版面配置。<br>
+                            </h5>
+                        </div> 
+                        <div style="position:absolute;bottom:2px;right:2px;">
+                            <a href="/web_app.html">
+                                <h5 style="line-height:150%;margin:0;">
+                                	learn more...
+                                </h5>
+                            </a>
+                        </div>                                                                  	
+                    </div>
+                </div>
+                <div id="introduction_4" class="ui-col-a">
+                	<div>
+                    	<div style="position:absolute;width:100%;height:90%;overflow:hidden;">                    	
+                            <div id="solomo" class="auto_pic match_wv" style="float:left;width:50%;height:50%;margin:0 5px 5px 0;background-image:url(/images/probeweb/home/home05.png)">
+                            </div>                      	
+                            <h4 style="line-height:150%;margin:0;color:#333333">
+                                開啟SoLoMo龐大商機
+                            </h4>
+                            <h5 style="line-height:150%;margin:0;color:#888888">
+                            	Social：開發可以跟臉書等社群網站緊密結合的 app，。透過社群網站的按讚分享，迅速傳播商品資訊，累積口碑與信任行銷，並提高顧客忠誠度。<br>
+                                Local：結合地圖功能，突出地域性商家，攜帶廣告促銷等訊息，將客源由線上引進實體店鋪。<br>
+                                Mobile：藉由手機平板電腦等行動裝置，網路消費行為無遠弗屆，更可創造出預約訂位、限時促銷、免下車取貨等新式服務，開創另一個龐大商機。<br>
+                            </h5>
+                        </div> 
+                        <div style="position:absolute;bottom:2px;right:2px;">
+                            <a href="/probeweb/imall/imall.html">
+                                <h5 style="line-height:150%;margin:0;">
+                                	learn more...
+                                </h5>
+                            </a>
+                        </div>                                                                  	
+                    </div>
+                </div>
+                <div id="introduction_5" class="ui-col-a">
+                	<div>
+                    	<div style="position:absolute;width:100%;height:90%;overflow:hidden;">                    	
+                            <div id="solomo" class="auto_pic match_wv" style="float:left;width:50%;height:50%;margin:0 5px 5px 0;background-image:url(/images/probeweb/home/home05.png)">
+                            </div>                      	
+                            <h4 style="line-height:150%;margin:0;color:#333333">
+                                開啟SoLoMo龐大商機
+                            </h4>
+                            <h5 style="line-height:150%;margin:0;color:#888888">
+                            	Social：開發可以跟臉書等社群網站緊密結合的 app，。透過社群網站的按讚分享，迅速傳播商品資訊，累積口碑與信任行銷，並提高顧客忠誠度。<br>
+                                Local：結合地圖功能，突出地域性商家，攜帶廣告促銷等訊息，將客源由線上引進實體店鋪。<br>
+                                Mobile：藉由手機平板電腦等行動裝置，網路消費行為無遠弗屆，更可創造出預約訂位、限時促銷、免下車取貨等新式服務，開創另一個龐大商機。<br>
+                            </h5>
+                        </div> 
+                        <div style="position:absolute;bottom:2px;right:2px;">
+                            <a href="/probeweb/imall/imall.html">
+                                <h5 style="line-height:150%;margin:0;">
+                                	learn more...
+                                </h5>
+                            </a>
+                        </div>                                                                  	
+                    </div>
+                </div>
+                <div id="introduction_6" class="ui-col-a">
+                	<div>
+                    	<div style="position:absolute;width:100%;height:90%;overflow:hidden;">                    	
+                            <div id="solomo" class="auto_pic match_wv" style="float:left;width:50%;height:50%;margin:0 5px 5px 0;background-image:url(/images/probeweb/home/home05.png)">
+                            </div>                      	
+                            <h4 style="line-height:150%;margin:0;color:#333333">
+                                開啟SoLoMo龐大商機
+                            </h4>
+                            <h5 style="line-height:150%;margin:0;color:#888888">
+                            	Social：開發可以跟臉書等社群網站緊密結合的 app，。透過社群網站的按讚分享，迅速傳播商品資訊，累積口碑與信任行銷，並提高顧客忠誠度。<br>
+                                Local：結合地圖功能，突出地域性商家，攜帶廣告促銷等訊息，將客源由線上引進實體店鋪。<br>
+                                Mobile：藉由手機平板電腦等行動裝置，網路消費行為無遠弗屆，更可創造出預約訂位、限時促銷、免下車取貨等新式服務，開創另一個龐大商機。<br>
+                            </h5>
+                        </div> 
+                        <div style="position:absolute;bottom:2px;right:2px;">
+                            <a href="/probeweb/imall/imall.html">
+                                <h5 style="line-height:150%;margin:0;">
+                                	learn more...
+                                </h5>
+                            </a>
+                        </div>                                                                  	
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div id="probe_footer" data-role="footer" data-position="fixed">
+            http://www.probe.com.tw
+		</div>           
+	</div>        
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<div  data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+<script>
+	autoResize();
+</script>	
+	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">波峰軟體</h1>  
+        <div id="nav_history"></div>     
+	</div> 	
+	<div data-role="content"  data-theme="b" style="background:white;">
+    	<div style="position:relative;max-width:960px;margin:20px auto 20px auto;">
+		<div style="font-family:微軟正黑體;font-size:32px;line-height:50px;color:#FF4500;font-weight: bold;cursor:default;text-align:center;">
+		在 imall 我們可以...</div>
+        
+        <div style="position:relative;line-height:20px;border-top:1px solid #CCCCCC;padding:30px 0 30px 0;">
+                <div class="auto_resize" style="float:left;">
+                        <div style="font-family:微軟正黑體;font-size:14px;line-height:24px;color:dark grey;font-weight: bold;cursor:default;padding-left:15px;">到朋友的 mall 逛逛，中意的就順便買下來
+                        <!-- <span style="font-family:Segoe Script;font-size:12px;"">(shopping)</span> -->
+                        </div>
+                        <div style="margin-left:15px;font-size:12px;line-height:20px;color:gray;cursor:default;">所有 FB 上的朋友開設的 mall</div>
+                        <div style="margin-left:15px;font-size:12px;line-height:20px;color:gray;cursor:default;">都會集中列示在一起</div>
+                        <div style="margin-left:15px;font-size:12px;line-height:20px;color:gray;cursor:default;">方便我們瀏覽</div>
+                        <div style="margin-left:15px;font-size:12px;line-height:20px;color:gray;cursor:default;">跟朋友買東西總是比較放心</div>
+                        <div style="margin-left:15px;font-size:12px;line-height:20px;color:gray;cursor:default;">到他們開設的  mall 逛逛吧</div>
+                        <div style="margin-left:15px;font-size:12px;line-height:20px;color:gray;cursor:default;">先幫他按個「讚」再說</div>
+                </div>
+                
+                <img class="auto_resize" style="float:left;cursor:default;"
+                         src="http://photos-d.ak.fbcdn.net/hphotos-ak-snc6/252369_202919486496821_2002101011_n.jpg" alt="" />
+                <div style="clear:both;"></div>         
+        </div>  
+        
+        <div style="position:relative;line-height:20px;border-top:1px solid #CCCCCC;padding:30px 0 30px 0;">
+                <div class="auto_resize" style="float:left;">
+                        <div style="font-family:微軟正黑體;font-size:14px;line-height:24px;color:dark grey;font-weight: bold;cursor:default;padding-left:15px;">逛街購物搶好康
+                        <!-- <span style="font-family:Segoe Script;font-size:12px;"">(shopping)</span> -->
+                        </div>
+                        <div style="margin-left:15px;font-size:12px;line-height:20px;color:gray;cursor:default;">imall 首頁有好幾個專區</div>
+                        <ul style="margin-left:5px;font-size:12px;line-height:20px;color:gray;cursor:default;">
+                                <li>粉絲頁：由 FB 粉絲頁管理者開設的 mall，任何商品的促銷、廣告、資訊更新，都可同步 PO 到「動態消息」上；而專頁所有的粉絲，可以直接進入 mall 瀏覽或訂購商品，一切行為全部在 FB 完成。</li>
+                                <li>附近的：透過手機、平板電腦等行動裝置上網，需要甚麼東西，可以查詢附近有哪家 mall 在販賣，一指馬上搞定。</li>
+                                <li>限時、限量特賣：所有物超所值的好康ㄟ，等著我們來搶，要隨時盯緊。</li>
+                        </ul>
+                        <div></div>
+                </div>
+                
+                <img class="auto_resize" style="float:left;cursor:default;"
+                         src="http://photos-a.ak.fbcdn.net/hphotos-ak-snc7/318271_203004346488335_1002573632_n.jpg" alt="" />
+                <div style="clear:both;"></div>         
+        </div>
+        
+        <div style="position:relative;line-height:20px;border-top:1px solid #CCCCCC;padding:30px 0 30px 0;">
+                <div class="auto_resize" style="float:left;">
+                        <div style="font-family:微軟正黑體;font-size:14px;line-height:24px;color:dark grey;font-weight: bold;cursor:default;padding-left:15px;">幫塵封的物品找個新主人
+                        <!-- <span style="font-family:Segoe Script;font-size:12px;"">(shopping)</span> -->
+                        </div>
+                        <ul style="margin-left:5px;font-size:12px;line-height:20px;color:gray;cursor:default;">
+                                <li>以物易物：把我們已經用不著的好東西，PO 上來跟朋友分享、交換、贈送等等，而且大家都是 FB 好友，怎樣處理都好過於堆在倉庫。</li>
+                                <li>收藏分享：總有一些東西，時不時會想到它，甚至拿出來摩娑把玩一番，不妨在這裡展示，分享並待同好。</li>
+                                <li>IOU(I owe you)：喜歡朋友 PO 的物品，可是一時拿不出甚麼東西好跟他交換，這時就可以用就這張「IOU」，當做「欠他一次」，下次他可以用這張牌直接換走我「以物易物」區的任何物品。</li>
+                        </ul>
+                        <div></div>
+                </div>
+                
+                <img class="auto_resize" style="float:left;cursor:default;"
+                         src="http://photos-h.ak.fbcdn.net/hphotos-ak-ash3/598726_203044879817615_159660778_n.jpg" alt="" />
+                <div style="clear:both;"></div>         
+        </div>
+        
+        <div style="position:relative;line-height:20px;border-top:1px solid #CCCCCC;padding:30px 0 30px 0;">
+                <div class="auto_resize" style="float:left;">
+                        <div style="font-family:微軟正黑體;font-size:14px;line-height:24px;color:dark grey;font-weight: bold;cursor:default;padding-left:15px;">開設自己的 mall，加入社群新經濟
+                        <!-- <span style="font-family:Segoe Script;font-size:12px;"">(shopping)</span> -->
+                        </div>
+                        <ul style="margin-left:5px;font-size:12px;line-height:20px;color:gray;cursor:default;">
+                                <li>臉書分享、粉絲互動：運用 Facebook 做為傳播媒介，可透過社群的快速訊息滲透能力，輕易的進行網路行銷。</li>
+                                <li>免開辦費、免使用費：雲端服務的實踐，免費的軟體使用，並可同時兼具交易雙方的身份。</li>
+                                <li>不抽佣、只收1元：創造交易價值後才支付資訊處理服務費，並且是依資訊交易數量收費(每一筆新台幣一元)，而不是商品價格的抽成。</li>
+                                <li>紅利發送、不打對折：以紅利贈送取代折扣，不影響實體店面經常性售價。以紅利積點回饋的彈性應用機制，取代網路交易及團購造成的殺價競爭，維護交易秩序。</li>
+                        </ul>
+                        <div></div>
+                </div>
+                
+                <img class="auto_resize" style="float:left;cursor:default;"
+                         src="http://photos-f.ak.fbcdn.net/hphotos-ak-snc6/283750_203685649753538_1210571738_n.jpg" alt="" />
+                <div style="clear:both;"></div>         
+        </div>
+
+	</div>
+	</div>
+    <div data-role="footer" data-theme="c">
+			<h4>www.probe.com.tw</h4>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">視覺化元件</h1>  
+        <div id="nav_history"></div>     
+	</div> 
+      
+    
+<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0">        
+       
+            <div  class="ui-mason-2">
+            
+
+<div class="mbox ui-col-b" style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;text-align:left;">
+<h3>jLIVE Builder 視覺化元件</h3>
+</div>
+
+<div class="mbox ui-col-b" style="font-family:細明體;line-height:20px;color:;font-weight: normal;text-align:left;">
+<h5>直至目前，jLIVE Builder™ 開發完成的元件總計24種，
+以 Java™ Swing 為基礎物件，內部則以 MVC (Model, View, Controller) 
+運作的資料關聯元件(data-aware component)。<br/>
+為了在網路上有最好的效率，元件中的清單方塊、下拉式清單方塊、資料表元件
+更提供虛擬 (virtual mode) 讀取模式，不論連結的資料量多寡，
+皆能以最佳的效率呈現資料；統計圖元件以背景執行緒運算、讀取資料，
+統計圖形以隨到資料即時繪製方式，呈現隨資料變化的動態統計圖示；
+計時器元件，除了時間的顯示外，亦提供多執行緒的事件流程；
+備忘錄元件、圖片元件，可以直接連結儲存於資料表的二進位圖檔資料
+或圖檔路徑名稱；條碼元件是客製(third party)元件，採用條碼
+專業公司 Automation 所開發的元件為基礎物件，佈建執行時
+須向 Automation 購買授權。<br/>
+除此之外，絕大多數的元件，都能夠在使用者端操作應用系統時，
+利用 jLIVE Builder™的運算式，動態的改變元件屬性，
+契合各種複雜商業流程與計算邏輯的需求。 
+</h5>
+</div>
+                
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >編輯方塊</h4>
+</div>
+<div>
+<img src="/images/probeweb/product/comp_editbox.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>編輯方塊，常用來作為輸入、展示、修改資料的基本元件。</li>
+<li>當程式需要特定格式(format pattern)表現資料欄位內含值時，
+元件可以使用運算式，即時根據 格式樣板 (format pattern)，
+來變化編輯方塊內含值的外觀。 比如日期格式與數值...等。
+不論顯示、新增、修改等等，皆可生效，並具備自動化格式檢核的功能。</li>
+<li>當編輯方塊所接的資料欄位被設定為日期格式時，可以雙擊該元件，
+系統會顯示內建的日曆，供滑鼠點選日期輸入。</li>
+<li>每種元件都可以根據該元件所被定義操作行為，來觸發，啟動特定的事件流程。
+比如 編輯方塊元件，可以觸發事件的行為有動作事件（按下ENTER鍵）、
+值變事件、滑鼠點入、滑鼠移出、 滑鼠雙擊、按下滑屬右鍵等等。</li>
+<li>系統可以視程式需要，自動切換非英數的輸入法，比如在編輯方塊內輸入中文地址時，
+一旦滑鼠游標點入該編輯方塊，系統自動切換為中文輸入法
+（作業系統內必須有安裝輸入法）。</li> 
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >按鈕元件</h4>
+</div>
+<div style="max-width:373px;">
+<img src="/images/probeweb/product/comp_button.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>按鈕元件提供使用者啟動事件的介面，亦可設定為操作資料來源導覽的按鈕，此時按鈕元件會隨時以致能或失效反應資料來源的狀態。</li>
+
+<li>如果採用 jLIVE™ 授權機制，按鈕元件在連結動作事件為開啟視窗事件、執行印表作業事件、查詢資料來源事件或當作瀏覽元件時，皆會根據使用者是否擁有相關授權項目，而使按鈕元件致能或失效。</li>
+
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >下拉式清單方塊</h4>
+</div>
+<div style="max-width:162px;">
+<img src="/images/probeweb/product/comp_combobox.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>下拉式清單方塊是以關連資料來源或字串陣列組成列示的清單項目，當連結資料來源欄位，會以資料來源的資料欄位值，搜尋關連資料來源的資料欄位值或字串陣列，當其值相等時就標示該清單項目為選取項目。 </li>
+<li>下拉式清單方塊列示的項目是以運算公式的結果值顯示，所以顯示的項目不一定等於連結的資料欄位值。 </li>
+<li>在可編輯的模式下，可以直接輸入項目值或拉選後編輯選取項目。下拉式清單方塊的編輯方塊所顯示的資料值，是關連資料來源的資料欄位值，因為只能編輯實際連結的資料欄位，存檔的資料才有意義。 </li>
+<li>可以只選用關連資料來源，而不連結資料來源，如果設定被選時移至關連資料來源記錄的屬性，可以將下拉式清單方塊當成是關連資料來源的檔案記錄移動選擇器，使用者按選下拉式清單項目，關連資料來源即將目前檔案記錄移至該項目的檔案記錄，並引發關連資料來源的讀取前後事件，連結此關連資料來源的其他元件都會自動更新內含值。</li>
+<li>下拉式清單方塊是虛擬模式 (virtual mode) 的元件，關連資料來源的檔案記錄在初始時，並不會全部讀入下拉式清單項目中，而是將客戶端目前關連資料來源緩衝區的檔案記錄讀入，當使用者以捲動軸瀏覽或關連資料欄位不在緩衝區且關連資料來源尚未至檔尾時，下拉式清單方塊會以背景執行緒按關連資料來源的擷取記錄數，讀入檔案記錄至下拉式清單項目中。 </li>
+<li>可帶入相對的圖示，亦可依使用者端的各種操作行為啟動事件流程。</li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >核取方塊</h4>
+</div>
+<div>
+<img src="/images/probeweb/product/comp_checkbox.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>以核取條件運算公式的結果值為真或偽，判斷核取方塊的核取與不核取 (checked or unchecked)，並根據核取狀態，分別以核取或不核取的運算式結果值為元件內含值。如果核取方塊連結資料欄位，當資料來源編輯存檔時，將以此元件內含值填入資料欄位。設計師以運算公式取值時，系統亦回覆此內含值。</li>
+<li>核取方塊可以不連結任何資料欄位，如果配合當任何元件值改變時重新檢查的屬性，可以隨時以核取條件運算公式的結果值，檢視核取狀態，並根據核取狀態，取得核取與不核取的運算式結果值。亦可以利用多個核取方塊連結同一資料欄位，每個核取方塊檢驗資料欄位相關的字元，做為資料欄位複選之介面。</li>
+<li>可依核取、不核取、滑鼠滑過時，選用不同的圖示，亦可依使用者端的各種操作行為啟動事件流程。</li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >選擇鈕元件</h4>
+</div>
+<div>
+<img src="/images/probeweb/product/comp_radiobox.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>選擇鈕元件中存在多個選擇按鈕 (radio button)，但同時只有一個選擇按鈕是在選取的狀態。選擇鈕元件中的選擇按鈕會依序運算選取條件的運算公式，當結果值為真時，該選擇按鈕設定為選取狀態，其餘選擇按鈕設定為不選取狀態。</li>
+<li>選擇鈕元件以被選取的選取按鈕的選取值運算式結果值為元件內含值，如果選擇鈕元件連結資料欄位，當資料來源編輯存檔時，將以此內含值填入資料欄位。設計師以運算公式取值時，系統亦回覆此內含值。</li>
+<li>選擇鈕元件可以不連結任何資料欄位，如果配合當任何元件值改變時重新檢查的屬性，可以隨時以各個選擇按鈕的選取條件運算公式的結果值，檢視選取狀態，並根據選取狀態，取得被選取選擇按鈕的選取值。</li>
+<li>可依核取、不核取、滑鼠滑過時，選用不同的圖示，亦可依使用者端的各種操作行為啟動事件流程。</li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >清單方塊</h4>
+</div>
+<div style="max-width:204px;">
+<img src="/images/probeweb/product/comp_listbox.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>清單方塊是以關連資料來源 (lookup data source) 或字串陣列組成列示的清單項目，當清單方塊連結資料來源欄位時 ，清單方塊會以資料來源的資料欄位值，搜尋關連資料來源的資料欄位值或字串陣列，當其值相等時就標示該清單項目為選取項目。</li>
+<li>清單方塊列示的項目是以運算公式的結果值顯示，所以顯示的項目不一定等於連結的資料欄位值。 </li>
+<li>清單方塊可以只選用關連資料來源，而不連結資料來源，如果設定被選時移至關連資料來源記錄的屬性，可以將清單方塊當成是關連資料來源的檔案記錄移動選擇器，使用者按選清單項目，關連資料來源即將目前檔案記錄移至該項目的檔案記錄，並引發關連資料來源的讀取前後事件，連結此關連資料來源的其他元件都會自動更新內含值。</li>
+<li>清單方塊是虛擬模式 (virtual mode) 的元件，關連資料來源的檔案記錄在初始時，並不會全部讀入清單項目中，而是將客戶端目前關連資料來源緩衝區的檔案記錄讀入，當使用者以捲動軸流覽或關連資料欄位不在緩衝區且關連資料來源尚未至檔尾時，清單方塊會以背景執行緒按關連資料來源的擷取記錄數，讀入檔案記錄至清單項目中。</li>
+<li>可帶入相對的圖示，亦可依使用者端的各種操作行為啟動事件流程。 </li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >資料表元件</h4>
+</div>
+<div>
+<img src="/images/probeweb/product/comp_grid.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>資料表元件連結資料來源，使用於資料記錄瀏覽及資料維護。設計師選取資料來源的資料欄位組合成資料表元件的欄位，並根據作業需求可以選擇以編輯元件、核取方塊、下拉式清單方塊操作欄位資料外，尚可加入衍生的運算式欄位及啟動事件的按鈕欄位。</li>
+<li>資料表與連結的資料來源是同步運作，資料表隨時反應資料來源的狀態，其中資料表以選取顏色表示的選取列，即是目前資料記錄所在的位置；以內定灰色表示的資料列代表已刪除的資料記錄列，使用者不可選取亦不可編輯已刪除的資料記錄列；新增資料列則位於資料表的最後一列；設計師可以提供使用者呼叫重新開啟或查詢資料來源的功能，資料表將會重整，並將已刪除的資料記錄排除。</li>
+<li>資料表選取列改變、編輯、新增及刪的操作，會引發相對的資料來源讀取、編輯、新增、刪除前後事件。</li>
+<li>資料表是虛擬模式的元件，資料來源的檔案記錄在初始時，並不會全部讀入資料表中，而是將客戶端目前資料來源緩衝區 (buffer) 的檔案記錄讀入，當使用者以捲動軸瀏覽或資料欄位不在緩衝區且資料來源尚未至檔尾時，資料表會以背景執行緒按資料來源的擷取記錄數，讀入檔案記錄至資料表中。</li>
+<li>設計師可以運用衍生的運算式欄位，將運算的結果值顯示於資料表欄位中；以動態欄位顏色控制，顯示不同欄位資料值不同的前背景顏色；以資料表編輯、新增、刪除控制，控管使用者操作資料表的流程與權限。</li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >導覽元件</h4>
+</div>
+<div>
+<img src="/images/probeweb/product/comp_navigator.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>導覽元件提供使用者操作資料來源的介面，設計師根據使用流程，核選允許使用者操作資料來源的按鈕，導覽按鈕會隨時以致能或失效反應資料來源的狀態，例如：資料來源資料記錄在第一筆時，首筆按鈕及上筆按鈕會呈現失效的狀態。</li>
+<li>如果採用 jLIVE™ 授權機制，則相關未授權項目的按鈕會完全失效，使用者將無法執行未授權的資料來源操作。</li>
+<li>導覽元件的預設功能可以用 取代事件 加入設計師在使用者操作過程的應用系統流程，例如：在刪除前加入確認訊息、存檔前加入資料檢查事件、新增前先行填入預設值、以自定的查詢視窗取代預設查詢等等。取代事件是取代原預設功能，所以設計師除了加入一系列的事件串流外，如果還須執行原預設功能，則必須在事件串流中，加入資料來源導覽事件相關的導覽功能。</li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >索引標籤元件</h4>
+</div>
+<div>
+<img src="/images/probeweb/product/comp_tab.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>索引標籤元件使用於資料項目需以不同標籤頁區分類別顯示時。</li>
+<li>所有元件包括索引標籤元件，皆可嵌入標籤頁中，成為隸屬於該標籤頁的元件。</li>
+<li>標籤頁中的元件，除了顯示及位置由索引標籤所控管外，其餘使用方式及系統功能與一般工作視窗上的元件是完全一樣的。</li>
+<li>標籤頁中的元件與工作視窗元件可以滑鼠隨時移置互換。 </li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >統計圖元件</h4>
+</div>
+<div>
+<img src="/images/probeweb/product/comp_chart.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>統計圖連結資料來源，可依運算式及依資料欄位統計及繪製圖示。</li>
+<li>統計圖是多執行緒的元件，透過設定資料來源讀取列，可以即時統計繪製已下載至客戶端的資料，呈現動態的統計圖示。</li>
+<li>統計圖是一個可列印的元件，只要在報表系統直接引用即可將統計圖輸出至報表。</li>
+<li>統計圖元件統計的資料，是由連結資料來源的首筆開始，經過逐筆篩選、運算以至尾筆。每筆資料記錄在統計時，須設定相關的 X 軸、Y 軸、Z 軸運算式，一般而言 X 軸、Y 軸屬於統計資料項目分類，而 Z 軸則是資料值。由於統計的資料來源是資料記錄，為因應系統分析師規劃的各種資料表規格不同，統計圖元件對於 X 軸、Y 軸、Z 軸的資料對應方式，分為依運算式及依資料欄位，以產生統計圖示。</li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >多行編輯方塊元件</h4>
+</div>
+<div style="max-width:193px;">
+<img src="/images/probeweb/product/comp_multiedit.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>多行編輯方塊元件 (Multi-line Edit)，通常使用於連結資料來源資料欄位的顯示、輸入、修改的基本元件，其與編輯方塊元件不同的是資料中可以存取換行文字 (\n) 或 (0d0a)。</li>
+<li>編輯元件亦可不連結資料欄位，可將其當作多行文字編輯器。</li>
+<li>可串接事件以反應各種商業邏輯的運作，例如：當元件內含值修改時、按下 Enter 鍵時、元件 Gain Focus 時、元件 Lost Focus 時、雙擊滑鼠的左鍵時、按下滑鼠右鍵時， 則會啟動指定的相關事件程序。 </li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >遮罩式編輯方塊元件</h4>
+</div>
+<div style="max-width:435px;">
+<img src="/images/probeweb/product/comp_maskedit.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>Maskedit 元件，使用於連結資料來源資料欄位的顯示、輸入、修改的基本元件，與編輯方塊元件不同的是，提供 Mask 格式字串，方便使用者讀取與輸入。</li>
+<li>MaskEdit 元件亦可不連結資料欄位，而是使用運算式顯示運算後的結果，當視窗資料來源移動資料記錄、存檔、刪除或其他元件值內含值改變時，運算式將會自動重新計算即時同步更新。</li>
+<li>可串接事件以反應各種商業邏輯的運作，例如：當元件內含值修改時、按下 Enter 鍵時、元件 Gain Focus 時、元件 Lost Focus 時、雙擊滑鼠的左鍵時、按下滑鼠右鍵時， 則會啟動指定的相關事件程序。 </li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >計時器元件</h4>
+</div>
+<div style="max-width:163px;">
+<img src="/images/probeweb/product/comp_timer.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>計時器元件是多執行緒的元件，除了顯示目前日期時間外，依設計師啟動事件時機的規劃，以獨立的背景執行緒執行事件流程。</li>
+<li>啟動事件的時機可以規劃為每隔幾毫秒、每天的、每月的、當條件為真。</li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >條碼元件</h4>
+</div>
+<div>
+<img src="/images/probeweb/product/comp_barcode.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>jLIVE Builder™ 的條碼元件 (Barcode component) 是 wrap 專業級條碼開發商(idautomation) Java™條碼元件的 Third party component。</li>
+<li>以下所述功能及執行期模組皆屬 www.idautomation.com 所提供之測試版，設計師於應用程式開發完成佈建執行時，須按使用範圍另行採購正式版本。</li>
+<li>jLIVE Builder™ 將 idautomation 的條碼元件 Wrap 成 n-tiers 的元件，使其適用於 Web 應用程式及報表系統中，相關條碼元件的屬性除參照本文解說外，屬於條碼專業屬性請參照 www.idautomation.com Java™ 元件之使用說明。 </li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >圖片元件</h4>
+</div>
+<div style="max-width:177px;">
+<img src="/images/probeweb/product/comp_image.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>圖片元件，使用於顯示 GIF、 JPG 圖檔格式的圖片。</li>
+<li>圖片的資料來源可以是直接儲存於資料記錄中的 LONGVARBINARY 欄位型別的 JPG 圖檔格式的二進位圖片資料 前綴路徑 (prefix path) 加上 儲存於資料記錄中的 VARCHAR 欄位型別的圖檔名稱前綴路徑 (prefix path) 加上直接指名的圖檔名稱。</li>
+<li>只有直接儲存於資料記錄中的 LONGVARBINARY 欄位型別的二進位圖片資料，在連結的資料來源存檔時，異動的二進位圖片資料會更新至資料欄位中。使用檔案名稱做為圖檔來源，檔案內容的更新，必須透過檔案上載與更新的方式，進行實際的檔案內容更新。若只是改變資料記錄中的VARCHAR 欄位型別的檔案名稱，圖片元件會在欄位值 (檔案名稱) 更新存檔後，自動下載該檔案，更新圖片元件的顯示，如果該檔案不存在則顯示空白。</li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >圖片引發器元件</h4>
+</div>
+<div>
+<img src="/images/probeweb/product/comp_imageinvoker.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>圖片引發器元件是以圖片的不同範圍啟動事件。</li>
+<li>當使用者以滑鼠移入範圍時，設計師可以設定各個範圍的顏色變化，及提示文字。使用者按下滑鼠時即啟動事件。</li>
+<li>如果採用jLIVE™ 授權機制，作用範圍連結的事件為開啟視窗事件、執行印表作業事件、查詢資料來源事件時，皆會根據使用者是否擁有相關授權項目，而使該區域致能或失效。 </li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >備忘錄元件</h4>
+</div>
+<div style="max-width:285px;">
+<img src="/images/probeweb/product/comp_memo.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>備忘錄元件是繼承自 Java™ JEditorPane 的元件，使用於不限制長度、可多行編輯的文字資料。</li>
+<li>文字的資料格式可以是純文字 (plain text)、RTF、HTML。</li>
+<li>文字的資料來源可以是直接儲存於資料記錄中的 LONGVARCHAR 欄位型別的文字資料、前綴路徑 (prefix path) 加上 儲存於資料記錄中的VARCHAR 欄位型別的檔案名稱、前綴路徑 (prefix path) 加上 直接指名的檔案名稱。</li>
+<li>只有直接儲存於資料記錄中的 LONGVARCHAR 欄位型別的文字資料，編輯資料後，在連結的資料來源存檔時，異動的資料會更新至資料欄位中。編輯時，使用者可以標示文字資料，按右鍵後，以顯示的功能選單，加入文字樣式。使用檔案名稱做為文字資料來源，檔案內容的更新，必須透過檔案上載與下載的方式，進行實際的檔案內容更新。若只是改變資料記錄中的VARCHAR 欄位型別的檔案名稱，備忘錄元件會在欄位值 (檔案名稱) 更新存檔後，自動下載該檔案，更新備忘錄元件的顯示資料，如果該檔案不存在則顯示空白。</li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >樹狀元件</h4>
+</div>
+<div style="max-width:223px;">
+<img src="/images/probeweb/product/comp_tree.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>樹狀元件是以關連資料來源組成樹狀的節點，當樹狀元件連結資料來源欄位時，樹狀元件會以資料來源的資料欄位值，搜尋關連資料來源的資料欄位值，當其值相等時就標示該節點為選取節點。</li>
+<li>樹狀元件列示的節點說明文字 是以運算公式的結果值顯示。而樹狀元件的節點結構則由 dotcode 欄位控制，同一層級的節點 (node) 次序則根據欄位屬性排序。</li>
+<li>樹狀元件可以只選用關連資料來源，而不連結資料來源，如果設定被選時移至關連資料來源記錄的屬性，可以將樹狀元件當成是關連資料來源的檔案記錄移動選擇器，使用者按選節點，關連資料來源即將目前檔案記錄移至該項目的檔案記錄，並引發關連資料來源的讀取前後事件，連結此關連資料來源的其他元件都會自動更新內含值。</li>
+<li>樹狀元件是並不是虛擬模式 (virtual mode) 的元件，所以關連資料來源的擷取記錄數應設為 -1 (全部擷取) 以加快初始的檔案記錄讀取效率。</li>
+<li>可帶入相對的圖示，亦可依使用者端的各種操作行為啟動事件流程。 </li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >下拉式樹狀元件</h4>
+</div>
+<div style="max-width:309px;">
+<img src="/images/probeweb/product/comp_combotree.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>下拉式樹狀元件具有樹狀元件和下拉式清單方塊的特性，下拉式樹狀元件以下拉式清單方塊的樣式呈現，當使用者下拉選項時 ，選取區域則以樹狀元件為操作介面。</li>
+<li>下拉式樹狀元件是並不是虛擬模式 (virtual mode) 的元件，所以關連資料來源的擷取記錄數應設為-1 (全部擷取) 以加快初始的檔案記錄讀取效率。 </li>
+<li>可帶入相對的圖示，亦可依使用者端的各種操作行為啟動事件流程。 </li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >視窗容器元件</h4>
+</div>
+<div>
+<img src="/images/probeweb/product/comp_formcontainer.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>視窗容器元件可以載入其他的視窗於元件區域中。</li>
+<li>設計師設定初始啟動視窗，系統將於視窗容器元件所在視窗開啟後，隨即開啟視窗容器元件中的視窗。</li>
+<li>關閉視窗容器元件所在視窗時，系統將先關閉視窗容器元件中的視窗，再關閉視窗容器元件所在視窗。 </li>
+</h5></ul>
+</div>
+</div>
+                             
+        
+        	</div> <!-- #container -->
+        
+        </div>
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script>  	
+             
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">汽車買賣加盟業</h1>  
+        <div id="nav_history"></div>     
+	</div> 	
+      
+    <div data-role="content">
+    
+    
+<div><img class="" style="cursor:default;"  src="../../images/probeweb/solution/erp_car.jpg" alt="" />
+</div>
+<div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+<h2>》 代表性客戶：有羿科技</h2>
+
+<ul>
+<h5 style="color:black;font-weight: normal;">
+<li>車輛管理：車輛買賣管理，車輛配備輸入，進售車獎金統計等16個子系統。</li>
+
+<li>帳務管理：收入與支出作業、票據管理、分類帳管理等16個子系統。</li>
+
+<li>行政管理：列印每日信函與報表、人脈管理、員工管理等11個子系統。</li>
+
+<li>公共作業：買賣契約書作業、銷售簡介DM製作、車輛售價表等21個子系統。</li>
+
+<li>同業聯盟：聯盟管理、聯盟車輛、聯盟規章等3個仔細統。</li>
+
+<li>BOSS專區：帳務審核、到期應收帳款、總體營運分析報告等19個子系統。</li>
+</h5></ul>
+        
+
+         </div>
+	</div>
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script>              
+</div>
+</body>
+</html>

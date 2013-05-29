@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">產品架構</h1>  
+        <div id="nav_history"></div>     
+	</div> 
+      
+    
+<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0">        
+       
+            <div class="ui-mason-3">
+            
+
+<div class="mbox ui-col-c" style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;text-align:left;">
+<h3>產品架構</h3>
+</div>
+                
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >應用程式執行環境 (runtime environment)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h5>
+jLIVE Builder™ 應用程式可以執行在網際網路及區域網路中。使用者端可以瀏覽器或 Java Web Start™ 或下載可執行 Java™ Jar 檔執行，程式執行後會連結應用伺服器 ，由應用伺服器提供後端資料庫伺服器及其他系統資源存取服務。jLIVE Builder™ 的使用者端可以是任何支援 Java™ 環境的作業系統；jLIVE Builder™ 的中間層可以安裝在任何支援 Java Servlet™ 的應用伺服器；透過 JDBC jLIVE Builder™ 可以同時處理各種資料庫系統。 
+</h5>
+</div>
+<div style="max-width:560px;">
+<img src="/images/probeweb/product/structure01.jpg">
+</div>
+</div>
+
+                
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >瀏覽器啟動執行機制 (browser enabled HTML mechanism)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h5>jLIVE Builder™ 在開發完成階段，可以產生三種的應用程式：</h5>
+<ul><h5>
+<li>由瀏覽器啟動執行(browser enabled HTML)</li>
+<li>Java™ 可執行檔獨立執行 (standalone executable JAR)</li>
+<li>以 Java web start ™ 啟動執行(web start JNLP)</li>
+</h5></ul>
+<h5>
+獨立執行的應用程式 (standalone executable JAR) 和一般的視窗 (*.exe) 程式是一模一樣的，只不過檔名是 Java™ 的可執行檔 *.jar 。以 Java web start ™ 啟動執行(web start JNLP) 的程式和獨立執行的應用程式 一樣 ，其分別是受 Java web start™ 的控管且可透過 Java web start ™ 自動更新版本。三種應用程式在網際網路上啟動執行後，應用程式皆以多層式 的架構運作。<br/>
+瀏覽器啟動 (browser enabled) 的應用程式，是由客戶端的瀏覽器，經由 HTTP 連結到 Web 伺服器的HTML 檔，而由 Java™ 內嵌在 HTML 的小程式段 (Java™ applet) 啟動應用程式。詳細的流程如下圖。
+</h5>
+<div style="max-width:565px;">
+<img src="/images/probeweb/product/structure02.jpg">
+</div>
+<h5>
+當客戶端在瀏覽器，以 HTTP 向 Web 伺服器要求網頁時，由 Web 伺服器送出內含 Java™ Applet class 標籤的 HTML 網頁，客戶端即啟動 Java™ 虛擬機器 (JVM) ，並對 Web 伺服器要求載入 Applet class。當 Applet class 載入實體化後，立即載入主畫面，並出現密碼驗證對話視窗，要求客戶端登入。客戶端的密碼驗證是由 jLIVE™ middle ware 以查驗資料庫的方式處理。當客戶端的密碼是合法時，jLIVE™ middle ware 會為客戶端建立連結的 Session ，並按指示連結資料庫，回覆客戶端時會將客戶端的權限一併傳回。客戶端的 Java™ class 會根據權限，控管視窗模組的開啟與否，和對該視窗模組中 操作資料庫新增、刪除、修改、查詢以及列印的元件，自動將其致能或失效。客戶端在主視窗畫面啟動後，即可像操作任何視窗程式一樣，以系統選單、按鍵、圖示啟動各種作業。當呼叫視窗模組，Web 伺服器回傳視窗模組的 Java™ class；當視窗模組中存取資料庫或系統資源時，則由 jLIVE™ middle ware 負責服務。此即由客戶端發出請求，中間層 jLIVE™ middle ware 負責連結、存取後端資料庫伺服器的三層架構。 
+</h5>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >瀏覽器啟動應用程式特性 (browser enabled features)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>啟動的 HTML 網頁及 Java™ Applet class，由 jLIVE Builder™ 在製作執行程式時，自動產生原始程式碼 (Java™ source)，有經驗的設計師可以按需求進一步的編輯更改。一個應用系統只會存在一個 Java™ Applet ，Applet 的作用只在於初始化瀏覽器的應用程式，應用程式接下來的所有運作，將會在此 Applet 區域，以多視窗模組的型式呈現。</li>
+<li>HTML 載入，瀏覽器啟動虛擬機器 (Java™ VM) 時，會檢查 Java™ 執行期版本 (JRE) 並進行載入指定的版本，版本載入來源預設為 Sun 網站，jLIVE Builder™ 在製作執行程式時，提供重導載入來源的機制。</li>
+<li>在應用程式執行時 Java™ Applet 只是扮演啟動程式的機制，所有程式的實際運作，由 Java™ class 執行。所以整個應用程式，只需也只有一個 Java™ Applet 參與運作。</li>
+<li>在載入時期會有兩個 jar 檔和語系模組的載入。一個是約250K的 jlive.jar，這是 jLIVE™ 執行期的元件 class 檔；另一個是 jimage.jar，這是應用程式開發者，設定要預先載入的圖形檔，其大小視圖檔而定。此兩個 Jar 檔在客戶端，第一次執行程式時載入，往後除非有新版本否則不會再耗時去重載。</li>
+<li>應用程式在執行時，jLIVE™ 系統訊息及輔助提示，皆會以客戶端的語系顯示。若是支援多國語系的應用程式，jLIVE™ 系統會自動以客戶端的語系呈現。</li>
+<li>jLIVE Builder™ 系統中，所開發的每一個視窗畫面模組，都是一個近乎獨立的 Java™ class。應用程式啟動時不會載入所有的視窗畫面模組，而是在呼叫執行到該視窗畫面模組再行載入並儲存在客戶端，除非有更新版的視窗畫面模組，系統會以客戶端的模組直接執行，不再耗時從 Web 伺服器載入。此即 jLIVE Builder™ 系統所開發的應用程式執行效率高的原因之一。</li>
+<li>jLIVE Builder™ 系統是多執行緒的系統。程式啟動時，系統會載入儲存在客戶端的視窗畫面模組，顯現視窗畫面後，再連結 jLIVE™ middle ware 要求操作的資料庫資料。因此客戶端執行時可以在最短時間內得到回應，就像瀏覽器網頁一樣，先看到顯示的視窗元件，再看到回應的資料顯示在元件中，最後才是圖形資料。</li>
+<li>jLIVE™ middle ware 是 100% pure java 所開發的 Java™ Servlet，可以適用於各種作業平台和相容於各種應用伺服器。</li>
+<li>jLIVE Builder™ 系統是三層式架構，資料庫的存取由 jLIVE™ middle ware 所負責，所以客戶端不須安裝任何驅動程式，也無法直接存取資料庫伺服器，位於防火牆及內部網路中的資料庫伺服器因此能得到最安全的保障。</li>
+</h5></ul>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >開發及佈建的應用伺服器環境 (application server environment)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h5>
+設計師在使用 jLIVE Builder™ 設計程式時，與一般使用者在執行由 jLIVE Builder™ 所開發的應用程式是一模一樣，所以設計師能即時知道應用程式，在真實環境下執行的結果。 jLIVE ™ middle ware 的 class 名稱為 ProbeServlet，是以 Java Servlet™ 所開發的。在應用伺服器上與 HTML、JSP 提供系統服務，只不過 ProbeServlet 所服務的客戶端是 jLIVE Builder™ 的應用程式。所以 jLIVE Builder™ 可以與 HTML 、ASP、JSP 、PHP 協同開發網際網路上的應用與服務。佈建 jLIVE Builder™ 應用環境只要將 ProbeServlet 安裝到應用伺服器上即可。程式設計、更新、維護 ，可以透過 jLIVE Builder™ 內建的線上更新提交到應用伺服器。
+</h5>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >jLIVE middle™ ware 在 J2EE 應用伺服器的運作 (service route in application server (J2EE))</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h5>
+ProbeServlet 是 jLIVE ™ middle ware 的 class 名稱，在應用伺服器以 Java Servlet™ 機制運作，是完全相容與 Java™ J2EE 規格。ProbeServlet 在接到資料庫存取請求時，以 JDBC 連結資料庫並調整回應資料量，快速提供使用者端的需求。jLIVE Builder™ 提供內建 Servlet Call event 用與其他 J2EE 應用伺服器上的資源協同運作。例如：Java™ EJB 的開發者可以透過 Servlet 呼叫 EJB 且將 EJB 的結果回傳至 jLIVE Builder™ 使用者端 。 
+</h5>
+</div>
+<div style="max-width:579px;">
+<img src="/images/probeweb/product/structure03.jpg">
+</div>
+</div>
+               
+        
+        	</div> <!-- #container -->
+        
+        </div>
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script> 	
+             
+</div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+<div  data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">事件流程</h1>  
+        <div id="nav_history"></div>     
+	</div> 
+    
+<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0">        
+        
+            <div class="ui-mason-2">
+            
+
+<div class="mbox ui-col-b" style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;text-align:left;">
+<h3>事件流程</h3>
+</div>
+                
+<div class="mbox ui-col-b">
+<div style="max-width:350px;">
+<img src="/images/probeweb/product/event01.jpg">
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h5>
+事件物件是由啟動條件 (fire condition)、否則事件 (otherwise event)、執行運算程序 (perform computing process) 及後續事件 (next event)所組成。啟動條件是一個運算式，當結果值為真，則執行運算程序，之後接續執行後續事件；運算式結果值為偽，則執行否則事件。設計師可以啟動條件根據應用程式流程需求，連結否則事件及後續事件，達成具有流程分支、控管的事件流程 (event flow)。
+</h5>
+</div>
+</div>
+
+                
+<div class="mbox ui-col-b">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >運算程序，分為四大類 (元件、資料來源、模組、進階)，在應用程式執行期執行、控制：</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>改變元件的內含屬性值 (內含值、位置、大小、字型、顏色、致能、顯示、Focus)。</li>
+<li>操作資料來源(導覽、欄位值、觸發、查詢)。</li>
+<li>執行 SQL 指令 (SQL、預存程序)。</li>
+<li>設定資料庫(Isolation level、Transaction)</li>
+<li>應用系統流程(開啟視窗、印表作業、外部程式、訊息視窗)。</li>
+<li>檔案資料(上載、下載、Buffer 資料來源)</li>
+<li>網際網路功能(電子郵件、超連結、聲音檔、影像檔、Servlet Call)。</li>
+</h5></ul>
+<h5>
+運用這些事件的運算程序，串連以啟動條件分支執行的否則事件及後續事件，設計師可以完整的將程式流程，以完全視覺化的事件流程綱要 (event flow schema) 予以展現，不論在流程分析、更動、維護與除錯，皆能快速且正確的因應。 
+</h5>
+<h5>
+事件流程是由使用者或系統程序所啟動，在元件及資料來源設計時，設計師根據使用者操作的行為性，分別連結啟動的事件流程，完成回應使用者操作的作業需求；系統程序所啟動的事件，例如：視窗開啟程序中，會依序啟動資料來源開啟前事件及資料來源開啟後事件，視窗關閉前，會啟動關閉事件。設計師只要在系統程序中連結所需的作業事件即可。 
+</h5>
+</div>
+</div>
+
+
+<div class="mbox ui-col-b">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >事件類別 (event type)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<ul><h5>
+<li>元件事件 (component event)</li>
+<li>資料來源事件 (data source event)</li>
+<li>模組事件 (module event)</li>
+<li>進階事件 (advance event)</li>
+</h5></ul>
+</div>
+<div style="max-width:620px;">
+<img src="/images/probeweb/product/event02.jpg">
+</div>
+</div>
+
+<div class="mbox ui-col-b">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >事件流程綱要</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h5>
+事件流程綱要，提供設計師新增、編輯、檢視事件，分析、規劃、調整事件流程，以及測試執行的事件中斷設定。設計師在視窗設計平台按下事件列表的新增事件按鈕，進入事件流程綱要設計平台，可以在工作區域中檢視所有運用於視窗的事件。
+</h5>
+<h5>
+工作區域以流程圖示所有事件物件，其中較大的圖示表示該事件為視窗元件、資料來源或系統流程 所連結啟動，較小的圖示則為事件串流中的事件。藍色連結線表示事件的後續事件；粉紅色的連結線表示事件的否則事件。設計師以滑鼠移動到事件物件時，該事件會以綠色外框標示為選取，工作區域左邊的事件屬性列示區，會列示事件的所有資訊，工作區域左上角的引發器列表，會列示連結引發該事件的元件、資料來源及系統流程。設計師可以滑鼠拖拉快速地調整事件流程，設定除錯的中斷點，檢視執行時資料及參數的正確性。
+</h5>
+<h5>
+設計師可以在工作區域中，將滑鼠移到事件物件上，事件物件會以綠色外框標示為選取狀態，在綠色外框的右緣，按住滑鼠，將後續事件的連結拖曳至目標事件，放開滑鼠後，系統會以藍色線顯示連結。在綠色外框的下緣，按住，將否則事件的連結拖曳至目標事件，放開滑鼠後，系統會以粉紅色線顯示連結。 
+</h5>
+</div>
+<div style="max-width:393px;">
+<img src="/images/probeweb/product/event03.jpg">
+</div>
+</div>
+               
+        
+        	</div> <!-- #container -->
+        
+        </div>
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script> 	
+             
+</div>
+</body>
+</html>
