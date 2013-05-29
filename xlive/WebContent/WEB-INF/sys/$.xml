@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>system</description>
+		<request-html>
+			<name></name>
+			<encoding></encoding>
+			<return>
+				<data/>
+			</return>
+		</request-html>
+		<get-properties>
+			<exclude/>
+			<return>
+				<properties/>
+			</return>
+		</get-properties>
+		<wsdl>
+		</wsdl>
+		<echo-request/>
+		<dump-context/>
+	</properties>
+	<method name="arguments" useClass="xlive.method.sys.xArgumentsMethod" useType="apply"/>
+	<method name="arguments-xslt" useClass="xlive.method.sys.xArgumentsXsltMethod" useType="apply"/>
+	<method name="set-argument" useClass="xlive.method.sys.xSetArgumentMethod" useType="apply"/>
+	<method name="remove-argument" useClass="xlive.method.sys.xRemoveArgumentMethod" useType="apply"/>
+	<method name="script" useClass="xlive.method.sys.xScriptMethod" useType="apply"/>
+	<method name="get-properties" useClass="xlive.method.sys.xGetPropertiesMethod" useType="apply"/>
+	<method name="request-html" useClass="xlive.method.sys.xRequestHtmlMethod" useType="call"/>
+	<method name="response-xslt" useClass="xlive.method.sys.xResponseXsltMethod" useType="apply"/>
+	<method name="wrap-return-in" useClass="xlive.method.sys.xWrapReturnInMethod" useType="apply"/>
+	<method name="wsdl" useClass="xlive.method.sys.xWsdlMethod" useType="apply"/>
+	<method name="echo-request" useClass="xlive.method.sys.xEchoRequestMethod" useType="apply"/>
+	<method name="dump-context" useClass="xlive.method.sys.xDumpContextMethod" useType="apply"/>
+	<method name="timeout-service" useClass="xlive.method.sys.xTimeoutServiceMethod" useType="apply"/>
+</object>
+
+
+

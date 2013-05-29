@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	
+    	<get-localmall>
+	    	<lat-1/>
+	    	<lon-1/>
+	    	<lat-2/>
+	    	<lon-2/>
+	    	<last-call/>
+    	</get-localmall>
+	</properties>
+	
+	<method name="get-localmall" useClass="xlive.method.rst.mall.xGetLocalMallMethod"/>
+</object>

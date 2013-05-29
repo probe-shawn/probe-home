@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>user authorized data</description>
+    	<version>1.0</version>
+    	<gae-redirect-url>http://probe.com.tw:8080/</gae-redirect-url>
+    	<database-object-name>db.mysql.xlive</database-object-name>
+    </properties>
+	<method name="login" useClass="xlive.method.authorized.forum.xLoginMethod"/>
+	<method name="register" useClass="xlive.method.authorized.forum.xRegisterMethod"/>
+	<method name="change-password" useClass="xlive.method.authorized.forum.xChangePasswordMethod"/>
+</object>
+

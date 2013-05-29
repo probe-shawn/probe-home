@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job>
+	<name>probe iobox fetcher</name>
+	<description></description>
+	<!--
+	<schedule-date-pattern>* * * * *</schedule-date-pattern>
+	-->
+	<schedule-time-interval>60000</schedule-time-interval>
+	<object-name>probe.iobox</object-name>
+	<method-name>fetcher</method-name>
+	<start-date/>
+	<end-date/>
+	<on-server-start>false</on-server-start>
+	<stop>true</stop>
+	<arguments/>
+</job>
+

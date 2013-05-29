@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object lifeCycle="request">
+	<properties>
+		<resource-type>native</resource-type>
+		<description>rowset</description>
+    	<version>1.0</version>
+    	<!-- blob : 2004 clob :2005 varchar :12 date : 91 time :92 timstamp : 93 
+    	  integer : 4 float : 6 real :7 double :8 decimal : 3 numeric : 2 ,BIT : -7
+    	  char : 1 varchar:12 LONGVARCHAR :-1 NVARCHAR:-9 NCHAR:-15 NCLOB:2011
+    	  LONGVARBINARY :-4 VARBINARY:-3 BINARY:-2 CLOB:2005
+    	 -->
+    	<gae-redirect-url>http://probe.com.tw:8080/</gae-redirect-url>
+    	<database-object-name/>
+		<resultset>
+			<holdability/>
+			<type/>
+			<concurrency/>
+		</resultset>
+		<get-connection>
+			<user/>
+			<password/>
+		</get-connection>
+		<dispose-connection/>
+ 		<sql-update>
+ 			<table></table>
+ 			<!-- key field for indetified row, field-name is the key field name-->
+ 			<key-fields>
+ 				<!--<field-name dataType="12"></field-name>-->
+ 			</key-fields>
+ 			<!-- update fields, field-name is field name -->
+ 			<fields-constrain/>
+ 			<update-fields>
+ 				<!--<field-name dataType="12">value</field-name>-->
+ 			</update-fields>
+ 			<record-tag-name>r</record-tag-name>
+ 			<return>
+ 				<data/>
+ 			</return>
+		</sql-update>
+ 		<sql-insert>
+ 			<table/>
+ 			<!--new field name and value-->
+ 				<!--<fields-constrain><field-name dataType="12" "static">value</field-name></fields-constrain>-->
+ 			<fields-constrain/>
+ 			<fields>
+ 				<!--<field-name dataType="12">value</field-name>-->
+ 			</fields>
+ 			<return>
+ 				<data/>
+ 			</return>
+ 			<record-tag-name>r</record-tag-name>
+		</sql-insert>
+ 		<sql-delete>
+ 			<table/>
+ 			<!--key fields name and value-->
+ 			<key-fields>
+ 				<!--<field-name dataType="12">value</field-name>-->
+ 			</key-fields>
+ 			<return>
+ 				<data/>
+ 			</return>
+		</sql-delete>
+		<sql-statement>
+ 			<command>
+ 				<![CDATA[]]> 
+ 			</command>
+ 			<!-- prepared statement parameters ?-->
+ 			<params>
+ 				<!--<param dataType="4"></param>-->
+ 			</params>
+			<row-fetch>-1</row-fetch>
+			<row-from>1</row-from>
+ 			<row-maximum>0</row-maximum>
+ 			<output-eof-rows>true</output-eof-rows>
+  			<record-tag-name>r</record-tag-name>
+ 			<output-metadata>false</output-metadata>
+ 			<return>
+ 				<metadata/>
+ 				<data/>
+ 			</return>
+		</sql-statement>
+		<sql-query>
+			<!--sql command,be replaced where, [replace_where_name]-->
+			<command><![CDATA[]]></command>
+			<!-- define the query where, 
+			<where name="replace_where_name">
+				<and>
+					<argument-name always="1" fieldName="fiel_name" dataType="" isNull="" operator="=">value</argument-name>
+					<argument-name fieldName="fiel_name" operator="between">
+						<value1>between_start_value</value1>
+						<value2>between_end_value</value2>
+					</argument-name>
+					<argument-name fieldName="fiel_name" operator="in">
+						<value>in_value1</value>
+						<value>in_value2</value>
+						<value>in_value3</value>
+					</argument-name>
+					<or>
+						<not-and></not-and>
+						<not-or></not-or>
+					</or>
+				</and>
+			</where>
+			-->
+			<!-- define order by.
+			<orderby>
+				<argument-name fieldName="field_name" desc=""/>
+			</orderby>
+			-->
+			<row-fetch>15</row-fetch>
+			<row-from>1</row-from>
+			<row-maximum>0</row-maximum>
+			<record-tag-name>r</record-tag-name>
+			<output-metadata>true</output-metadata>
+			<convert-to-treeset></convert-to-treeset>
+			<return>
+ 				<metadata/>
+ 				<data/>
+  			</return>
+		</sql-query>
+ 		<sql-fetch>
+ 			<resultset-id></resultset-id>
+ 			<row-fetch>20</row-fetch>
+			<row-maximum>0</row-maximum>
+ 			<record-tag-name>r</record-tag-name>
+ 			<return>
+ 				<data/>
+ 			</return>
+		</sql-fetch>
+		<get-properties>
+			<exclude>
+				<get-connection/>
+				<close-connection/>
+				<sql-query><command/></sql-query>
+				<sql-statement><command/></sql-statement>
+			</exclude>
+		</get-properties>
+		<dispose-resultset/>
+		<call-procedure>
+			<name/>
+			<columns/>
+			<record-tag-name>r</record-tag-name>
+			<return>
+				<data/>
+			</return>
+		</call-procedure>
+	</properties>
+ 	<method name="initial">
+	 	<this.get-connection/>
+ 	</method>
+ 	<method name="dispose">
+		<this.close-connection/>
+ 	</method>
+	<method name="get-connection" useClass="xlive.method.rowset.xGetConnectionMethod"/>
+	<method name="close-connection" useClass="xlive.method.rowset.xCloseConnectionMethod"/>
+	<method name="dispose-resultset" useClass="xlive.method.rowset.xDisposeResultsetMethod"/>
+	<method name="sql-update" useClass="xlive.method.rowset.xSqlUpdateMethod"/>
+	<method name="sql-insert" useClass="xlive.method.rowset.xSqlInsertMethod"/>
+	<method name="sql-delete" useClass="xlive.method.rowset.xSqlDeleteMethod"/>
+	<method name="sql-statement" useClass="xlive.method.rowset.xSqlStatementMethod"/>
+	<method name="sql-query" useClass="xlive.method.rowset.xSqlQueryMethod"/>
+	<method name="sql-fetch" useClass="xlive.method.rowset.xSqlFetchMethod"/>
+	<method name="call-procedure" useClass="xlive.method.rowset.xCallProcedureMethod"/>
+	<method name="get-properties" useClass="xlive.method.rowset.xGetPropertiesMethod"/>
+</object>
+

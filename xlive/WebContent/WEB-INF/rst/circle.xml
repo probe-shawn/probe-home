@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<list-circle>
+    	</list-circle>
+    	<get-circle>
+	    	<fid/>
+    	</get-circle>
+    	<set-circle>
+    		<circle pxml="pxml" name="生活圈">
+    			<fid/>
+    			<name name="名稱" blank="使用臉書名稱" pxml="input"/>
+    			<icon name="圖示" blank="使用臉書大頭照" pxml="fbimg" /> 
+    			<date/>
+    			<phone name="電話" blank="必要欄位" pxml="input"/>
+    			<addr name="地址" blank="必要欄位" pxml="html" objectName="addressSelect"  url="/xlive/rst2/menu/addressSelect.html"/>
+    			<map name="地圖比例" pxml="select" multiple="false" options="13,14,15,16">15</map>
+   				<desc-html name="簡介" pxml="textarea"/>
+	    		<icons name="影音輯" create="tag:icon;name:圖片;pxml:fbimg;removable:true;video:false;detail:true;label:新增圖片"/>
+    			<latitude/>
+    			<longitude/>
+    			<tz-offset/>
+    			<apply-message name="申請加入訊息揭示" pxml="textarea" epilog="ex: 每加入一專區，每月費用 500元。"></apply-message>
+    		</circle>
+    	</set-circle>
+    	<set-district>
+    		<district  pxml="pxml" name="設定專區">
+	    		<circle-fid/>
+	    		<key/>
+	    		<name pxml="input" name="名稱"  blank="商品名稱, 必要欄位"/>
+	    		<spec-xml pxml="pxml" name="專區資訊" create="tag:kv;name:;pxml:kv;kblank:-標題-;vblank:-內文-;removable:true;video:true;detail:true;label:新增 標題-內文">
+	    		</spec-xml>
+	    		<news1 pxml="textarea" name="最新訊息1"/>
+	    		<news2 pxml="textarea" name="最新訊息2"/>
+	    		<news3 pxml="textarea" name="最新訊息3"/>
+    		</district>
+    	</set-district>
+    	<list-district>
+    	</list-district>
+    	<set-dmall>
+    	</set-dmall>
+    	<list-dmall>
+    	</list-dmall>
+    	<del-dmall>
+    	</del-dmall>
+    	<set-circle-mall>
+    	    <key/>
+    	    <circle-fid/>
+    	    <mall-fid/>
+    	    <status/>
+    	    <c2m-message/>
+    	    <m2c-message/>
+    	</set-circle-mall>
+    	<list-circle-mall>
+    	    <mall-fid/>
+    	    <circle-fid/>
+    	</list-circle-mall>
+    	<remove-circle-mall>
+    	    <key/>
+    	</remove-circle-mall>
+    		<swap-district>
+    		<key1/>
+    		<key2/>    		
+    	</swap-district>
+    	<swap-district-mall>
+    		<key1/>
+    		<key2/>    		
+    	</swap-district-mall>
+	</properties>
+	<method name="list-circle" useClass="xlive.method.rst.circle.xListCircleMethod"/>
+	<method name="set-circle" useClass="xlive.method.rst.circle.xSetCircleMethod"/>
+	<method name="get-circle" useClass="xlive.method.rst.circle.xGetCircleMethod"/>
+	<method name="list-district" useClass="xlive.method.rst.circle.xListDistrictMethod"/>
+	<method name="set-district" useClass="xlive.method.rst.circle.xSetDistrictMethod"/>
+	<method name="list-dmall" useClass="xlive.method.rst.circle.xListDistrictMallMethod"/>
+	<method name="set-dmall" useClass="xlive.method.rst.circle.xSetDistrictMallMethod"/>
+	<method name="set-circle-mall" useClass="xlive.method.rst.circle.xSetCircleMallMethod"/>
+	<method name="list-circle-mall" useClass="xlive.method.rst.circle.xListCircleMallMethod"/>
+	<method name="remove-circle-mall" useClass="xlive.method.rst.circle.xRemoveCircleMallMethod"/>
+	<method name="swap-district" useClass="xlive.method.rst.circle.xSwapDistrictMethod"/>
+	<method name="swap-district-mall" useClass="xlive.method.rst.circle.xSwapDistrictMallMethod"/>
+	<method name="del-dmall" useClass="xlive.method.rst.circle.xDelDistrictMallMethod"/>
+	
+</object>

@@ -1,0 +1,28 @@
+
+{
+	properties:{
+		name:"store"
+	},
+	set:{
+		key:''
+	},
+	sort:{},
+	get:{
+		key:''
+	},
+	list:{},
+	del:{},
+	setStoreSaleRule:{},
+	listStoreSaleRule:{},
+	batchStoreSaleRule:{},
+	methods:{
+		set:{use_class:"xlive.method.yup.uSetStore"},
+		get:{use_class:"xlive.method.yup.uGetStore"},
+		sort:{use_class:"xlive.method.yup.uSortStore"},
+		list:{use_class:"xlive.method.yup.uListStore"},
+		del:{use_class:"xlive.method.yup.uDelStore"},
+		setStoreSaleRule:{use_class:"xlive.method.yup.uSetStoreSaleRule"},
+		listStoreSaleRule:{use_class:"xlive.method.yup.uListStoreSaleRule"},
+		batchStoreSaleRule:{use_class:"xlive.method.yup.uBatchStoreSaleRule"}		
+	}
+}

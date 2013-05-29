@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>logger</description>
+    	<version>1.0</version>
+    	<xlive-logger>
+    		<!--<level>FINE</level> WARNING, SEVERE-->
+    		<level>WARNING</level>
+    		<handler>
+    			<file-name>xlive_</file-name>
+    		</handler>
+    	</xlive-logger>
+    	<xlive-object-logger>
+    		<level>FINEST</level>
+    		<handler>
+    			<file-name>object_</file-name>
+    		</handler>
+    	</xlive-object-logger>
+    	<xlive-user-logger>
+    		<level>FINEST</level>
+    		<handler/>
+    	</xlive-user-logger>
+    	
+    	<set-xlive-logger-level>
+    		<level/>
+    	</set-xlive-logger-level>
+    	<set-xlive-object-logger-level>
+    		<level/>
+    	</set-xlive-object-logger-level>
+    	<set-xlive-user-logger-level>
+    		<level/>
+    	</set-xlive-user-logger-level>
+    	<log-object>
+    		<object-name/>
+    	</log-object>
+    	<unlog-object>
+    		<object-name/>
+    	</unlog-object>
+    	<unlog-all-objects/>
+    	<log-user>
+    		<session-id/>
+    	</log-user>
+    	<unlog-user>
+    		<sessio-id/>
+    	</unlog-user>
+    	<unlog-all-users/>
+
+
+	</properties>
+	<method name="set-xlive-logger-level" useClass="xlive.method.logger.xSetXliveLoggerLevelMethod"/>
+	<method name="set-xlive-object-logger-level" useClass="xlive.method.logger.xSetXliveObjectLoggerLevelMethod"/>
+	<method name="set-xlive-user-logger-level" useClass="xlive.method.logger.xSetXliveUserLoggerLevelMethod"/>
+	<method name="log-object" useClass="xlive.method.logger.xLogObjectMethod"/>
+	<method name="unlog-object" useClass="xlive.method.logger.xUnlogObjectMethod"/>
+	<method name="unlog-all-objects" useClass="xlive.method.logger.xUnlogAllObjectsMethod"/>
+	<method name="log-user" useClass="xlive.method.logger.xLogUserMethod"/>
+	<method name="unlog-user" useClass="xlive.method.logger.xUnlogUserMethod"/>
+	<method name="unlog-all-users" useClass="xlive.method.logger.xUnlogAllUsersMethod"/>
+
+	<method name="get-properties"><sys.get-properties/></method>
+</object>
+

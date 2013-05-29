@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>gdata calendar</description>
+		<user-calendars>
+			<return>
+				<data/>
+			</return>
+		</user-calendars>
+		<all-events>
+			<return>
+				<data/>
+			</return>
+		</all-events>
+		<create-event>
+			<title/>
+			<content/>
+			<start-time/>
+			<end-time/>
+			<participant>
+				<who></who>
+			</participant>
+			<send-event-notifications>true</send-event-notifications>
+		</create-event>
+	</properties>
+ 	<method name="user-calendars" useClass="xlive.method.gdata.calendar.xUserCalendarsMethod"/>
+ 	<method name="all-events" useClass="xlive.method.gdata.calendar.xAllEventsMethod"/>
+ 	<method name="create-event" useClass="xlive.method.gdata.calendar.xCreateEventMethod"/>
+</object>
+
+
+

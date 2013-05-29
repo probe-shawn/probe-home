@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<orders/>
+    	<list-daily>
+    		<mall-fid/>
+    		<date/>
+    		<tz-offset/>
+    	</list-daily>
+    	<list-monthly>
+    		<mall-fid/>
+    		<date/>
+    	</list-monthly>
+    	<calc-mall-daily>
+    		<mall-fid/>
+    		<date/>
+    	</calc-mall-daily>
+    	<task-calc-mall-daily>
+    		<tz-offset/>
+    	</task-calc-mall-daily>
+    	<patch-order>
+    	</patch-order>
+	</properties>
+	<method name="list-daily" useClass="xlive.method.rst.report.xListDailyMethod"/>
+	<method name="list-monthly" useClass="xlive.method.rst.report.xListMonthlyMethod"/>
+	<method name="calc-mall-daily" useClass="xlive.method.rst.report.xCalcMallDailyMethod"/>
+	<method name="task-calc-mall-daily" useClass="xlive.method.rst.report.xTaskCalcMallDailyMethod"/>
+	<method name="patch-order" useClass="xlive.method.rst.report.xPatchOrderMethod"/>
+</object>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<list>
+    		<mall-fid/>
+    	</list>
+		<set-status>
+			<mall-fid/>
+    		<pxml/>
+    	</set-status>
+	</properties>
+	<method name="list" useClass="xlive.method.rst.status.xListMethod"/>
+	<method name="set-status" useClass="xlive.method.rst.status.xSetStatusMethod"/>
+</object>

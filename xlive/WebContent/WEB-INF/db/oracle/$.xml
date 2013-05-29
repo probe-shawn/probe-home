@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>oracle</description>
+    	<version>1.0</version>
+		<create-datasource> 
+			<class-name>oracle.jdbc.pool.OracleConnectionPoolDataSource</class-name>
+			<url/>
+			<user/>
+			<password/>
+		</create-datasource>
+	</properties>
+</object>
+
+
+

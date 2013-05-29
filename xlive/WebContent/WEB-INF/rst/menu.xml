@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<bom>
+    	</bom>
+    	<list>
+    		<mall-fid/>
+    		<comment>
+    			<key/>
+    		</comment>
+    	</list>
+    	<list-bom>
+    		<key/>
+    		<list-type/>
+    	</list-bom>
+    	<set-directory pxml="pxml" name="設定目錄">
+    		<parent-key/>
+    		<key/>
+    		<mall-fid/>
+    		<id/>
+    		<name pxml="input" name="名稱" blank="目錄名稱, 必要欄位"/>
+    		<barcode/>
+    		<list-price/>
+    		<price/>
+    		<date/>
+    		<icon pxml="fbimg" name="圖片"/>
+    		<icon2 pxml="fbimg" name="切換背景圖片"/>
+    		<icons>
+    		</icons>
+    		<brief-html/>
+    		<desc-html/>
+    		<spec-html/>
+    		<option-xml/>
+    		<addon-xml/>
+    		<options/>
+    		<addons/>
+    		<parts/>
+    		<type>0</type>
+    		<status>0</status>
+    	</set-directory>
+    	<set-product pxml="pxml" name="設定商品">
+    		<parent-key/>
+    		<key/>
+    		<mall-fid/>
+    		<id/>
+    		<name pxml="input" name="名稱"  blank="商品名稱, 必要欄位"/>
+    		<barcode/>
+    		<list-price pxml="input" name="原價" />
+    		<price pxml="input"  name="售價"  blank="必要欄位"/>
+    		<date/>
+    		<bonus pxml="int" name="紅利" min="0">0</bonus>
+    		<limit pxml="pxml" name="商品限量，限購">
+    			<limit-qty-html pxml="html" objectName="menuLimitQty" name="限量商品" url="/xlive/rst2/menu/limitQty.html"/>
+    			<limit-buy-html pxml="html" objectName="menuLimitBuy" name="限購商品" url="/xlive/rst2/menu/limitBuy.html"/>
+    		</limit>
+    		<limit-qty/>
+    		<current-qty/>
+    		<add-qty/>
+    		<limit-buy/>
+    		<max-buy/>
+    		<fans/>
+    		<markers/>
+    		<icon pxml="fbimg" name="圖片" />
+   			<brief-html pxml="textarea" name="商品介紹"/>
+    		<icons pxml="pxml" name="商品影音" create="tag:icon;name:圖片與影片;pxml:fbimg;removable:true;video:true;detail:true;label:新增圖片與影片">
+    		</icons>
+     		<desc-html/>
+    		<spec-html/>
+    		<spec-xml pxml="pxml" name="商品資訊" create="tag:kv;name:;pxml:kv;kblank:-項目-;vblank:-資訊-;removable:true;video:true;detail:true;label:新增 項目-資訊">
+    		</spec-xml>
+    		<option-xml/>
+    		<addon-xml/>
+    		<options name="選擇項" pxml="select" multiple="true" options=""/>
+    		<addons name="加值項" pxml="select"  multiple="true" prolog="加值項" options=""/>
+    		<qty>-1</qty>
+    		<parts/>
+    		<type>1</type>
+    		<status>0</status>
+    	</set-product>
+    	<set-bom pxml="pxml" name="設定">
+    		<parent-key/>
+    		<key/>
+    		<id pxml="input" name="編碼" prolog="input id" epilog="example"/>
+    		<name pxml="input" name="名稱"/>
+    		<barcode pxml="input"/>
+    		<list-price pxml="input" name="牌價"/>
+    		<price pxml="input"  name="售價"/>
+    		<date pxml="date"  name="日期"/>
+    		<markers/>
+    		<icon pxml="img" dmName="fs.google.rst" name="圖示"/>
+    		<icons>
+    		</icons>
+    		<brief-html pxml="rich" name="簡述"/>
+    		<desc-html pxml="rich" name="詳述"/>
+    		<spec-html/>
+    		<option-xml/>
+    		<addon-xml/>
+    		<options/>
+    		<addons/>
+    		<qty>-1</qty>
+    		<parts/>
+    		<type>1</type>
+    		<status>0</status>
+    	</set-bom>
+    	<remove-bom>
+    		<parent-key/>
+    		<key/>
+    		<type/>
+    	</remove-bom>
+    	<swap-date>
+    		<key1/>
+    		<key2/>
+    	</swap-date>
+    	<get-bom-buy>
+    		<key/>
+    	</get-bom-buy>
+    	<list-hot>
+    		<mall-fid></mall-fid>
+    	</list-hot>
+    	<list-root>
+    		<mall-fid/>
+    		<comment>
+    			<key/>
+    		</comment>
+    	</list-root>
+    	<list-dir>
+    		<key/>
+    	</list-dir>
+	</properties>
+	<method name="list" useClass="xlive.method.rst.menu.xListMethod"/>
+	<method name="list-bom" useClass="xlive.method.rst.menu.xListBomMethod"/>
+	<method name="set-directory" useClass="xlive.method.rst.menu.xSetBomMethod"/>
+	<method name="set-product" useClass="xlive.method.rst.menu.xSetBomMethod"/>
+	<method name="set-bom" useClass="xlive.method.rst.menu.xSetBomMethod"/>
+	<method name="remove-bom" useClass="xlive.method.rst.menu.xRemoveBomMethod"/>
+	<method name="swap-date" useClass="xlive.method.rst.menu.xSwapDateMethod"/>
+	<method name="get-bom-buy" useClass="xlive.method.rst.menu.xGetBomBuyMethod"/>
+	<method name="list-hot" useClass="xlive.method.rst.menu.xListHotMethod"/>
+	<method name="list-root" useClass="xlive.method.rst.menu.xListRootMethod"/>
+	<method name="list-dir" useClass="xlive.method.rst.menu.xListDirMethod"/>
+</object>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job>
+	<name/>
+	<description/>
+	<schedule-time-interval/>
+	<schedule-date-pattern/>
+	<object-name/>
+	<method-name/>
+	<start-date/>
+	<end-date/>
+	<on-server-start>false</on-server-start>
+	<run-once>false</run-once>
+	<stop>true</stop>
+	<arguments/>
+</job>
+

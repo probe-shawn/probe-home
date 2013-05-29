@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>sms provider</description>
+    	<version>1.0</version>
+    	<sms-store-directory>./sms-store/</sms-store-directory>
+    	<sms-file-regexp>^\w{4}_(\d{14}).*\\.xml$</sms-file-regexp>
+		<connection-information>
+			<gateway-ip>202.39.54.130</gateway-ip>
+			<gateway-port>8000</gateway-port>
+			<user-id></user-id>
+			<user-password></user-password>
+			<maximum-connection></maximum-connection>
+			<wait-timeout>5000</wait-timeout>
+		</connection-information>
+		<send-text-message>
+    		<sms>
+    			<comp-code/>
+    			<message-id></message-id>
+    			<user-id></user-id>
+    			<user-password></user-password>
+    			<create-time></create-time>
+    			<send-time></send-time>
+    			<order-time></order-time>
+    			<phone-number></phone-number>
+    			<message></message>
+    			<cost></cost>
+    			<status/>
+    			<return-code/>
+    			<return-message/>
+    		</sms>
+			<return>
+				<return-code/>
+				<return-message/>
+			</return>
+		</send-text-message>
+		<query-message>
+			<sms>
+				<query-type></query-type>
+				<message-id></message-id>
+			</sms>
+			<return>
+				<return-code/>
+				<return-message/>
+			</return>
+		</query-message>
+		<receive-text-message>
+			<return>
+				<return-code/>
+				<return-message/>
+			</return>
+		</receive-text-message>
+	</properties>
+	<method name="create-connection" useClass="xlive.method.sms.provider.cht.xCreateConnectionMethod"/>
+	<method name="close-connection" useClass="xlive.method.sms.provider.cht.xCloseConnectionMethod"/>
+	<method name="send-text-message" useClass="xlive.method.sms.provider.cht.xSendTextMessageMethod"/>
+	<method name="query-message" useClass="xlive.method.sms.provider.cht.xQueryMessageMethod"/>
+	<method name="receive-text-message" useClass="xlive.method.sms.provider.cht.xReceiveTextMessageMethod"/>
+	<method name="cancel-text-message"/>
+</object>
+

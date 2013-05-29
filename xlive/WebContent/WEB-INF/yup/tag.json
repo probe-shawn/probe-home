@@ -1,0 +1,20 @@
+
+{
+	properties:{
+		name:"tag"
+	},
+	set:{
+		key:''
+	},
+	sort:{},	
+	list:{},
+	del:{},
+	listTagProducts:{},
+	methods:{
+		set:{use_class:"xlive.method.yup.tag.uSetTag"},
+		sort:{use_class:"xlive.method.yup.tag.uSortTag"},
+		list:{use_class:"xlive.method.yup.tag.uListTag"},
+		del:{use_class:"xlive.method.yup.tag.uDelTag"},
+		listTagProducts:{use_class:"xlive.method.yup.tag.uListTagProducts"}
+	}
+}

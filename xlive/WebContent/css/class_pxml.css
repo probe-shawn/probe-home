@@ -1,0 +1,441 @@
+.class_pxml div, 
+.class_pxml span,
+.class_pxml ul, 
+.class_pxml li
+{
+	font-weight:normal;
+	font-style:normal;
+	line-height: normal;
+	font-size:13px;
+	font-family: Verdana, Arial,"新細明體","微軟正黑體", sans-serif;
+}
+.class_pxml input {font-family:Verdana, Arial,"新細明體","微軟正黑體",   sans-serif;font-size:14px;}
+
+.class_pxml {
+	position:relative;-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.class_pxml._default_ {
+ 	  cursor:pointer;
+	  display:block;
+	  padding: 12px 12px 14px;
+	  -webkit-border-radius: 8px;
+	  -moz-border-radius:    8px;
+	  border-radius:         8px;
+	  /*font: 12px "Lucida Grande", Sans-Serif;*/
+	  background-color: #b6d3f4;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#b6d3f4), to(#5483b8)) !important; 
+	  background-image: -webkit-linear-gradient(top, #b6d3f4, #5483b8) !important; 
+	  background-image:    -moz-linear-gradient(top, #b6d3f4, #5483b8) !important; 
+	  background-image:     -ms-linear-gradient(top, #b6d3f4, #5483b8) !important; 
+	  background-image:      -o-linear-gradient(top, #b6d3f4, #5483b8) !important; 
+	  color: white !important;
+	  box-shadow: inset 0 1px 1px white,0 3px 3px rgba(0,0,0,0.6);
+	  border: 1px solid #9ac9ff !important;
+	  /*font-weight: 600;*/
+	  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+	  text-decoration: none;
+	  margin: 0;
+	  position: relative;
+	}
+.class_pxml._default_:hover {
+	  box-shadow: inset 0 2px 6px white,0 3px 3px rgba(0,0,0,0.6);
+}
+
+.pxml_border_radius{
+	padding:8px;
+	background:url(/xlive/web/img?method=png&c=466281&o=0.3) top left repeat;
+	border:1px solid white;
+	border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;
+}
+.pxml_shadow{
+	-moz-box-shadow:0 0 5px 5px #aaa;-webkit-box-shadow: 0 0 5px 5px #aaa;box-shadow: 0 0 5px 5px #aaa;
+}
+.pxml_shadow.pxml_border_radius{
+	padding:8px;
+	background:url(/xlive/web/img?method=png&c=466281&o=0.5) top left repeat;
+	border:1px solid white;
+	border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;
+}
+
+.class_pxml #pxml_toolbar {
+	position:relative;text-align:center;clear:both;left:0px;right:0px;
+	background:url(/xlive/web/img?method=gradient&c=b1d3ff&fo=0.3&to=0.9&h=34) left top repeat-x;
+	height:34px;
+}
+.class_pxml #pxml_toolbar #xlvid_back {
+	position:relative;
+	float:left;
+	background:url(/xlive/images/pxml/btnd_left_arrow.png) no-repeat left top;
+	color:#FFF;
+	padding:0px 6px 0px 6px;
+	margin:0px 4px 0px 6px;
+	top:3px;
+	display:inline-block;
+}
+.class_pxml #pxml_toolbar #xlvid_backright{
+    float:left;
+    background:url(/xlive/images/pxml/btnd_right.png) no-repeat right top;
+    padding:0px 6px 4px 6px;
+    margin-right:-10px;
+    display:inline-block;
+    cursor:pointer;
+    line-height:24px;
+    line-height:30px\9;
+    font-size:13px;
+}
+.class_pxml #pxml_toolbar #xlvid_name {
+	position:relative;
+	display:inline-block;
+	line-height:30px;
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	font-size:15px;
+	color:white;
+}
+.class_pxml #pxml_toolbar #xlvid_cancel {position:absolute;top:-0px;right:0px;}
+.class_pxml #pxml_viewport {
+	clear:both;overflow:hidden;position:relative;
+	background:url(/xlive/web/img?method=png&c=ffffff&o=0.7) top left repeat;
+}
+.class_pxml #pxml_viewport #pxml_canvas {position:relative;clear:both;}
+.class_pxml #pxml_canvas #pxml_box {float:left;overflow:hidden;padding:8px}
+
+.class_pxml #pxml_box .prolog {margin:6px 0px}
+.class_pxml #pxml_box .epilog {margin:6px 0px;text-align:center}
+
+.class_pxml #pxml_box #xlvid_border_b2,
+.class_pxml #pxml_box #xlvid_border_b3,
+.class_pxml #pxml_box #xlvid_border_b4,
+.class_pxml #pxml_box #xlvid_border_b4b,
+.class_pxml #pxml_box #xlvid_border_b3b,
+.class_pxml #pxml_box #xlvid_border_b2b {background:white}
+
+.class_pxml #pxml_box ul {list-style:none;margin:0px;padding:0px;cursor:default;overflow:hidden;clear:both;}
+.class_pxml #pxml_box ul #xlvid_item {
+	position:relative;clear:both;background:white;
+	border-top:solid 1px gray;
+	text-align:right;
+	padding:7px 8px 5px 8px;
+	height:24px;
+	color:#6666CC;
+	vertical-align:middle;
+}
+.class_pxml #pxml_box ul #xlvid_item:first-child{
+	border-top:0px;
+}
+
+.class_pxml #pxml_box #xlvid_item #xlvid_icon {float:left;height:24px;width:24px;display:none}
+.class_pxml #pxml_box #xlvid_item #xlvid_name {
+	line-height:24px;display:inline-block;color:black;font-weight:500;float:left;
+}
+.class_pxml #pxml_box #xlvid_item.checked #xlvid_name {color:#6666CC;}
+.class_pxml #pxml_box #xlvid_item #xlvid_value{
+	line-height:24px;
+	display:inline-block;
+	text-align:right;
+	vertical-align:middle;
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	color:#6666CC;font-weight:500;
+	float:right;
+}
+.class_pxml #pxml_box #xlvid_item.blank #xlvid_value{color:gray;}
+.class_pxml #pxml_box #xlvid_item.item_node #xlvid_value{color:black;}
+.class_pxml #pxml_box #xlvid_item.item_node.checked #xlvid_value{color:#6666CC;}
+
+.class_pxml #pxml_box #xlvid_item #xlvid_bool_onoff {
+	float:right;width:62px; height:20px; background:url(/xlive/images/pxml/bool_onoff.png) left -40px; display:inline-block;overflow:hidden;margin-top:2px;
+}
+.class_pxml #pxml_box #xlvid_item #xlvid_bool_onoff:hover {
+	float:right;width:62px; height:20px; background:url(/xlive/images/pxml/bool_onoff.png) left bottom; display:inline-block;overflow:hidden;margin-top:2px;
+}
+.class_pxml #pxml_box #xlvid_item.checked #xlvid_bool_onoff {
+	float:right;width:62px; height:20px; background:url(/xlive/images/pxml/bool_onoff.png) left top; display:inline-block;overflow:hidden;margin-top:2px;
+}
+.class_pxml #pxml_box #xlvid_item.checked #xlvid_bool_onoff:hover {
+	float:right;width:62px; height:20px; background:url(/xlive/images/pxml/bool_onoff.png) left -20px; display:inline-block;overflow:hidden;margin-top:2px;
+}
+
+.class_pxml #pxml_box #xlvid_item #xlvid_input {padding:2px;margin:2px;border:none;color:#6666CC;font-weight:500;text-align:right;}
+.class_pxml #pxml_box #xlvid_item.editing #xlvid_input {color:black;text-align:left;color:black;border:1px dotted gray;}
+.class_pxml #pxml_box #xlvid_item.blank #xlvid_input {color:gray;}
+.class_pxml #pxml_box #xlvid_item #xlvid_input_button {float:right;padding-top:4px;}
+
+.class_pxml #pxml_box #xlvid_item #xlvid_int_add {margin:2px 2px 2px 6px;float:right}
+.class_pxml #pxml_box #xlvid_item #xlvid_int_sub {margin:2px 2px 2px 4px;float:right}
+
+
+
+.class_pxml #pxml_box #xlvid_item #xlvid_img {float:right;width:24px;height:24px;margin-right:4px;}
+.class_pxml #pxml_box #xlvid_item #xlvid_exec_method {
+	line-height:24px;
+	display:inline-block;
+	text-align:center;
+	vertical-align:middle;
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	color:black;font-weight:500;float:right;
+	background: url(/xlive/images/pxml/btnb_bg.gif) repeat-x;
+}
+.class_pxml #pxml_box #xlvid_item #xlvid_exec_method:hover {
+	text-decoration:underline;
+}
+.class_pxml #pxml_box #xlvid_item #xlvid_checked {float:right;visibility:hidden;}
+.class_pxml #pxml_box #xlvid_item.checked #xlvid_checked {visibility:visible;}
+
+.class_pxml #pxml_box #xlvid_item #xlvid_advance {float:right;padding-left:12px;display:none;padding-top:5px}
+.class_pxml #pxml_box #xlvid_item.advanced #xlvid_advance {display:block}
+
+.class_pxml #pxml_box #xlvid_item #pxml_gallery{
+	margin:4px;padding:4px;position:relative;
+	left:5%;width:90%;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_gallery #pxml_gimg{
+	float:left;width:32px;height:32px;border:1px solid white;
+	margin:8px;padding:4px;cursor:pointer;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_gallery #pxml_gimg:hover{
+	border:1px dotted gray;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbimg_ximg{
+	width:120px;
+	height:100px;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbimg_ximg #pxml_fbimg_del{
+	display:none;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbimg_ximg:hover #pxml_fbimg_del{
+	display:block;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_imgtab{
+	position:relative;
+	margin-top:8px;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_imgtab #xlvid_tab_content{
+	line-height:30px;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbarea,
+.class_pxml #pxml_box #xlvid_item #pxml_fbvarea,
+.class_pxml #pxml_box #xlvid_item #pxml_gyarea{
+	position:relative;
+	width:100%;
+	height:346px;
+	overflow:hidden;
+	border-left:1px solid gray;
+	border-right:1px solid gray;
+	border-bottom:1px solid gray;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbnav,
+.class_pxml #pxml_box #xlvid_item #pxml_fbvnav,
+.class_pxml #pxml_box #xlvid_item #pxml_gynav{
+	position:relative;
+	width:100%;
+	line-height:20px;
+	text-align:left;
+	padding:4px;
+	background:#cfe6fa;
+	background:#f2f2f2;
+	border-bottom:1px dotted #e8e8e8;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbnav #pxml_fbroot,
+.class_pxml #pxml_box #xlvid_item #pxml_fbvnav #pxml_fbvroot,
+.class_pxml #pxml_box #xlvid_item #pxml_gynav #pxml_gyroot{
+	line-height:24px;
+	text-align:left;
+	padding:4px;
+	color:blue;
+	cursor:pointer;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbnav:hover #pxml_fbroot,
+.class_pxml #pxml_box #xlvid_item #pxml_fbvnav:hover #pxml_fbvroot,
+.class_pxml #pxml_box #xlvid_item #pxml_gynav:hover #pxml_gyroot{
+	text-decoration:underline;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbnav #pxml_fbdesc,
+.class_pxml #pxml_box #xlvid_item #pxml_fbnav #pxml_fbvdesc,
+.class_pxml #pxml_box #xlvid_item #pxml_gynav #pxml_gydesc{
+	line-height:24px;
+	color:black;
+	text-align:left;
+	padding:4px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbview,
+.class_pxml #pxml_box #xlvid_item #pxml_fbvview,
+.class_pxml #pxml_box #xlvid_item #pxml_gyview{
+	position:relative;
+	overflow-x:hidden;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbcanvas,
+.class_pxml #pxml_box #xlvid_item #pxml_fbvcanvas,
+.class_pxml #pxml_box #xlvid_item #pxml_gycanvas{
+	position:relative;
+	background:#f2f2f2;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbalbums,
+.class_pxml #pxml_box #xlvid_item #pxml_fbvideos,
+.class_pxml #pxml_box #xlvid_item #pxml_gydirs{
+	position:relative;
+	float:left;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_albums,
+.class_pxml #pxml_box #xlvid_item #pxml_videos,
+.class_pxml #pxml_box #xlvid_item #pxml_dirs{
+	position:relative;
+	align:center;
+	height:312px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_albums #pxml_album,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_frame,
+.class_pxml #pxml_box #xlvid_item #pxml_dirs #pxml_dir{
+	position:relative;
+	float:left;
+	margin:8px;
+	cursor:pointer;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_albums #pxml_outter,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_outter,
+.class_pxml #pxml_box #xlvid_item #pxml_dirs #pxml_outter{
+	border:1px gray solid;
+	position:relative;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_albums #pxml_inner,
+.class_pxml #pxml_box #xlvid_item #pxml_dirs #pxml_inner{
+	background:white;
+	border:1px gray solid;
+	margin:4px -4px -4px 4px;
+	padding:4px;
+}
+
+.class_pxml #pxml_box #xlvid_item #pxml_albums #pxml_photo,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_video,
+.class_pxml #pxml_box #xlvid_item #pxml_dirs #pxml_png{
+	width:120px;
+	height:100px;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_albums #pxml_album_title,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_video_title,
+.class_pxml #pxml_box #xlvid_item #pxml_dirs #pxml_dir_title{
+	width:120px;
+	overflow:hidden;
+	line-height:20px;
+	color:blue;
+	text-align:left;
+	padding:4px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_albums #pxml_album:hover #pxml_album_title,
+.class_pxml #pxml_box #xlvid_item #pxml_dirs #pxml_dir:hover #pxml_dir_title{
+	text-decoration:underline;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_fbphotos,
+.class_pxml #pxml_box #xlvid_item #pxml_fbvideos,
+.class_pxml #pxml_box #xlvid_item #pxml_gypngs{
+	position:relative;
+	float:left;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_photos,
+.class_pxml #pxml_box #xlvid_item #pxml_videos,
+.class_pxml #pxml_box #xlvid_item #pxml_pngs{
+	position:relative;
+	height:312px;
+	align:center;
+	margin-left:auto;
+	margin-right:auto;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_photos #pxml_frame,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_frame,
+.class_pxml #pxml_box #xlvid_item #pxml_pngs #pxml_frame{
+	position:relative;
+	float:left;
+	margin:8px;
+	cursor:pointer;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_photos #pxml_outter,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_outter,
+.class_pxml #pxml_box #xlvid_item #pxml_pngs #pxml_outter{
+	border:1px gray solid;
+	position:relative;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_photos #pxml_frame:hover #pxml_outter,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_frame:hover #pxml_outter,
+.class_pxml #pxml_box #xlvid_item #pxml_pngs #pxml_frame:hover #pxml_outter{
+	border:1px pink solid;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_photos #pxml_inner,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_inner,
+.class_pxml #pxml_box #xlvid_item #pxml_pngs #pxml_inner{
+	background:white;
+	padding:4px;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_photos #pxml_photo,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_video,
+.class_pxml #pxml_box #xlvid_item #pxml_pngs #pxml_png{
+	width:120px;
+	height:100px;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_photos #pxml_photo_title,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_video_title,
+.class_pxml #pxml_box #xlvid_item #pxml_pngs #pxml_png_title{
+	width:120px;
+	overflow:hidden;
+	line-height:20px;
+	color:blue;
+	text-align:left;
+	padding:4px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+.class_pxml #pxml_box #xlvid_item #pxml_photos #pxml_frame:hover #pxml_photo_title,
+.class_pxml #pxml_box #xlvid_item #pxml_videos #pxml_frame:hover #pxml_video_title,
+.class_pxml #pxml_box #xlvid_item #pxml_pngs #pxml_frame:hover #pxml_png_title{
+	text-decoration:underline;
+}
+/*****pxml writer *****/
+.class_pxml #pxml_box #xlvid_item.write #xlvid_advance {float:right;padding-left:5px;display:none;padding-top:2px}
+.class_pxml #pxml_box #xlvid_item.write.advanced #xlvid_advance {display:block}
+
+.class_pxml #pxml_box #xlvid_item #xlvid_remove {float:left;margin-top:2px;}
+
+.class_pxml #pxml_box #xlvid_item.write #xlvid_input {padding:2px;margin:2px;border:1px gray dotted;color:black;font-weight:500;text-align:left;float:left}
+.class_pxml #pxml_box #xlvid_item.write.editing #xlvid_input {color:black;border:1px dotted red;}
+.class_pxml #pxml_box #xlvid_item.write.blank #xlvid_input {color:gray;} 
+
+
+.class_pxml #pxml_box #xlvid_item #xlvid_multiple_onoff {
+	float:right;width:62px; height:20px; background:url(/xlive/images/pxml/bool_onoff.png) left -40px; display:inline-block;margin-top:2px;
+}
+.class_pxml #pxml_box #xlvid_item #xlvid_multiple_onoff:hover {
+	float:right;width:62px; height:20px; background:url(/xlive/images/pxml/bool_onoff.png) left bottom; display:inline-block;margin-top:2px;
+}
+.class_pxml #pxml_box #xlvid_item.checked #xlvid_multiple_onoff {
+	float:right;width:62px; height:20px; background:url(/xlive/images/pxml/bool_onoff.png) left top; display:inline-block;margin-top:2px;
+}
+.class_pxml #pxml_box #xlvid_item.checked #xlvid_multiple_onoff:hover {
+	float:right;width:62px; height:20px; background:url(/xlive/images/pxml/bool_onoff.png) left -20px; display:inline-block;margin-top:2px;
+}
+
+
+.class_pxml #pxml_box #xlvid_item.select_node.write #xlvid_input {padding:2px;margin:2px;border:1px gray dotted;color:black;font-weight:500;text-align:left;float:left}
+.class_pxml #pxml_box #xlvid_item.select_node.write #xlvid_input.editing {color:black;border:1px dotted red;}
+.class_pxml #pxml_box #xlvid_item.select_node.write #xlvid_input.blank {color:gray;}
+
+.class_pxml #pxml_box #xlvid_item.select_node.write #xlvid_input_value {padding:2px;margin:2px;border:1px gray dotted;color:#6666CC;font-weight:500;text-align:left;float:left;text-align:right}
+.class_pxml #pxml_box #xlvid_item.select_node.write #xlvid_input_value.editing {color:black;border:1px dotted red;text-align:left;}
+.class_pxml #pxml_box #xlvid_item.select_node.write #xlvid_input_value.blank {color:gray;} 
+
+.class_pxml #pxml_box #xlvid_item.add_item #xlvid_name {color:blue;padding-left:8px}
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>user authorized data</description>
+    		<version>1.0</version>
+    		<userdata-directory>./userdata</userdata-directory>
+	</properties>
+	<method name="login" useClass="xlive.method.authorized.xLoginMethod"/>
+	<method name="register" useClass="xlive.method.authorized.xRegisterMethod"/>
+	<method name="change-password" useClass="xlive.method.authorized.xChangePasswordMethod"/>
+</object>
+

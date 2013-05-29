@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>soap client</description>
+    	<version>1.0</version>
+    	<wsdl-url></wsdl-url>
+    	<is-built>false</is-built>
+    	<invoker-class>xlive.method.soap.xDefaultInvokerMethod</invoker-class>
+    	<get-properties>
+    	  <wsdl-url/>
+    	  <exclude>
+    	  	<invoker-class/>
+    	  	<get-properties/>
+    	  </exclude>
+	</get-properties>
+	</properties>
+ <method name="get-properties" useClass="xlive.method.soap.xGetPropertiesMethod"/>
+</object>

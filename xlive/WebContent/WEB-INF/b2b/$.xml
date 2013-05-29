@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>b2b</description>
+    	<version>1.0</version>
+	</properties>
+ <method name="initial"/>
+ <method name="dispose"/>
+</object>
+

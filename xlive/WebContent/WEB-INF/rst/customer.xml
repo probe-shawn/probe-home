@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<get-customer>
+    		<id/>
+    		<fid/>
+    		<name/>
+    		<credit/>
+    		<pages/>
+    		<return>
+    			<customer>
+    				<key/>
+    				<id/>
+    				<name/>
+    				<gis/>
+    				<fid/>
+    				<create-date/>
+    				<last-date/>
+    				<bonus/>
+    				<bonus-total/>
+    				<bonus-used/>
+    				<credit/>
+    				<orders/>
+    			</customer>
+    		</return>
+    	</get-customer>
+    	<null-customer pxml="pxml" name="訪客紀錄">
+    		<name pxml="text" name="名稱">訪客未登入</name>
+    		<g pxml="g" prolog="&lt;span style='color:red;' &gt; 請登入&lt;/span&gt;" epilog=" &lt;span style='font-size:11px;color:gray;' &gt; 您可以選擇是否登入, &lt;br/&gt; 系統將以您 facebook 名稱,  &lt;br/&gt;記錄您累積的紅利點數,  &lt;br/&gt; 以利您換購商品  &lt;/span&gt;">
+    			<exe icon="/xlive/images/rst/facebook.gif" pxml="exec" name="facebook login" methodName="facebook_login"></exe>
+    		</g>
+    	</null-customer>
+    	<set-customer>
+    			<customer>
+    				<key/>
+    				<id/>
+    				<name/>
+    				<gis/>
+    				<fid/>
+    				<create-date/>
+    				<last-date/>
+    				<bonus/>
+    				<credit/>
+    				<orders/>
+    			</customer>
+    	</set-customer>
+    	<set-visit>
+    		<fid/>
+    		<name/>
+    		<mall-fid/>
+    		<mall-name/>
+    	</set-visit>
+    	<list-visit>
+    		<fid/>
+    	</list-visit>
+    	<calc-bonus>
+    	    <fid/>
+    	</calc-bonus>
+    	
+	</properties>
+	<method name="get-customer" useClass="xlive.method.rst.customer.xGetCustomerMethod"/>
+	<method name="set-customer" useClass="xlive.method.rst.customer.xSetCustomerMethod"/>
+	<method name="set-visit" useClass="xlive.method.rst.customer.xSetVisitMethod"/>
+	<method name="list-visit" useClass="xlive.method.rst.customer.xListVisitMethod"/>
+	<method name="calc-bonus" useClass="xlive.method.rst.customer.xCalcBonusMethod"/>
+</object>

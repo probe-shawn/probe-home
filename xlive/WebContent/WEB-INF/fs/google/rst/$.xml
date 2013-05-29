@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>file system google</description>
+    	<version>1.0</version>
+    	<root-directory>/gae/rst/upload</root-directory>
+	</properties>
+</object>
+

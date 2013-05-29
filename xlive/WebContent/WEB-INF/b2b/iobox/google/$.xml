@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native,google</resource-type>
+		<description>iobox</description>
+    	<version>1.0</version>
+    	<target-server-url>http://probe-xlive.appspot.com</target-server-url>
+    	<target-object-url>b2b.iobox.probe</target-object-url>
+    	<inbox-directory>./inbox</inbox-directory>
+    	<inbox-maximum-mb>6</inbox-maximum-mb>
+    	<outbox-directory>./outbox</outbox-directory>
+    	<outbox-maximum-mb>6</outbox-maximum-mb>
+    	<sender>
+    	</sender>
+    	<receiver>
+    		<do-dispatcher>true</do-dispatcher>
+			<do-executer>true</do-executer>
+     	</receiver>
+    	<fetcher>
+    		<do-dispatcher>true</do-dispatcher>
+    	    <do-executer>true</do-executer>
+    	</fetcher>
+    	<supplier>
+    	</supplier>
+    	<executer>
+    		<executable-regex>^__(\S+)__\.xml$</executable-regex>
+    	</executer>
+    	<task>
+    		<object-url/>
+    		<file-name/>
+    	</task>
+    	<dispatcher>
+    		<!-- 
+    		<match>
+    			<file-regex/>
+    			<directory-regex></directory-regex>
+    			<to-directory></to-directory>
+    		</match>
+    		-->
+    		<match>
+    			<file-regex>^(TSBCON|TSBPOST|TSAC)\w{4}\d{8}.*</file-regex>
+    			<directory-regex/>
+    			<to-directory>/../ROOT/edubox/class/doc/bank/</to-directory>
+    		</match>
+    	</dispatcher>
+	</properties>
+	<method name="sender" extendArguments="true" useClass="xlive.method.b2b.iobox.google.xSenderMethod"/>
+	<method name="receiver" extendArguments="true" useClass="xlive.method.b2b.iobox.google.xReceiverMethod"/>
+	<method name="fetcher" extendArguments="true" useClass="xlive.method.b2b.iobox.google.xFetcherMethod"/>
+	<method name="supplier" extendArguments="true" useClass="xlive.method.b2b.iobox.google.xSupplierMethod"/>
+	<method name="executer" extendArguments="true" useClass="xlive.method.b2b.iobox.google.xExecuterMethod"/>
+	<method name="task" extendArguments="true" useClass="xlive.method.b2b.iobox.google.xTaskMethod"/>
+	<method name="dispatcher" extendArguments="true" useClass="xlive.method.b2b.iobox.google.xDispatcherMethod"/>
+	<method name="get-properties"><sys.get-properties/></method>
+</object>
+
+

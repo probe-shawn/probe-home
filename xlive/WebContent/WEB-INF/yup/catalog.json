@@ -1,0 +1,26 @@
+{
+	properties:{
+		name:"catalog"
+	},
+	listCatalogStores:{
+		catalog_key:""
+	},
+	listStoreCatalogs:{
+		sid:""
+	},
+	batchStoreCatalogs:{
+		sid:"",
+		ins:[],
+		del:[]
+	},
+	set:{
+		catalog_key:"",
+		sid:""
+	},
+	methods:{
+		listCatalogStores:{use_class:"xlive.method.yup.uListCatalogStores"},
+		listStoreCatalogs:{use_class:"xlive.method.yup.uListStoreCatalogs"},
+		batchStoreCatalogs:{use_class:"xlive.method.yup.uBatchStoreCatalogs"},
+		set:{use_class:"xlive.method.yup.uSetCatalogStore"}
+	}
+}

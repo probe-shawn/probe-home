@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>qcode img</description>
+    	<version>1.0</version>
+    	<qrcode>
+    		<data/>
+    		<error-correct>M</error-correct>
+    		<encode-mode>B</encode-mode>
+    		<version>7</version>
+    		<charset>UTF-8</charset>
+    		<matrix-dot>3</matrix-dot>
+    		<gif-jpeg-png>jpeg</gif-jpeg-png>
+    	</qrcode>
+	</properties>
+	<method name="get-properties"><sys.get-properties/></method>
+	<method name="qrcode" useClass="xlive.method.img.qrcode.google.xQrcodeMethod"></method>
+
+</object>
+

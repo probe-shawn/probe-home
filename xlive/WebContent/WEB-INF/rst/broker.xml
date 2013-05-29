@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+		<set-broker pxml="pxml" name="推薦名店">
+			<broker pxml="g" epilog="&lt;span style='font-size:11px;color:gray;'&gt; 本公司聯絡確認後，將致贈給您 紅利 &lt;span style='color:red'&gt; 10 &lt;/span&gt;點，&lt;br/&gt;如果您有意願協助您所推薦的商家申請上線，&lt;br/&gt;開店完成後，我們再致贈您 紅利&lt;span style='color:red'&gt; 90 &lt;/span&gt;點。&lt;/span&gt;">
+				<key/>
+				<fid/>
+				<name/>
+				<date/>
+				<store-name pxml="input" name="店名" blank="必要欄位"/>
+				<store-phone pxml="input" name="電話" blank="必要欄位"/>
+				<store-addr pxml="input" name="店址"/>
+				<mall-fid/>
+				<state>0</state>
+				<bonus-1>0</bonus-1>
+				<bonus-2>0</bonus-2>
+				<verify-date1/>
+				<verify-date2/>
+				<operator/>
+				<note/>
+			</broker>
+			<g pxml="g">
+				<down-load pxml="exec" name="我要協助開店" methodName="download"/>
+			</g>
+    	</set-broker>
+	</properties>
+	<method name="set-broker" useClass="xlive.method.rst.broker.xSetBrokerMethod"/>
+</object>

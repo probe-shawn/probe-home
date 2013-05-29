@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<list-bill>
+    		<link></link>
+    		<fid></fid>
+    		<type></type>
+    	</list-bill>
+    	<set-bill>
+    		<key/>
+    		<fid/>
+    		<link/>
+    		<type/>
+    		<qty/>
+    		<amount/>
+    		<remark/>
+    		<writeoff/>
+    		<doneflag/>
+    	</set-bill>
+    	<process-income>
+    		<key/>
+    	</process-income>
+    	
+    	<write-off>
+    		<bid/>
+    	</write-off>
+    	
+    	<process-fee>
+    		<mall-fid/>
+    		<month-date/>
+    				
+    	</process-fee>
+    	
+    	<calc-mallfee>
+    		<date/>		
+    	</calc-mallfee>
+    	<list-servicefee>
+    		<fid/>		
+    	</list-servicefee>
+	</properties>
+	<method name="list-bill" useClass="xlive.method.rst.finance.xListBillMethod"/>
+	<method name="set-bill" useClass="xlive.method.rst.finance.xSetBillMethod"/>
+	<method name="writeoff-bill" useClass="xlive.method.rst.finance.xWriteOffMethod"/>
+	<method name="process-income" useClass="xlive.method.rst.finance.xProcessIncomeMethod"/>
+	<method name="process-fee" useClass="xlive.method.rst.finance.xProcessFeeMethod"/>
+	<method name="calc-mallfee" useClass="xlive.method.rst.finance.xCalcMallFeeMethod"/>
+	<method name="list-servicefee" useClass="xlive.method.rst.finance.xListServiceFeeMethod"/>
+</object>

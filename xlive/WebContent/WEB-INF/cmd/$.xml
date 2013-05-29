@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>dos command service</description>
+    	<version>1.0</version>
+		<execute>
+			<command/>
+			<wait-for>true</wait-for>
+			<return>
+				<exit-value/>
+				<output/>
+			</return>
+		</execute>
+	</properties>
+	<method name="execute" useClass="xlive.method.cmd.xExecuteMethod"/>
+    <method name="get-properties"><sys.get-properties/></method>
+</object>
+
+
+

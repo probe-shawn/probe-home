@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<barters/>
+    	<set-barter>
+    	</set-barter>
+    	<agree-love-me>
+    		<love-me-key/>
+    		<my-love-key/>
+    	</agree-love-me>
+    	<remove-barter>
+    	</remove-barter>
+    	<update-status>
+    	</update-status>
+	</properties>
+	<method name="set-barter" useClass="xlive.method.rst.barter.channel.xSetBarterMethod"/>
+	<method name="remove-barter" useClass="xlive.method.rst.barter.channel.xRemoveBarterMethod"/>
+	<method name="update-status" useClass="xlive.method.rst.barter.channel.xUpdateStatusMethod"/>
+</object>

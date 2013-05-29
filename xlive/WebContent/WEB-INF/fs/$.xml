@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>file system</description>
+    	<version>1.0</version>
+    	<root-directory></root-directory>
+    	<file>
+    		<work-directory/>
+    		<name/>
+    		<return>
+    			<exists/>
+    			<is-directory/>
+    			<is-hidden/>
+    			<last-modified/>
+    			<length/>
+    		</return>
+    	</file>
+    	<md>
+    		<work-directory/>
+    		<name/>
+    		<return>
+    			<valid>false</valid>
+    			<why></why>
+    		</return>
+    	</md>
+    	<rd>
+    		<work-directory/>
+    		<name/>
+    		<return>
+    			<valid>false</valid>
+    			<why></why>
+    		</return>
+    	</rd>
+    	<del>
+    		<work-directory/>
+    		<name/>
+    		<return>
+    			<valid>false</valid>
+    			<why></why>
+    		</return>
+    	</del>
+    	<deltree>
+    		<work-directory/>
+    		<name/>
+    		<return>
+    			<valid>false</valid>
+    			<why></why>
+    		</return>
+    	</deltree>
+    	<rename>
+    		<work-directory/>
+    		<name/>
+    		<to-work-directory/>
+    		<to-name/>
+    		<return>
+    			<valid>false</valid>
+    			<why></why>
+    		</return>
+    	</rename>
+    	<list>
+    		<work-directory/>
+    		<name/>
+    		<deep>true</deep>
+    		<file-or-directory-only></file-or-directory-only>
+    		<filter-regexp></filter-regexp>
+    		<return>
+    			<valid>false</valid>
+    			<why></why>
+    			<root/>
+    		</return>
+    	</list>
+    	<upload>
+    		<work-directory/>
+    		<prefix-file-name/>
+    		<maximum-mb>60</maximum-mb>
+    		<return>
+    			<data/>
+    			<valid/>
+    			<why/>
+    		</return>
+    	</upload>
+    	<download>
+    		<work-directory/>
+    		<name/>
+    		<file-name/>
+    	</download>
+		<get-properties>
+			<exclude>
+				<root-directory/>
+				<get-properties/>
+			</exclude>
+		</get-properties>
+	</properties>
+ <method name="initial"/>
+ <method name="dispose"/>
+ <method name="file" useClass="xlive.method.fs.xFileMethod"/>
+ <method name="md" useClass="xlive.method.fs.xMdMethod"/>
+ <method name="rd" useClass="xlive.method.fs.xRdMethod"/>
+ <method name="del" useClass="xlive.method.fs.xDelMethod"/>
+ <method name="deltree" useClass="xlive.method.fs.xDelTreeMethod"/>
+ <method name="rename" useClass="xlive.method.fs.xRenameMethod"/>
+ <method name="list" useClass="xlive.method.fs.xListMethod"/>
+ <method name="upload" useClass="xlive.method.fs.xUploadMethod"/>
+ <method name="download" useClass="xlive.method.fs.xDownloadMethod"/>
+ <method name="get-properties"><sys.get-properties/></method>
+</object>
+

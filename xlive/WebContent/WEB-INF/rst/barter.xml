@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<barters/>
+    	<set-barter pxml="pxml" name="設定物件">
+    		<key/>
+    		<id/>
+    		<owner-fid/>
+    		<owner-name/>
+    		<creator-fid/>
+    		<creator-name/>
+    		<name pxml="input" name="名稱"  blank="品項物件, 必要欄位"/>
+    		<date/>
+    		<icon pxml="fbimg" name="物件圖片" />
+    		<icons pxml="pxml" name="物件影音" create="tag:icon;name:圖片與影片;pxml:fbimg;removable:true;video:true;detail:true;label:新增圖片與影片">
+    		</icons>
+    		<desc-html pxml="textarea" name="物件描述"/>
+    		<spec-xml pxml="pxml" name="物件資訊" create="tag:kv;name:;pxml:kv;kblank:-項目-;vblank:-資訊-;removable:true;video:true;detail:true;label:新增 項目-資訊">
+    		</spec-xml>
+    		<type>0</type>
+    		<status>0</status>
+    		<i-love/>
+    		<love-mes/>
+    	</set-barter>
+    	<list>
+    		<owner-fid/>
+    	</list>
+    	<list-my-love>
+    		<owner-fid/>
+    	</list-my-love>
+    	<queue-love-me>
+    		<my-love-key/>
+    		<love-me-key/>
+    	</queue-love-me>
+    	<cancel-i-love>
+    		<i-love-key/>
+    		<my-love-key/>
+    	</cancel-i-love>
+    	<reject-love-me>
+    		<love-me-key/>
+    		<my-love-key/>
+    	</reject-love-me>
+    	<cancel-love-me>
+    		<love-me-key/>
+    		<my-love-key/>
+    	</cancel-love-me>
+    	<agree-love-me>
+    		<love-me-key/>
+    		<my-love-key/>
+    	</agree-love-me>
+    	<remove-barter>
+    		<key/>
+    	</remove-barter>
+    	<swap-date>
+    		<key1/>
+    		<key2/>
+    	</swap-date>
+    	<update-status>
+    		<key/>
+    		<status/>
+    	</update-status>
+    	<list-hot>
+    		<owner-fid/>
+    	</list-hot>
+	</properties>
+	<method name="set-barter" useClass="xlive.method.rst.barter.xSetBarterMethod"/>
+	<method name="list" useClass="xlive.method.rst.barter.xListMethod"/>
+	<method name="list-my-love" useClass="xlive.method.rst.barter.xListMyLoveMethod"/>
+	<method name="queue-love-me" useClass="xlive.method.rst.barter.xQueueLoveMeMethod"/>
+	<method name="cancel-i-love" useClass="xlive.method.rst.barter.xCancelILoveMethod"/>
+	<method name="reject-love-me" useClass="xlive.method.rst.barter.xRejectLoveMeMethod"/>
+	<method name="cancel-love-me" useClass="xlive.method.rst.barter.xCancelLoveMeMethod"/>
+	<method name="agree-love-me" useClass="xlive.method.rst.barter.xAgreeLoveMeMethod"/>
+	<method name="remove-barter" useClass="xlive.method.rst.barter.xRemoveBarterMethod"/>
+	<method name="update-status" useClass="xlive.method.rst.barter.xUpdateStatusMethod"/>
+	<method name="swap-date" useClass="xlive.method.rst.barter.xSwapDateMethod"/>
+	<method name="list-hot" useClass="xlive.method.rst.barter.xListHotMethod"/>
+</object>

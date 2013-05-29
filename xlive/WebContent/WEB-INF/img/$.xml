@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>img service</description>
+    	<version>1.0</version>
+    	<cached-images-instance lifeCycle="session"/>
+    	<create-cached-image>
+    		<cached-name/>
+    		<type/>
+    		<width/>
+    		<height/>
+    		<params>
+    		</params>
+    		<return>
+    			<cached-name/>
+    		</return>
+    	</create-cached-image>
+    	<dynamic-image>
+    		<type/>
+    		<width/>
+    		<height/>
+    		<params>
+    		</params>
+    	</dynamic-image>
+    	<png>
+    		<width/>
+    		<height/>
+    		<color/>
+    		<opague/>
+    	</png>
+    	<gradient>
+    		<c/>
+    		<fo/>
+    		<to/>
+    		<w/>
+    		<h/>
+    	</gradient>
+    	<box>
+    		<c/>
+    		<w/>
+    		<h/>
+    		<fo/>
+    		<to/>
+    		<b/>
+    	</box>
+    	<random>
+    		<c/>
+    		<w/>
+    		<h/>
+    		<o/>
+    		<r/>
+    	</random>
+    	<number>
+    		<num/>
+    	</number>
+	
+	</properties>
+	<method name="get-properties"><sys.get-properties/></method>
+	<!--<method name="create-cached-image" useClass="xlive.method.img.xCreateCachedImageMethod"></method>-->
+	<method name="dynamic-image" useClass="xlive.method.img.xDynamicImageMethod"></method>
+	<method name="png" useClass="xlive.method.img.xPngMethod"></method>
+	<method name="gradient" useClass="xlive.method.img.xGradientMethod"></method>
+	<method name="box" useClass="xlive.method.img.xBoxMethod"></method>
+	<method name="random" useClass="xlive.method.img.xRandomMethod"></method>
+	<method name="number" useClass="xlive.method.img.xNumberMethod"></method>
+</object>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+	<data>
+		<user-id>probe</user-id>
+		<user-pass>probe</user-pass>
+		<user-name/>
+		<comp-code/>
+		<authorized  grantAll="false">
+			<grant name="/protected/order"><item>IDUQPXYZ</item></grant>
+			<prohibit name="/protected/strict"></prohibit>
+		</authorized>
+	</data>
+</user>
+
+
+

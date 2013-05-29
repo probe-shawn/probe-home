@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xlive-config>
+	<resource-type>native</resource-type>
+	<description>configuration</description>
+    <version>1.0</version>
+	<server>
+		<context id="administrator">
+			<properties/>
+			<life-cycle-trace/>
+			<login-data/>
+		</context>
+	</server>
+	<protected>
+		<directory>protected</directory>
+	</protected>
+	<security-html>
+		<xlive>
+			<login-please>/security/loginPlease.html</login-please>
+			<login>/security/login.html</login>
+			<login-error>/security/loginError.html</login-error>
+			<unauthorized>/security/unauthorized.html</unauthorized>
+		</xlive>
+		<https>
+			<login>/security/https_login.html</login>
+			<login-error>/security/https_loginError.html</login-error>
+			<unauthorized>/security/https_unauthorized.html</unauthorized>
+			<register>/security/https_register.html</register>
+			<register-error>/security/https_registerError.html</register-error>			
+		</https>
+	</security-html>
+	<context-pattern>
+		<properties/>
+		<life-cycle-trace/>
+		<login-data/>
+	</context-pattern>
+</xlive-config>
+

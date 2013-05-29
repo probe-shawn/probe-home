@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job>
+	<name></name>
+	<description></description>
+	<!--
+	<schedule-date-pattern>* * * * *</schedule-date-pattern>
+	-->
+	<schedule-time-interval>5000</schedule-time-interval>
+	<object-name>b2b.sms</object-name>
+	<method-name>start-service</method-name>
+	<start-date/>
+	<end-date/>
+	<on-server-start>false</on-server-start>
+	<run-once>true</run-once>
+	<arguments/>
+	<stop>true</stop>
+</job>
+

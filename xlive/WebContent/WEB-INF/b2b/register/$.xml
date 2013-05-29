@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native,probe</resource-type>
+		<description>register</description>
+    	<version>1.0</version>
+    	<server-url>http://probe-xlive2.appspot.com</server-url>
+    	<object-url>probe.service</object-url>
+    	<register>
+    		<name/>
+			<icon/>
+			<description/>
+   			<authorized-id/>
+   			<authorized-key/>
+    		<due-date/>
+    		<user-count/>
+    		<comp-code/>
+    		<options/>
+    		<create-date/>
+			<last-modified/>
+			<external-url/>
+			<internal-url/>
+			<host-name/>
+			<port/>
+			<welcome-html/>
+    		<mail/>
+    		<return/>
+    	</register>
+	</properties>
+ <method name="initial"/>
+ <method name="dispose"/>
+ <method name="register" useClass="xlive.method.b2b.register.xRegisterMethod"/>
+ <method name="get-properties"><sys.get-properties/></method>
+</object>

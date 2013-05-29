@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<get-mall>
+	    	<key/>
+	    	<fid/>
+    	</get-mall>
+    	<set-mall>
+    		<mall pxml="pxml" name="iMall">
+    			<key/>
+    			<id/>
+    			<fid/>
+    			<name name="名稱" blank="必要欄位" pxml="text"/>
+    			<type name="類別"  options="activity,actor,article,athlete,author,album,bar,band,blog,book,company,cafe,city,country,cause,director,drink,food,game,government,hotel,landmark,musician,movie,non_profit,politician,public_figure,product,restaurant,sport,sports_league,sports_team,school,state_province,song,tv_show,university,website" >product</type>
+    			<date/>
+    			<phone name="電話" blank="必要欄位" pxml="input"/>
+    			<addr name="地址" blank="外送,面交,宅配, 必要欄位" pxml="html" objectName="addressSelect"  url="/xlive/rst2/menu/addressSelect.html"/>
+    			<desc name="簡述"/>
+   				<desc-html name="簡介" pxml="textarea"/>
+   				<mall-bg-icon name="封面圖片" pxml="fbimg" /> 
+	    		<mall-icons pxml="pxml" name="形象影音輯" create="tag:mall-icon;name:圖片與影片;pxml:fbimg;removable:true;video:true;detail:true;label:新增圖片與影片"/>
+    			<shop name="商品購物" pxml="pxml" data="市集設定">
+    					<store-name name="實體店名" pxml="input"/>
+    					<open-time name="營業時間" pxml="select" multiple="true" options="AM 9:00 ~ PM 6:00,AM 9:00 ~ PM 10:00,24 小時">24 小時</open-time>
+    					<service-type name="服務方式" pxml="select" multiple="true" options="外送,自取,面交,宅配">外送,自取,面交,宅配</service-type>
+		     			<fare name="外送及宅配設定" pxml="pxml">
+		    				<outgo pxml="g" prolog="外送" epilog="買家低於最低金額的訂單將無法送出, 0 表示不設限.">
+		    					<min-outgo name="外送最低金額" pxml="int" min="0">0</min-outgo>
+		    				</outgo>
+		    				<delivery pxml="g" prolog="宅配" epilog="免運費最低金額 0 表示沒有設定 免運費">
+		    					<fare-delivery name="宅配運費" pxml="int" min="0">0</fare-delivery>
+		    					<max-delivery name="免運費最低金額" pxml="int" min="0">0</max-delivery>
+		    				</delivery>
+		    			</fare>
+		    			<bonus-percent name="使用紅利百分比" pxml="select" options="10%,20%,30%">30%</bonus-percent>
+		    			<bonus-percent-limit>50%</bonus-percent-limit>
+		    			<service-message name="購買訊息揭示" pxml="textarea" epilog="ex: 五公里內，訂購金額滿200元，免費外送，其餘需外送者，酌收運費。大量訂購，請提前一日預訂。"></service-message>
+     					<mail name="信箱" pxml="input" blank="輸入email帳號, 新進訂單,系統自動發信通知" />
+						<menu-bg-icon name="商品購物封面圖片" pxml="fbimg" /> 
+    			</shop>
+   				<barter name="以物易物" pxml="pxml" data="易物設定">
+   						<barter-bg-icon name="以物易物封面圖片" pxml="fbimg" /> 
+   				</barter>
+    			<note name="備註" pxml="input"/>
+    			<latitude/>
+    			<longitude/>
+    			<status/>
+    			<tz-offset/>
+    			<mall-type>account</mall-type>
+    		</mall>
+    	</set-mall>
+    	<list-mall>
+    		<ins/>
+    	</list-mall>
+    	<list-page-mall/>
+    	<set-pause>
+    		<mall pxml="pxml" name="iMall">
+	    		<mall-fid/>
+	    		<pause-string name="接單" pxml="select" options="營運中,暫停接單"/>
+	    		<pause-message name="暫停接單訊息揭示" blank="必要欄位" pxml="input">暫停接單</pause-message>
+    		</mall>
+    	</set-pause>
+    	<get-localmall>
+	    	<latitude/>
+	    	<longitude/>
+    	</get-localmall>
+    	<copy-malldetail/>
+    	<patch-mall/>
+	</properties>
+	<method name="get-mall" useClass="xlive.method.rst.mall.xGetMallMethod"/>
+	<method name="set-mall" useClass="xlive.method.rst.mall.xSetMallMethod"/>
+	<method name="list-mall" useClass="xlive.method.rst.mall.xListMallMethod"/>
+	<method name="list-page-mall" useClass="xlive.method.rst.mall.xListPageMallMethod"/>
+	<method name="set-pause" useClass="xlive.method.rst.mall.xSetPauseMethod"/>
+	<method name="copy-malldetail" useClass="xlive.method.rst.mall.xCopyMallDetailMethod"/>
+	<method name="patch-mall" useClass="xlive.method.rst.mall.xPatchMallMethod"/>
+</object>

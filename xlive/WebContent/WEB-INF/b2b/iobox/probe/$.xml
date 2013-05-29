@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native,probe</resource-type>
+		<description>iobox to probe</description>
+    	<version>1.0</version>
+    	<target-server-url>http://probe-xlive.appspot.com</target-server-url>
+    	<target-object-url>probe.iobox</target-object-url>
+    	<inbox-directory>./inbox</inbox-directory>
+    	<inbox-maximum-mb>6</inbox-maximum-mb>
+    	<outbox-directory>./outbox</outbox-directory>
+    	<outbox-maximum-mb>6</outbox-maximum-mb>
+	</properties>
+</object>
+

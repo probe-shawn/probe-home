@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<list>
+    		<mall-fid/>
+    	</list>
+		<set-options>
+			<mall-fid/>
+    		<pxml/>
+    	</set-options>
+	</properties>
+	<method name="list" useClass="xlive.method.rst.options.xListMethod"/>
+	<method name="set-options" useClass="xlive.method.rst.options.xSetOptionsMethod"/>
+</object>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pxml pxml="pxml" name="test1" prolog="prolog" epilog="epilog">
+		<product-name name="姓氏" pxml="text" editable="true">林務局</product-name>
+		<product-id name="ID" pxml="input">123456789</product-id>
+		<product-date name="日期" pxml="date" readonly="false"></product-date>
+		<sex name="sex" pxml="bool" true="male" false="female">male</sex>
+		<sex name="qty" pxml="int" max="5" min="3" blank='請填入數量'></sex>
+		<icon icon="/xlive/images/pxml/bool_onoff.png" name="icon" pxml="img" dmName="fs.google.rst">/xlive/images/pxml/bool_onoff.png</icon>
+		<brief icon="/xlive/images/pxml/help.png" name="簡述" pxml="textarea" readonly="false">this is brief test</brief>
+		<desc icon="/xlive/images/pxml/advance.png" name="desc" pxml="rich" prolog="prolog" epilog="epilog" readonly="false">description</desc>
+		<test name="html" pxml="html" prolog="prolog" epilog="epilog" url="/xlive/test2.html">html ajax test</test>
+		<test name="execute method" pxml="exec" prolog="prolog" epilog="epilog" methodName="domethod">html ajax test</test>
+		
+		<g pxml="g"  prolog="group test" epilog="epilog">
+			<choose-one name="radio test" prolog="prolog" epilog="epilog" pxml="select" options="one,two,three" sep=",">two</choose-one>
+			<multiple name="check test" pxml="select" multiple="true" options="123,456,789,8888,7777" sep=",">456,8888</multiple>
+		</g>
+		<gs name="another properties" pxml="pxml" prolog="prolog" epilog="epilog">
+		 	<sex name="sex" pxml="bool" true="male" false="female">male</sex>
+			<brief name="簡述" pxml="textarea" editable="true">this is brief test</brief>
+			<desc name="desc" pxml="rich" prolog="prolog" epilog="epilog" editable="true">description</desc>
+			<choose-one name="radio test" prolog="prolog" epilog="epilog" pxml="select" options="one,two,three" sep=",">two</choose-one>
+			<multiple name="check test" pxml="select" multiple="true" options="123,456,789,8888,7777" sep=",">456,8888</multiple>
+		</gs>
+</pxml>

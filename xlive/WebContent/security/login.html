@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+</head>
+<body>
+	<div id="login_main" xlvobject="xlv.obj.pane" xlvprop="{glow:{enable:true},border:{enable:true},bkOpacity:true}"
+			xlvmethod="{
+			initial:function(){
+				this.addEventHandler('keyup','_defaultEnter');
+				this.$self('initial');
+			},
+			_defaultEnter:function(event){
+				var c=(event.keyCode||event.which);
+			},
+			styleFor:function(root){
+				root.style.background='url(/xlive/images/lightgrayTexture.gif) left top repeat';
+			}
+		}"
+	>
+		<div id="login_trigger" xlvobject="xlv.obj.dmTrigger" xlvprop="{enabled:false,dmName:'user',listener:{when:'afterModelChanged',notify:'setChanged',memoType:'create',memoMethods:'login'}}"
+			 xlvmethod="{
+			 	process:function(options){
+			 		xlv.sys.stopCurrentEditor(true);
+			 		var dm=this.getDataModel();
+			 		var password=dm.getValue('login.return.valid');
+			 		if('true'==password){
+						var pane=xlv.util.findParent(this,{id:'login_main'});
+						pane.dispose();
+					}else{
+						var why=dm.getValue('login.return.why');
+						alert('login error :\n'+why);
+					}
+			 	}
+			 }"
+		>
+		</div>
+		<div style="padding:20px;width:300px;">
+			<table border="0" style="font-family:Arial;font-size:12px;text-align:left;">
+				<tr>
+					<td rowSpan="4" style="padding-right:12px"><img src="/xlive/images/login.png" width="64"></img></td>
+					<td>user-id</td>
+					<td><div xlvobject="xlv.obj.input" xlvprop="{dmName:'user',dmPath:'login.user-id'}"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>password</td>
+					<td>
+						<div xlvobject="xlv.obj.input" xlvprop="{password:true,dmName:'user',dmPath:'login.user-pass'}">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<div xlvobject="xlv.obj.checkbox" xlvprop="{dmName:'user',dmPath:'login.cache',text:'Remember me'}"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+					<nobr>
+					<button xlvobject="xlv.obj.dmProcess" xlvprop="{dmName:'user',methodName:'login',srcImg:'/xlive/images/user.png',title:'login'}"
+						xlvmethod="{
+							process:function(options){
+								var dm=this.getDataModel();
+								var id=dm.getValue('login.user-id');
+								if(!id||id.strip().length==0) {
+									alert('user id is blank');
+									return;
+								}
+								var pass=dm.getValue('login.user-pass');
+								if(!pass||pass.strip().length==0) {
+									alert('password is blank');
+									return;
+								}
+								var trig=this.getObjectById('login_trigger');
+								trig.enabled(true);
+								this.$self('process');
+							}
+						}"
+					></button>
+					<button xlvobject="xlv.obj.dmProcess" xlvprop="{srcImg:'/xlive/images/cancel.png',title:'cancel'}"
+						xlvmethod="{
+							process:function(options){
+								var pane=xlv.util.findParent(this,{id:'login_main'});
+								pane.dispose();
+							}
+						}"
+					></button>
+					</nobr>
+					</td>
+				</tr>
+			</table>
+			<!-- <div xlvobject="xlv.obj.tree" xlvprop="{dmName:'user'}"></div>-->
+		</div>	
+	</div>	
+</body>
+</html>

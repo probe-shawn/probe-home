@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<set-bonus>
+   			<from-type/>
+   			<from-id/>
+   			<bonus/>
+   			<to-type/>
+   			<to-id/>
+   			<note/>
+    	</set-bonus>
+	</properties>
+	<method name="set-bonus" useClass="xlive.method.rst.bonus.xSetBonusMethod"/>
+</object>

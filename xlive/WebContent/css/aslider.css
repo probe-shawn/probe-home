@@ -1,0 +1,19 @@
+
+.aSlider{
+	position:relative;
+	font-family: 'Open Sans Condensed','Arial Narrow', serif;
+	background: #ddd url(/xlive/images/flip/fabric_plaid.png) repeat top left !important;
+	font-weight: 400;
+	font-size: 15px;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	margin: 0;
+}
+.aSlider .s-page {
+	position:absolute;
+	width:100%;
+}

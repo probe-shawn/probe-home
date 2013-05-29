@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>database</description>
+    	<version>1.0</version>
+    	<gae-redirect-url>http://probe.com.tw:8080/</gae-redirect-url>
+    	<datasource-instance lifeCycle="server"></datasource-instance>
+		<create-datasource>
+			<class-name>ConnectionPoolDataSource</class-name>
+			<url>
+			<![CDATA[jdbc:]]> 
+			</url> 
+			<user/>
+			<password/>
+		</create-datasource>
+		<connection-instance lifeCycle="session"/>
+		<connection-reference-count lifeCycle="session">0</connection-reference-count>
+ 		<connection-resultset-instance-table lifeCycle="session"/>
+    	<auto-commit lifeCycle="session">true</auto-commit>
+		<get-connection>
+			<user/>
+			<password/>
+		</get-connection>
+		<close-connection/>
+		<table-columns>
+			<catalog/>
+			<schema/>
+			<table/>
+			<column/>
+			<return>
+				<columns/>
+			</return>
+		</table-columns>
+		<best-row-identifier>
+			<catalog/>
+			<schema/>
+			<table/>
+			<scope/>
+			<nullable/>
+			<return>
+				<columns/>
+			</return>
+		</best-row-identifier>
+		<tables>
+			<catalog/>
+			<schema/>
+			<table/>
+			<types>TABLE,VIEW</types>
+			<return>
+				<tables/>
+			</return>
+		</tables>
+		<primary-keys>
+			<catalog/>
+			<schema/>
+			<table/>
+			<return>
+				<columns/>
+			</return>
+		</primary-keys>
+		<set-autocommit>
+			<on>true</on>
+		</set-autocommit>
+		<commit/>
+		<rollback/>
+		<isolation-level>
+		</isolation-level>
+		<procedures>
+			<catalog/>
+			<schema/>
+			<name/>
+			<return>
+				<procedures>
+				</procedures>
+			</return>
+		</procedures>
+		<procedure-columns>
+			<catalog/>
+			<schema/>
+			<name/>
+			<column/>
+			<return>
+				<columns/>
+			</return>
+		</procedure-columns>
+		<get-properties>
+			<exclude>
+				<datasource-instance/>
+				<connection-instance/>
+				<get-connection/>
+				<close-connection/>
+			</exclude>
+		</get-properties>
+	</properties>
+	<method name="dispose">
+		<arguments>
+			<session-closed>true</session-closed>
+		</arguments>
+		<this.close-connection/>
+	</method>
+	<method name="create-datasource" useClass="xlive.method.db.xCreateDataSourceMethod"/>
+	<method name="remove-datasource" useClass="xlive.method.db.xRemoveDataSourceMethod"/>
+	<method name="get-connection" useClass="xlive.method.db.xGetConnectionMethod"/>
+	<method name="close-connection" useClass="xlive.method.db.xCloseConnectionMethod"/>
+	
+	<method name="set-autocommit"  useClass="xlive.method.db.xSetAutoCommitMethod"/>
+	<method name="commit"  useClass="xlive.method.db.xCommitMethod"/>
+	<method name="rollback"  useClass="xlive.method.db.xRollBackMethod"/>
+	<method name="isolation-level"  useClass="xlive.method.db.xIsolationLevelMethod"/>
+	
+	<method name="best-row-identifier" useClass="xlive.method.db.xBestRowIdentifierMethod"/>
+	<method name="table-columns" useClass="xlive.method.db.xTableColumnsMethod"/>
+	<method name="tables" useClass="xlive.method.db.xTablesMethod"/>
+	<method name="primary-keys" useClass="xlive.method.db.xPrimaryKeysMethod"/>
+	<method name="procedures" useClass="xlive.method.db.xProceduresMethod"/>
+	<method name="procedure-columns" useClass="xlive.method.db.xProcedureColumnsMethod"/>
+	<method name="get-properties"><sys.get-properties/></method>
+
+</object>
+

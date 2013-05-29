@@ -1,0 +1,22 @@
+
+{
+	properties:{
+		name:"property"
+	},
+	set:{
+		key:''
+	},
+	sort:{},
+	get:{
+		key:''
+	},
+	list:{},
+	del:{},
+	methods:{
+		set:{use_class:"xlive.method.yup.prop.uSetProperty"},
+		get:{use_class:"xlive.method.yup.prop.uGetProperty"},
+		sort:{use_class:"xlive.method.yup.prop.uSortProperty"},
+		list:{use_class:"xlive.method.yup.prop.uListProperty"},
+		del:{use_class:"xlive.method.yup.prop.uDelProperty"}
+	}
+}

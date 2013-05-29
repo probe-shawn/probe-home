@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+ <!--
+  <cron>
+    <url>/web/b2b/register?method=register</url>
+    <description>register every 6 hours</description>
+    <schedule>every 6 hours</schedule>
+  </cron>
+  <cron>
+    <url>/web/rst/statistic?method=calc-bonus-product-rank</url>
+    <description>register every 3 minutes from 7:00 to 23:59</description>
+    <timezone>Asia/Taipei</timezone>
+    <schedule>every 3 minutes from 7:00 to 23:59</schedule>
+  </cron>
+  <cron>
+    <url>/web/rst/statistic?method=calc-bonus-customer-rank</url>
+    <description>register every 3 minutes from 7:00 to 23:59</description>
+    <timezone>Asia/Taipei</timezone>
+    <schedule>every 3 minutes from 7:00 to 23:59</schedule>
+  </cron>
+  <cron>
+    <url>/web/rst/statistic?method=complete-goods-month</url>
+    <description>every day 00:30</description>
+    <timezone>Asia/Taipei</timezone>
+    <schedule>every day 00:30 </schedule>
+  </cron>
+  <cron>
+    <url>/web/rst/statistic?method=complete-goods-week</url>
+    <description>every day 00:50</description>
+    <timezone>Asia/Taipei</timezone>
+    <schedule>every day 00:50</schedule>
+  </cron>
+  <cron>
+    <url>/web/rst/statistic?method=calc-goods-day-rank</url>
+    <description>every day 00:10</description>
+    <timezone>Asia/Taipei</timezone>
+    <schedule>every day 00:10</schedule>
+  </cron>
+  <cron>
+    <url>/web/rst/report?method=task-calc-mall-daily</url>
+    <description>every day 01:00</description>
+    <timezone>Asia/Taipei</timezone>
+    <schedule>every day 01:00</schedule>
+  </cron>
+  <cron>
+    <url>/web/rst/finance?method=calc-mallfee</url>
+    <description>every 1 of month</description>
+    <timezone>Asia/Taipei</timezone>
+    <schedule>1 of month 01:00</schedule>
+  </cron>
+   <cron>
+    <url>/web/rst/finance?method=calc-mallfee</url>
+    <description>every 2 of month</description>
+    <timezone>Asia/Taipei</timezone>
+    <schedule>2 of month 17:00</schedule>
+  </cron>
+ -->   
+</cronentries>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>informix</description>
+    	<version>1.0</version>
+		<create-datasource>
+			<class-name>com.informix.jdbcx.IfxConnectionPoolDataSource</class-name>
+			<!--<ifx-host></ifx-host>-->
+			<!--<port-number></port-number>-->
+			<!--<server-name></server-name>-->
+			<!--<database-name></database-name>-->
+			<!--<user></user>-->
+			<!--<password></password>-->
+		</create-datasource>
+	</properties>
+	<method name="create-datasource" useClass="xlive.method.db.informix.xCreateDataSourceMethod"/>
+</object>
+
+
+

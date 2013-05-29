@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>xml</description>
+    	<version>1.0</version>
+    	<root-directory></root-directory>
+    	<load-xml>
+    		<work-directory/>
+    		<name/>
+    		<return>
+    			<valid/>
+    			<why/>
+    			<xml/>
+    		</return>
+    	</load-xml>
+    	<save-xml>
+    		<work-directory/>
+    		<prefix-file-name/>
+    		<xml/>
+    		<return>
+    			<valid/>
+    			<why/>
+    		</return>
+    	</save-xml>
+	</properties>
+	<method name="load-xml" useClass="xlive.method.xml.xLoadXmlMethod" useType="apply"/>
+	<method name="save-xml" useClass="xlive.method.xml.xSaveXmlMethod" useType="apply"/>
+	<method name="get-properties"><sys.get-properties/></method>
+	
+</object>
+

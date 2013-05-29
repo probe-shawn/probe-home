@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>address</description>
+    	<version>1.0</version>
+    	
+    	<get-street>
+    		<city/>
+    		<area/>    	
+    		<url>http://www.post.gov.tw/post/internet/f_searchzone/streetNameData.jsp</url>	
+    		<return>
+    		</return>
+    	</get-street>
+    	
+    	<get-localdata>
+    		<location/>
+    		<radius>500</radius>    	
+    		<url>https://maps.googleapis.com/maps/api/place/search/xml</url>	
+    		<sensor>false</sensor>
+    		<key>AIzaSyCqUqduJsVDnA70djeVI2fixhpvHAlmV0g</key>
+    		<return>
+    		</return>
+    	</get-localdata>
+    	
+	</properties>
+	<method name="get-street" useClass="xlive.method.addr.xGetStreetMethod"/>
+	<method name="get-localdata" useClass="xlive.method.addr.xGetLocalDataMethod"/>
+</object>

@@ -1,0 +1,41 @@
+
+{
+	properties:{
+		name:'tagproduct'
+	},
+	set:{
+		key:''
+	},
+	get:{
+		key:''
+	},
+	listkeys:{
+		product_key:'',
+		tag_key:''
+	},
+	batch:{
+		ins:[
+			{product_key:'',
+			tag_key:'',
+			sort:''
+			}
+		],
+		del:[
+			{product_key:'',
+			tag_key:''
+			}
+		]
+	},
+	sort:{
+		product_key:'',
+		tag_key:'',
+		sort:''
+	},
+	methods:{
+		set:{use_class:"xlive.method.yup.tag.uSetTagProduct"},
+		get:{use_class:"xlive.method.yup.tag.uGetTagProduct"},
+		listkeys:{use_class:"xlive.method.yup.tag.uListKeys"},
+		batch:{use_class:"xlive.method.yup.tag.uBatchTagProduct"},
+		sort:{use_class:"xlive.method.yup.tag.uSortTagProduct"}
+	}
+}

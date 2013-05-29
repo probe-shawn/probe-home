@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object lifeCycle="server">
+	<properties>
+		<resource-type>native</resource-type>
+		<description>schedule service</description>
+    	<version>1.0</version>
+    	<jobs-directory>./jobs</jobs-directory>
+    	<google-task>
+    		<job-name/>
+    		
+    	</google-task>
+	</properties>
+	<method name="initial">
+		<this.start/>
+	</method>
+	<method name="dispose">
+		<this.stop/>
+	</method>
+	<method name="start" useClass="xlive.method.schedule.xStartMethod"/>
+	<method name="stop" useClass="xlive.method.schedule.xStopMethod"/>
+	<method name="google-task" useClass="xlive.method.schedule.xGoogleTaskMethod"/>
+	<method name="get-properties"><sys.get-properties/></method>
+</object>
+

@@ -1,0 +1,27 @@
+
+{
+	properties:{
+		name:"company"
+	},
+	set:{
+		cid:''
+	},
+	get:{
+		cid:''
+	},	
+	list:{
+	},
+	del:{
+		cid:''
+	},
+	listStores:{
+		cid:''
+	},
+	methods:{
+		set:{use_class:"xlive.method.yup.uSetCompany"},
+		get:{use_class:"xlive.method.yup.uGetCompany"},
+		del:{use_class:"xlive.method.yup.uDelCompany"},
+		list:{use_class:"xlive.method.yup.uListCompany"},
+		listStores:{use_class:"xlive.method.yup.uListCompanyStores"}
+	}
+}

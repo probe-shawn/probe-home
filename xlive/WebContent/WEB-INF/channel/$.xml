@@ -1,0 +1,71 @@
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>channel</description>
+    	<version>1.0</version>
+    	<get-token>
+    		<fid/>
+    		<name/>
+    		<barter-fid/>
+    		<barter-name/>
+    		<mall-fid/>
+    		<mall-name/>
+    		<type/>
+    	</get-token>
+    	<opened>
+    		<id/>
+    		<name/>
+    		<type/>
+    	</opened>
+    	<closed>
+    		<id/>
+    	</closed>
+    	<receive-message>
+    		<!--
+    		<message>
+    			<sender>
+    				<id/>
+    				<name/>
+    				<type/>
+    			</sender>
+    			<data/>
+    		</message>
+    		-->
+    	</receive-message>
+    	<send-message>
+    		<sender>
+    			<id/>
+    			<fid/>
+    			<name/>
+    			<type/>
+    		</sender>
+    		<receiver>
+    			<id/>
+    			<fid/>
+    			<name/>
+    			<mall-fid/>
+    			<mall-name/>
+    			<barter-fid/>
+    			<barter-name/>
+    			<type/>
+    		</receiver>
+    		<message/>
+    	</send-message>
+    	<update>
+    		<id/>
+    		<fid/>
+    		<name/>
+    		<barter-fid/>
+    		<barter-name/>
+    		<mall-fid/>
+    		<mall-name/>
+    	</update>
+	</properties>
+ 	<method name="get-token" useClass="xlive.method.channel.xGetTokenMethod"/>
+ 	<method name="send-message" useClass="xlive.method.channel.xSendMessageMethod"/>
+ 	<method name="opened" useClass="xlive.method.channel.xOpenedMethod"/>
+ 	<method name="closed" useClass="xlive.method.channel.xClosedMethod"/>
+ 	<method name="update" useClass="xlive.method.channel.xUpdateMethod"/>
+ 	<method name="get-properties"><sys.get-properties/></method>
+</object>
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<get>
+    		<return>
+	    		<mall-count/>
+	    		<customer-count/>
+	    		<order-count/>
+    		</return>
+    	</get>
+    	<calc-mall/>
+    	<calc-customer/>
+    	<calc-order/>
+    	<calc-bonus-product-rank/>
+    	<calc-product-day-rank/>
+    	<calc-product-week-rank/>
+    	<calc-product-month-rank/>
+    	<calc-bonus-customer-rank/>
+    	<calc-goods-day-rank/>
+    	<calc-goods-week-rank/>
+    	<calc-goods-month-rank/>
+    	<log-customer-bonus>
+    		<fid/>
+    	</log-customer-bonus>
+    	<log-order-goods>
+    		<mall-fid/>
+    		<order-id/>
+    	</log-order-goods>
+    	<complete-goods-week/>
+    	<complete-goods-month/>
+	</properties>
+	<method name="get" useClass="xlive.method.rst.statistic.xGetMethod"/>
+	<method name="calc-mall" useClass="xlive.method.rst.statistic.xCalcMallMethod"/>
+	<method name="calc-customer" useClass="xlive.method.rst.statistic.xCalcCustomerMethod"/>
+	<method name="calc-order" useClass="xlive.method.rst..statistic.xCalcOrderMethod"/>
+	<method name="calc-bonus-product-rank" useClass="xlive.method.rst.statistic.xCalcBonusProductRankMethod"/>
+	<method name="calc-product-day-rank" useClass="xlive.method.rst.statistic.xCalcProductDayRankMethod"/>
+	<method name="calc-product-week-rank" useClass="xlive.method.rst.statistic.xCalcProductWeekRankMethod"/>
+	<method name="calc-product-month-rank" useClass="xlive.method.rst.statistic.xCalcProductMonthRankMethod"/>
+	<method name="calc-bonus-customer-rank" useClass="xlive.method.rst.statistic.xCalcBonusCustomerRankMethod"/>
+	<method name="log-customer-bonus" useClass="xlive.method.rst.statistic.xLogCustomerBonusMethod"/>
+	<method name="log-order-goods" useClass="xlive.method.rst.statistic.xLogOrderGoodsMethod"/>
+	<method name="complete-goods-week" useClass="xlive.method.rst.statistic.xCompleteGoodsWeekMethod"/>
+	<method name="complete-goods-month" useClass="xlive.method.rst.statistic.xCompleteGoodsMonthMethod"/>
+	<method name="calc-goods-day-rank" useClass="xlive.method.rst.statistic.xCalcGoodsDayRankMethod"/>
+	<method name="calc-goods-week-rank" useClass="xlive.method.rst.statistic.xCalcGoodsWeekRankMethod"/>
+	<method name="calc-goods-month-rank" useClass="xlive.method.rst.statistic.xCalcGoodsMonthRankMethod"/>
+	
+</object>

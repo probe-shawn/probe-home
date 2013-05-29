@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>barcode img</description>
+    	<version>1.0</version>
+    	<barcode>
+    		<type/>
+    		<data/>
+    		<require-checksum/>
+    		<check-digit/>
+    		<bar-height/>
+    		<bar-width/>
+    		<drawing-text>true</drawing-text>
+    		<drawing-quiet-section/>
+    		<label/>
+    		<resolution/>
+    		<gif-jpeg-png>gif</gif-jpeg-png>
+    		<ucc128-application-id/>
+    		<font-name/>
+    		<font-style/>
+    		<font-size/>
+    	</barcode>
+	</properties>
+	<method name="get-properties"><sys.get-properties/></method>
+	<method name="barcode" useClass="xlive.method.img.barcode.xBarcodeMethod"/>
+
+</object>
+

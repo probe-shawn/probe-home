@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description></description>
+    	<version>1.0</version>
+    	<sms-provider-name/>
+    	<send-text-message>
+    		<sms>
+    			<comp-code/>
+    			<message-id/>
+    			<user-id/>
+    			<user-password/>
+    			<create-time/>
+    			<order-time/>
+    			<send-time/>
+    			<phone-number/>
+    			<message/>
+    			<cost/>
+    			<status/>
+    			<return-code/>
+    			<return-message/>
+    		</sms>
+    		<return>
+    			<valid/>
+    			<why/>
+    			<return-code/>
+    			<return-message/>
+    		</return>
+    	</send-text-message>
+	</properties>
+	<method name="send-text-message" useClass="xlive.method.sms.service.xSendTextMessageMethod"/>
+	<method name="get-properties"><sys.get-properties/></method>
+</object>
+

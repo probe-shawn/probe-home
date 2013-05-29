@@ -1,0 +1,16 @@
+
+{
+	properties:{
+		name:"copy_entity"
+	},
+	copy_entity:{
+		key:""
+	},
+	local_remote:{
+		key:""
+	},
+	methods:{
+		copy_entity:{use_class:"xlive.method.remote_api.copyEntity"},
+		local_remote:{use_class:"xlive.method.remote_api.localRemote"}
+	}
+}

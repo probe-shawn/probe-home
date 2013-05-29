@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job>
+	<name>customer register</name>
+	<description>customer register and status</description>
+	<schedule-date-pattern>1 0 * * *</schedule-date-pattern>
+	<!-- 
+	<schedule-time-interval>60000</schedule-time-interval>
+	-->
+	<object-name>b2b.register</object-name>
+	<method-name>register</method-name>
+	<start-date/>
+	<end-date/>
+	<on-server-start>true</on-server-start>
+	<arguments/>
+	<stop>false</stop>
+</job>
+

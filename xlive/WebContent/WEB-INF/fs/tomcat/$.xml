@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>tomcat fs</description>
+    	<version>1.0</version>
+    	<root-directory>/../../</root-directory>
+	</properties>
+	<!--
+	 <method name="initial">
+	 	<script>
+	 		<![CDATA[
+	 			//var tomcat_dir=xWebInformation.getWebDirectory();
+	 			var tomcat_dir=thisMethod.getObjectRealDirectory();
+	 			var index=tomcat_dir.indexOf('webapps');
+	 			tomcat_dir=tomcat_dir.substring(0,index);
+	 			thisMethod.setProperties('root-directory',tomcat_dir);
+	 			thisMethod.logMessage('script :'+tomcat_dir);
+	 		]]>
+	 	</script>
+	 </method>
+	 -->
+</object>
+

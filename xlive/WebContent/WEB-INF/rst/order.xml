@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<orders/>
+    	<list>
+    		<mall-fid/>
+    	</list>
+    	<customer-orders>
+    		<fid/>
+    		<cursor/>
+    	</customer-orders>
+    	<get-goods>
+    		<key/>
+    	</get-goods>
+    	<set-order pxml="pxml" name="訂單資料">
+    		<key/>
+    		<id/>
+    		<name name="客戶名稱" blank="必要欄位" pxml="input"/>
+    		<date/>
+    		<phone name="電話號碼" blank="必要欄位" pxml="input"/>
+    		<addr name="地址" blank="外送,面交,宅配, 必要欄位" pxml="html" objectName="addressSelect"  url="/xlive/rst2/menu/addressSelect.html"/>
+    		<mail name="信箱" pxml="input" blank="商家確認或取消訂單後,以此 email 通知"/>
+    		<products/>
+    		<deliver name="購買方式" pxml="select" options="外送,自取,面交,宅配"></deliver>
+    		<payment name="付款方式" pxml="select" options="貨到付款">貨到付款</payment>
+    		<date2 name="貨到日期" />
+    		<time2 name="貨到時段" pxml="select" options="任何時刻,上午,午休,下午,晚餐,晚上,非例假日,上班時間" multiple="true">任何時刻</time2>
+    		<total>0</total>
+    		<discount/>
+    		<bonus-m2c>0</bonus-m2c>
+    		<bonus-c2m>0</bonus-c2m>
+    		<operator/>
+    		<processed/>
+    		<note name="備註" pxml="input"/>
+    		<status/>
+    		<goods-list/>
+    		<mall-fid/>
+    		<customer-fid/>
+    		<tz-offset/>
+    		<fare-delivery>0</fare-delivery>
+    	</set-order>
+     	<mail-order>
+     		<type/>
+    		<mall-fid/>
+    		<order-id/>
+    		<remark/>
+    	</mail-order>
+    	<order-count>
+    	    <customer-fid/>
+    	</order-count>
+	</properties>
+	<method name="list" useClass="xlive.method.rst.order.xListMethod"/>
+	<method name="customer-orders" useClass="xlive.method.rst.order.xListCustomerOrderMethod"/>	
+	<method name="get-goods" useClass="xlive.method.rst.order.xGetGoodsMethod"/>
+	<method name="set-order" useClass="xlive.method.rst.order.xSetOrderMethod"/>
+	<method name="mail-order" useClass="xlive.method.rst.order.xMailOrderMethod"/>
+	<method name="order-count" useClass="xlive.method.rst.order.xOrderCountMethod"/>
+</object>

@@ -1,0 +1,19 @@
+{
+	properties:{
+		name:"product"
+	},
+	set:{
+		key:''
+	},
+	sort:{},
+	get:{},
+	list:{},
+	del:{},
+	methods:{
+		set:{use_class:"xlive.method.yup.uSetProduct"},
+		get:{use_class:"xlive.method.yup.uGetProduct"},
+		sort:{use_class:"xlive.method.yup.uSortProduct"},
+		list:{use_class:"xlive.method.yup.uListProduct"},
+		del:{use_class:"xlive.method.yup.uDelProduct"}
+	}
+}

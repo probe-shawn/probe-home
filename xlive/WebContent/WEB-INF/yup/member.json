@@ -1,0 +1,34 @@
+
+{
+	properties:{
+		name:'member'
+	},
+	login:{
+		account:'',
+		password:''
+	},
+	forget:{
+		account:''
+	},
+	set:{
+		yid:''
+	},
+	get:{
+		yid:''
+	},
+	del:{
+		yid:''
+	},
+	update_stores:{
+		yid:'',
+		stores:[]
+	},
+	methods:{
+		set:{use_class:"xlive.method.yup.uSetMember"},
+		get:{use_class:"xlive.method.yup.uGetMember"},
+		del:{use_class:"xlive.method.yup.uDelMember"},
+		login:{use_class:"xlive.method.yup.uLogin"},
+		forget:{use_class:"xlive.method.yup.uForgetPassword"},
+		update_stores:{use_class:"xlive.method.yup.uUpdateStores"}
+	}
+}

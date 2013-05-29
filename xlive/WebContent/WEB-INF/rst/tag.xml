@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>application</resource-type>
+		<description>rst retail sales tablet</description>
+    	<version>1.0</version>
+    	<list-tag>
+    	    <tag>
+    	    	<fid></fid>
+    	    </tag>
+    	</list-tag>
+    	<del-tag>
+    	    <tag>
+    	    	<fid></fid>
+    	    </tag>
+    	</del-tag>
+    	<set-tag>
+    		<tag>
+    			<key></key>
+    			<owner></owner>
+    			<name></name>
+    			<desc></desc>
+    			<sort></sort>
+    			<icon></icon>
+    		</tag>
+    	</set-tag>
+    
+	</properties>
+	<method name="list-tag" useClass="xlive.method.upos.tag.uListProductTagMethod"/>
+	<method name="set-tag" useClass="xlive.method.upos.tag.uSetProductTagMethod"/>	
+	<method name="del-tag" useClass="xlive.method.upos.tag.uRemoveTagMethod"/>	
+</object>

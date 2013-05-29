@@ -1,0 +1,17 @@
+
+{
+	"xlive_config":{
+		"resource-type":"native",
+		"description":"configuration",
+		"version":"1.0",
+		"server":{
+			"context":{
+				"id":"administrator",
+				"properties":""
+			}
+		},
+		"protected":{
+			"directory":""
+		}
+	}
+}

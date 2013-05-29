@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+	<properties>
+		<resource-type>native</resource-type>
+		<description>google data</description>
+		<application-name>probe-google-data</application-name>
+		<version/>
+		<namespace/>
+		<oauth-consumer-key>www.probe.com.tw</oauth-consumer-key>
+    	<oauth-consumer-secret>rgNrkPzZAIXHchtTj5o6L47j</oauth-consumer-secret>
+    	<oauth>
+    		<domain/>
+    		<location>
+    			<protocol/>
+    			<host/>
+    			<hostname/>
+    			<port/>
+    			<pathname/>
+    			<href/>
+    		</location>
+    		<scope>http://www.google.com/calendar/feeds/</scope>
+    		<return>
+    			<valid/>
+    			<why/>
+    		</return>
+    	</oauth>
+    	<oauth-callback>
+    	</oauth-callback>
+    	<get-oauth-parameters/>
+		<get-properties>
+			<exclude>
+				<oauth-consumer-key/>
+				<oauth-consumer-secret/>
+				<oauth/>
+				<oauth-callback/>
+				<get-oauth-parameters/>
+				<get-properties/>
+			</exclude>
+		</get-properties>
+	</properties>
+ 	<method name="oauth" useClass="xlive.method.gdata.xOauthMethod"/>
+ 	<method name="oauth-callback" useClass="xlive.method.gdata.xOauthCallbackMethod"/>
+	<method name="get-oauth-parameters" useClass="xlive.method.gdata.xGetOauthParametersMethod"/>
+	<method name="get-properties"><sys.get-properties/></method>
+</object>
+
+
+
