@@ -32,204 +32,133 @@
 <h3>yup 的使用說明</h3>
 </div>
                 
+  
 <div class="mbox ui-col-c">
 <div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >識別碼 (id)</h4>
+<h4 >業務 (Sales)</h4>
 </div>
 <div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>
-由系統產生，unique。
-</h5>
-</div>
-</div>
-
-<div class="mbox ui-col-c">
-<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >序號 (serial_no)</h4>
-</div>
-<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>
-非必要欄位，由系統產生，coupon 的序號，8~12 碼。
-</h5>
-</div>
-</div>
-
-<div class="mbox ui-col-c">
-<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >發行數量 (version_qty)</h4>
-</div>
-<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>
-非必要欄位，該 coupon 該次發行數量，空白或 0 代表忽略。
-</h5>
-</div>
-</div>
-
-<div class="mbox ui-col-c">
-<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >限量 (max_qty)</h4>
-</div>
-<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>
-非必要欄位，該 coupon 最多發行數量，空白或 0 代表忽略。
-</h5>
-</div>
-</div>
-                
-<div class="mbox ui-col-c">
-<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >適用分店 (sid)</h4>
-</div>
-<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位，接受該 coupon 使用的分店，[sid1,sid2,...]。</h5>
-</div>
-</div>
-
-<div class="mbox ui-col-c">
-<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >名稱 (name)</h4>
-</div>
-<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位，coupon 名稱。</h5>
-</div>
-</div>
-
-<div class="mbox ui-col-c">
-<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >對象商品 (products)</h4>
-</div>
-<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位，單選，coupon 包含之商品。</h5>
 <ul><h5>
-<li>全部商品。</li>
-<li>tag 內之商品，tag 可多選。</li>
-<li>先選擇某一商品屬性 (property)，再依該屬性之 size 別，給予不同優惠。</li>
-<li>個別商品，可複選。</li>
+<li>銷售業績 (sales info)</li>
+<li>點數 (point info)</li>
 </ul>
 </div>
 </div>
 
 <div class="mbox ui-col-c">
 <div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >有效期限 (date)</h4>
+<h4 >訂單 (Order)</h4>
 </div>
 <div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位。</h5>
 <ul><h5>
-<li>永遠有效。</li>
-<li>設定起迄日期，日期均不得空白。</li>
+<li>訂單狀態 (order status)</li>
+<li>傳票管理 (voucher info)</li>
+<li>信用卡 (credit card)</li>
 </ul>
 </div>
 </div>
 
 <div class="mbox ui-col-c">
 <div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >有效時段 (time)</h4>
+<h4 >訊息 (Message)</h4>
 </div>
 <div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>非必要欄位，設定每日有效的起迄時間，格式為 XX:XX ~ XX:XX，可設多組。</h5>
-</div>
-</div>
-
-<div class="mbox ui-col-c">
-<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >使用時機 (repeat)</h4>
-</div>
-<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位，單選，在有效時限內，進一步設定循環使用的時機。</h5>
 <ul><h5>
-<li>每日：每天都適用。</li>
-<li>星期：一二三四五六日，check box 勾選，可複選。</li>
-<li>月：1~31日，check box 勾選，可複選。</li>
+<li>新郵件 (new mail)</li>
+<li>寄信匣 (send box)</li>
+<li>草稿 (draft)</li>
+<li>預約寄信 (send later)</li>
 </ul>
 </div>
 </div>
 
 <div class="mbox ui-col-c">
 <div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >優惠方式 (value)</h4>
+<h4 >系統 (Management)</h4>
 </div>
 <div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位，單選，該 coupon 的優惠內容。</h5>
 <ul><h5>
-<li>折價 (扣 5 元)。</li>
-<li>折扣 (扣 5 %)。</li>
-<li>優惠價 (全部都算 1 元)。</li>
-<li>送紅利點數 (會員卡)。</li>
-<li>送另一張折價卷 (下次使用)。</li>
+<li>公司 (company)</li>
+<li>分店 (store)</li>
 </ul>
 </div>
 </div>
 
 <div class="mbox ui-col-c">
 <div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >優惠條件 (condition)</h4>
+<h4 >會員 (Member)</h4>
 </div>
 <div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位，單選，該 coupon 須符合的條件。</h5>
 <ul><h5>
-<li>無條件。</li>
-<li>買 X 件，其中優惠 Y 件。例如"買一送一"，則 X=Y=1，共兩件商品；"買三送二"，則 X=3 , Y=2，共五件商品</li>
-<li>購買金額 X 元以上，優惠 Y 件。</li>
+<li>顧客清單 (customer list)</li>
+<li>等級 (rank)</li>
+<li>退出 (sign off)</li>
 </ul>
 </div>
 </div>
 
 <div class="mbox ui-col-c">
 <div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >使用次數限制 (discard)</h4>
+<h4 >基本資料 (Master)</h4>
 </div>
 <div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位，單選，該 coupon 是否使用過即失效。</h5>
 <ul><h5>
-<li>不限。</li>
-<li>只限一次。</li>
+<li>商品 (product)</li>
+	<ul><h5>
+	<li>標簽 (tags)</li>
+	<li>商品屬性 (property group)</li>
+	<li>過敏原 (allergy)</li>
+	<li>商品資料 (product info)</li>
+	<li>half & half</li>
+	</ul>
+<li>地區 (area)</li>
+	<ul><h5>
+	<li>地區資料 (area info)</li>
+	<li>upload CSV</li>
+	</ul>
+<li>會員 (member)</li>
+	<ul><h5>
+	<li>company</li>
+	<li>store</li>
+	<li>member</li>
+	</ul>
+<li>優惠.點數 (coupon.point)</li>
+	<ul><h5>
+	<li>點數設定 (point setting)</li>
+	<li>優惠設定 (coupon setting)</li>
+	</ul>
 </ul>
 </div>
 </div>
 
 <div class="mbox ui-col-c">
 <div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >優惠商品數量 (limit_qty)</h4>
+<h4 >操作 (Operation)</h4>
 </div>
 <div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位，單選，該 coupon 在同一次購物中，是否可以重覆使用。例如有些商品「一人限購兩組」</h5>
 <ul><h5>
-<li>不限。</li>
-<li>限 X 個。</li>
+<li>基本資料 (basic info)</li>
+<li>電郵模版 (mail template)</li>
+<li>店主 (owner info)</li>
+<li>分店清單 (store list)</li>
+<li>接受信用卡 (credit available)</li>
 </ul>
 </div>
 </div>
 
 <div class="mbox ui-col-c">
 <div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >可否併用 ()</h4>
+<h4 >使用說明 (Help)</h4>
 </div>
 <div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位，單選，該 coupon 在同一次購物中，是否可以與其他 coupon 一起使用。</h5>
 <ul><h5>
-<li>是。</li>
-<li>否。</li>
+<li>分店 (store)</li>
+<li>總部 (headquarter)</li>
 </ul>
 </div>
 </div>
 
-<div class="mbox ui-col-c">
-<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
-<h4 >狀態 (status)</h4>
-</div>
-<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
-<h5>必要欄位，單選，該 coupon 是否有效。</h5>
-<ul><h5>
-<li>有效。</li>
-<li>無效。</li>
-</ul>
-</div>
-</div>
 
-</div>
-               
-        
         	</div> <!-- #container -->
         
         </div>
