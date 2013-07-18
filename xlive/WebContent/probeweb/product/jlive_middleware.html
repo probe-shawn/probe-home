@@ -2,17 +2,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-40398500-2', 'probe-home.appspot.com');
-  ga('send', 'pageview');
-
-</script>
-
 </head>
 
 <body>
@@ -29,41 +18,68 @@
             <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
             <div style="clear:both;"></div>                        
         </div>
-        <h1 style="display:none">middleware</h1>  
+        <h1 style="display:none">jLIVE middleware</h1>  
         <div id="nav_history"></div>     
 	</div> 
       
     
-<div data-role="content"  style="background:#3B5998;margin:0;padding:0">
-        
-          
-      
-            <div class="ui-mason-3">
-                  <div class="mbox ui-col-c">
-                     <div style="position:relative;width:100%; margin-top:50px;
-                              max-width:960px;height:200px;background:#3B5998;">
-                              <div style="font-family:微軟正黑體;font-size:90px;color:white;font-weight: bold;text-align:center;">jLIVE middleware    
-                              </div>
-                              <div style="font-family:微軟正黑體;font-size:40px;line-height:50px;color:#FF4500;font-weight: bold;text-align:center;">
-                                   <a href="probeweb/aboutus/contactus.html" >Contact us</a>
-                              </div>
-                        </div> 
-                  </div>
-                  <div class="mbox ui-col-a">
-                    <img src="images/probeweb/product/prod_jlive.png">
-                  </div>
-                
-                
-                  <div class="mbox ui-col-a">
-                     <a href="probeweb/solution/erp_member.html" >
-                     <img src="images/probeweb/solution/box1x2_7.jpg"></a>
-                  </div>
-                  
-        
-        	</div> <!-- #container -->
-        
-        
+<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0">        
+       
+<div class="ui-mason-2">
+            
+
+<div class="mbox ui-col-c" style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;text-align:left;">
+<h3>應用程式伺服器 (Application Server)</h3>
 </div>
+                
+<div class="mbox ui-col-b"></div>                  
+     <div class="mbox ui-col-b" style="margin-top:10px;margin-bottom:10px;">
+      <p class="chapter"><font size="2"><a href="ch15_01.html">jLIVE&#8482; middle ware 
+(jLIVE&#8482; middle ware) </a><br>
+<a href="ch15_02.html">jLIVE&#8482; middle ware 管理介面 (jLIVE&#8482; middle ware management 
+interface)</a><br>
+<a href="ch15_03.html">異地應用伺服器同時存取 (multiple application servers access 
+simultaneously)</a><br>
+<a href="ch15_04.html">jLIVE&#8482; middle ware 安裝 (jLIVE&#8482; middle ware installation)</a></font></p>
+     </div>
+     <div class="mbox ui-col-a" style="padding:20px;">
+     <h4></h4>
+     <h4>
+     <p class="chapter" style="text-indent: 20"><font size="2">
+jLIVE Builder&#8482;&nbsp; 
+所開發的網際網路應用程式是以三層式的架構執行程式，使用者端 (client) 不允許也不可以直接存取後端資料庫系統 (database server) 
+和檔案系統資源 (file system resource)，所有的存取必須透過中間層 (middle tier) 的應用伺服器 (application 
+server) 取得服務。jLIVE Builder&#8482;&nbsp;的中間層 (middle tier) 是一個標準的 Java Sevlet&#8482; 
+模組，可以掛載於任何符合 Java&#8482; J2EE 規格的應用伺服器 (application server) ，例如：IBM Web sphere&#8482;、 Web 
+logic &#8482;、 Fujitsu Interstage&#8482;、 Tomcat&#8482; ‧‧‧。與應用伺服器 (application server) 
+協同合作處理網際網路的 Web 伺服器服務 (Web service)。</font></p>       
+<p class="chapter" style="text-indent: 20"><font size="2">
+  </h4>
+     </div>
+
+
+
+     <div class="mbox ui-col-a" style="padding:20px;">
+     <h4></h4>
+     <h4>
+     jLIVE Builder&#8482;&nbsp;的中間層 
+(middle tier) 是由 pure Java&#8482; 所撰寫的 Servlet 模組 -- jslive.jar (以下簡稱 jLIVE &#8482; middle 
+ware)，以 JAR 檔的型式掛載於應用伺服器，在應用伺服器啟動時由應用伺服器啟動服務，並納入應用伺服器的 Servlet 管理，與一般應用伺服器上的 
+Servlet 或 JSP 並沒有分別，只是 jLIVE&#8482; middle ware 專屬提供 JLIVE 應用程式使用者端的服務請求 (service 
+request)。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">&nbsp;jLIVE&#8482; 
+middle ware 除了提供使用者端的服務請求外，亦提供 jLIVE&#8482; middle ware 
+的管理介面，透過管理介面，應用伺服器管理員可以掌控應用程式執行的狀態，即時監控使用者連結及取用資訊的情況。</font></p> </h4>
+     </div>
+
+
+
+
+               
+        
+</div> <!-- #container -->
+        
+        
 <style>    
     .mbox img{
 	width:100%;
@@ -80,7 +96,8 @@
 			});
 		});		
     });	
-</script> 
+</script> 	
+             
 </div>
 </body>
 </html>
