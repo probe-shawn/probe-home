@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head> 
+<meta charset="UTF-8">
+</head>
+
+<body>
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">yup 新手上路</h1>  
+        <div id="nav_history"></div>     
+	</div> 
+      
+    
+<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0">        
+       
+<div class="ui-mason-2">
+            
+
+<div class="mbox ui-col-c" style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;text-align:left;">
+<h3>如何建立與維護商品標簽 (tag) 資料 ?</h3><a href="/probeweb/yup/howto.html">  back</a>
+</div>
+                
+<div class="mbox ui-col-b"></div>                  
+     <div class="mbox ui-col-a" style="margin-top:10px;margin-bottom:10px;">
+     <img src="/images/probeweb/yup/howto/addproducttag1.png">
+     </div>
+     <div class="mbox ui-col-a">
+     <h4></h4>
+     <h4>
+     <ol>
+     <li>唯有該商家管理者 (administrator) 進入「商家首頁」時，才會出現此圖示，點擊 (click) 圖示，管理功能列自右方滑出。</li>
+     <li>點擊 (click) 「基本資料(Master)\產品(product)\商品標簽 (tags)」，進入維護視窗。</li>
+     </ol></h4>
+     </div>
+
+
+<div class="mbox ui-col-b"></div>                  
+     <div class="mbox ui-col-a" style="margin-top:10px;margin-bottom:10px;">
+     <img src="/images/probeweb/yup/howto/addproducttag2.png">
+     </div>
+     <div class="mbox ui-col-a">
+     <h4></h4>
+     <h4>
+     <ul>
+     <li>箭頭指向「新增標簽」圖示，點擊 (click) 該圖示，以建立新的商品標簽 (tags)。</li>
+     <li>其他有背景圖者為已建立之商品標簽 (tags)，點擊 (click) 任意標簽以編輯資料。</li>
+     </ul></h4>
+     </div>
+
+    
+<div class="mbox ui-col-b"></div>                  
+     <div class="mbox ui-col-a" style="margin-top:10px;margin-bottom:10px;">
+     <img src="/images/probeweb/yup/howto/addproducttag3.png">
+     </div>
+     <div class="mbox ui-col-a">
+     <h4></h4>
+     <h4>
+     <ul>
+     <li>商品標簽 (tags) 須記載內容包含名稱、簡介、管理者專用旗標、選用圖片。</li>
+     <li>管理者專用旗標：勾選此欄位代表該標簽之建立，只是為了方便管理者設計商品之用 (例如套餐)，顧客在使用 yup menu 時並不會看到此標簽。</li>
+     <li>點擊 (click) 該圖片區進入「選用圖片」視窗。</li>
+     </ul></h4>
+     </div>
+     
+     <div class="mbox ui-col-b"></div>                  
+     <div class="mbox ui-col-a" style="margin-top:10px;margin-bottom:10px;">
+     <img src="/images/probeweb/yup/howto/addproducttag4.png">
+     </div>
+     <div class="mbox ui-col-a">
+     <h4></h4>
+     <h4>
+     <ol>
+     <li>該標簽目前選用之圖片。</li>
+     <li>切換 Facebook 相簿。「default」乃為 yup 提供的圖片 (如範例可見之圖片)。</li>
+     <li>相簿包含之所有圖片列示區。</li>
+     </ol></h4>
+     </div>
+     
+     <div class="mbox ui-col-b"></div>                  
+     <div class="mbox ui-col-a" style="margin-top:10px;margin-bottom:10px;">
+     <img src="/images/probeweb/yup/howto/addproducttag5.png">
+     </div>
+     <div class="mbox ui-col-a">
+     <h4></h4>
+     <h4>
+     <ul>
+     <li>範例：切換到 Facebook 中的「pizza」相簿。</li>
+     </ul></h4>
+     </div>
+     
+     <div class="mbox ui-col-b"></div>                  
+     <div class="mbox ui-col-a" style="margin-top:10px;margin-bottom:10px;">
+     <img src="/images/probeweb/yup/howto/addproducttag6.png">
+     </div>
+     <div class="mbox ui-col-a">
+     <h4></h4>
+     <h4>
+     <ul>
+     <li>「pizza」相簿裡的圖片列示於此，瀏覽更多圖片，請用手指滑動或是滑鼠拖曳。</li>
+     </ul></h4>
+     </div>
+
+               
+        
+</div> <!-- #container -->
+        
+        
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script> 	
+             
+</div>
+</body>
+</html>
