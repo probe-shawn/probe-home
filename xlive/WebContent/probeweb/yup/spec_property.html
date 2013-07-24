@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40398500-2', 'probe-home.appspot.com');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">商品屬性 (property) 的表格架構</h1>  
+        <div id="nav_history"></div>     
+	</div> 
+      
+    
+<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0">        
+       
+            <div class="ui-mason-3">
+            
+
+<div class="mbox ui-col-c" style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;text-align:left;">
+<h3>商品屬性 (property) 的表格架構</h3><a href="/probeweb/yup/spec_all.html">  back</a>
+</div>
+              
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >1.基本資料設定 (Basic property setting)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >屬性名稱 (name)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+必要欄位，不得空白。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >配達必須  (must)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+顧客下單外送時，訂購產品中至少需包含一項具有此特性之商品。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >圖示 (icon)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+較明顯的屬性代表圖示。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >大小/類別/型態設定 (dataset)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+例如比薩(大/中/小)、台灣啤酒(瓶/箱)、炸雞(4塊/6塊)等等。可設定任意多組，不得空白。預設 (default) 勾選代表該項為預設值。
+</h4>
+</div>
+</div>
+
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >2.內容 (content property setting)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >內容設定 (dataset)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+具備該屬性的商品，亦共同含有的詳細內容物，訂購此類商品時，內容物可以註明刪除。例如 pizza 多含有洋蔥、番茄、青椒等食材(內容物)，當我們把這些食材(內容物)列示於此，則討厭青椒的顧客，可以很方便的註明把「青椒」拿掉。顧客 (需加入會員) 對於食材 (內容物) 的刪除，可記錄起來，下次再買同屬性商品，yup 會自動先去除這些食材(內容物)。
+</h4>
+</div>
+</div>
+
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >3.必需 (essential property setting)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >必選項設定 (dataset)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>此標簽頁定義購物流程中，「要求顧客手動選取」的選項。可以包含多組，每個組合都是單選，yup 會驗證這些「必需選項」是否已經勾選。範例：買 pizza 時，餅皮有厚、薄、芝心等三種，顧客必須三選一，前兩者不加價，選擇芝心的話，大比薩加80，中比薩加50，小比薩加20。
+<ul>
+<li>必選項組別名稱 (tag)；不可空白。</li>
+<li>必選項內容名稱 (Name)；不可空白。</li>
+<li>依據「基本資料」所設定的大小/類別/型態數量展開成二維表格，分別輸入價錢。</li>
+</ul>
+</h4>
+</div>
+</div>
+
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >4.加價購 (addon property setting)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >加價購設定 (dataset)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>此標簽頁定義可以「加價購」的選項，以及不同包裝(pizza 大/中/小) 的價錢。可以包含多組，每個組合可定義單選或複選。範例：買 pizza 時，可以加價購買火腿、起司、香腸等等配料，大比薩加80，中比薩加50，小比薩加20。
+<ul>
+<li>加價購組別名稱 (addon name)；不可空白。</li>
+<li>必選項內容名稱 (Name)；不可空白。</li>
+<li>依據「基本資料」所設定的大小/類別/型態數量展開成二維表格，分別輸入價錢。</li>
+</ul>
+</h4>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+               
+        
+        	</div> <!-- #container -->
+        
+        </div>
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script> 	
+             
+</div>
+</body>
+</html>
