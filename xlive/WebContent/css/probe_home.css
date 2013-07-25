@@ -1,4 +1,4 @@
-/* 波峰GAE官網預設CSS */
+/* 瘜Ｗ陸GAE摰雯�身CSS */
 
 *{						
 	box-sizing:border-box;	
@@ -23,8 +23,8 @@
 		-moz-box-shadow:rgb(0, 0, 0) 2px 2px 2px;
 }
 
-div.auto_pic{		/*自動圖置中，預設原尺寸*/
-/*	background-image:url(/images/cloud_back.png);   自訂圖檔*/
+div.auto_pic{		/*�芸��蔭銝哨��身�偕撖�/
+/*	background-image:url(/images/cloud_back.png);   �芾���*/
 	background-repeat-x:no-repeat; 
 	background-repeat-y:no-repeat; 
 	background-repeat:no-repeat;
@@ -36,13 +36,13 @@ div.auto_pic{		/*自動圖置中，預設原尺寸*/
 	background-position-y:50%; 
 	background-size:auto auto;
 }
-div.auto_pic.match_w{ /*自動圖置中，寬漲滿*/
+div.auto_pic.match_w{ /*�芸��蔭銝哨�撖祆撞皛�/
 	background-size:100% auto; 
 }
-div.auto_pic.match_v{	/*自動圖置中，高漲滿*/
+div.auto_pic.match_v{	/*�芸��蔭銝哨�擃撞皛�/
 	background-size:auto 100%; 
 }
-div.auto_pic.match_wv{	/*自動圖置中，高漲滿*/
+div.auto_pic.match_wv{	/*�芸��蔭銝哨�擃撞皛�/
 	background-size:100% 100%; 
 }
 
@@ -95,7 +95,7 @@ div.auto_pic.match_wv{	/*自動圖置中，高漲滿*/
 	width:100%;
 }
 
-/*有關MENU*/
+/*��MENU*/
 #probe_header{
 	background:#666666;
 }
@@ -150,12 +150,14 @@ div.auto_pic.match_wv{	/*自動圖置中，高漲滿*/
 #menu div a{
 	
 	cursor:pointer;
-	color:#CCC;
+	color:red;
 	text-decoration:none;
+	font-size:10px;
 }
 #menu div a.probe_current{
 	text-shadow: 0 0 8px #FFF;
 	color:#FFF;
+	font-size:14px;
 }
 #menu div a:hover{
 	color:#FFF;
@@ -178,7 +180,7 @@ body.ui-size-s #menu #probe_popupMenu{
 	}
 	
 
-/*有關MENU*/
+/*��MENU*/
 
 body.ui-size-s .ui-mason-3 .ui-col-a,
 body.ui-size-s .ui-mason-3 .ui-col-b,
