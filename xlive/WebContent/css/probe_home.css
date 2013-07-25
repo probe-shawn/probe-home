@@ -1,4 +1,4 @@
-/* 瘜Ｗ陸GAE摰雯�身CSS */
+
 
 *{						
 	box-sizing:border-box;	
@@ -36,66 +36,7 @@ div.auto_pic{		/*�芸��蔭銝哨��身�偕撖�/
 	background-position-y:50%; 
 	background-size:auto auto;
 }
-div.auto_pic.match_w{ /*�芸��蔭銝哨�撖祆撞皛�/
-	background-size:100% auto; 
-}
-div.auto_pic.match_v{	/*�芸��蔭銝哨�擃撞皛�/
-	background-size:auto 100%; 
-}
-div.auto_pic.match_wv{	/*�芸��蔭銝哨�擃撞皛�/
-	background-size:100% 100%; 
-}
 
-#nav_history{
-	position:relative;
-	height:25px;
-	margin:10px;
-}
-
-#nav_div{
- position:absolute;
- z-index:999;
-}
-#nav_div #home{
-	border-radius:5px 0 0 5px;
-}
-#nav_div #home.probe_current{
-	display:none;
-}
-
-#nav_div span{
-	display:inline;
-}
-#nav_div .probe_nav{
-	font-weight:100!important;
-	font-size:14px;
-	padding:2px 5px 2px 5px;	
-	background-color:#FFFFFF;
-	border:1px solid #CCCCCC;
-	margin-left:-1px;
-}
-
-#nav_div .probe_nav:hover{
-	text-decoration:underline;
-	cursor: pointer;
-}
-#nav_div .probe_nav.probe_current{
-	text-decoration:none;
-	cursor:none;
-	color:#36C;	
-	border-radius:0 5px 5px 0;
-}
-
-.ui-mason-2,.ui-mason-3{
-	max-width:960px;
-	margin:0 auto;
-
-}
-.mbox img{
-	width:100%;
-}
-
-/*��MENU*/
 #probe_header{
 	background:#666666;
 }
