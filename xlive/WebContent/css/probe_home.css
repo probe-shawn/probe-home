@@ -150,14 +150,14 @@ div.auto_pic.match_wv{	/*�芸��蔭銝哨�擃撞皛�/
 #menu div a{
 	
 	cursor:pointer;
-	color:red;
+	color:#CCC;
 	text-decoration:none;
 	font-size:10px;
 }
 #menu div a.probe_current{
 	text-shadow: 0 0 8px #FFF;
 	color:#FFF;
-	font-size:14px;
+	font-size:12px;
 }
 #menu div a:hover{
 	color:#FFF;
