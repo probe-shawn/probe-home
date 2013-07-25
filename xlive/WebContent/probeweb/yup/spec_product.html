@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40398500-2', 'probe-home.appspot.com');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+         <div class="header-box">
+            <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
+            	<ul>
+                  
+                   <li><a href="aboutus.html" data-icon="info"  
+                    	style="background:#555555;border-radius:0 5px 5px 0;filter:alpha(opacity=80);opacity:0.8;">about us</a></li>
+                </ul>               
+            </div>
+            <div style="color:white;line-height:36px;padding-left:10px;">probe</div>            
+            <div style="clear:both;"></div>                        
+        </div>
+        <h1 style="display:none">商品資訊 (product) 的表格架構</h1>  
+        <div id="nav_history"></div>     
+	</div> 
+      
+    
+<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0">        
+       
+            <div class="ui-mason-3">
+            
+
+<div class="mbox ui-col-c" style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;text-align:left;">
+<h3>商品資訊 (product) 的表格架構</h3><a href="/probeweb/yup/spec_all.html">  back</a>
+</div>
+              
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >1.基本資料設定 (Basic)
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >商品編號 (product code)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+商家自定的編號，可以空白。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >商品屬性 (property)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+將商家附與一個屬性，該屬性所定義的內容 (content)、必需 (essential)、加價購 (addon)、選擇 (option)、贈品 (service) 等項目會一併帶過來，做進一步的使用。此欄位不得空白。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >商品名稱 (product name)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+商品主要名稱，不得空白。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >商品顯示名稱 (display name)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+商品顯示時的名稱，可以空白。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >商品列印名稱 (print name)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+商品列印時的名稱，可以空白。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >商品圖示 (icon)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+商品代表圖示，選用寬 600~900 pixel 的圖片，較為美觀。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >商品價格 (price)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+價格會依據所屬商品屬性的大小/類別/型態設定 (Size/Type/Model name setting) 而一一設定，範例中為比薩L(大)3150、M(中)/2100、S(小)/1250。預設 (default) 為M(中)/2100。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >商品描述 (description)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+商品的相關介紹與描述，可以使用 html 的 tag，可以空白。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >雙拼商品合組 (Half and Half)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+例如購買 pizza 時，可以選擇半片比薩甲跟半片比薩乙，當作一件商品來計價，勾選即具有此功能，預設為否。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >可作為贈品 (Service Setting)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+可否做為購買其他商品時的贈品，勾選即具有此功能，預設為否。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >只限預購 (Pre-order only)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+是否做為限定預購之商品，勾選即具有此功能，預設為否。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >過敏原 (Allergy)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+此商品含有哪些過敏原，即勾選起來，顧客購買前會提醒，若會員有記載自己的過敏原，則系統會出現警示。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >上架日期 (Online)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+可勾選永遠(always)、停止(none)、限時(date)，選限時 (date) 則需定義日期起迄。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >開賣時間 (Order time)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+可勾選永遠(always)、限時(time)，選限時 (time) 則需定義時間起迄。另有選項「只限週間販賣」(Weekdays only)。
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >折價卷豁免 (Exempt coupon)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+不得做為折價卷之優惠商品，勾選即具有此功能，預設為否。
+</h4>
+</div>
+</div>
+
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >2.屬性群組 (Property) 之一；內容 (content)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >內容設定 (dataset)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+列示該屬性所有定義的的內容 (content)，勾選內容名稱前的選擇鍵，此內容物會顯示於產品資訊內，勾選內容名稱後方的選擇鍵(minus possible)，代表訂購此商品時，這個內容物可以註明刪除。例如 pizza 多含有洋蔥、番茄、青椒等食材(內容物)，當我們把這些食材(內容物)列示於此，則討厭青椒的顧客，可以很方便的註明把「青椒」拿掉。顧客 (需加入會員) 對於食材 (內容物) 的刪除，可記錄起來，下次再買同屬性商品，yup 會自動先去除這些食材(內容物)。
+</h4>
+</div>
+</div>
+
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >2.屬性群組 (Property) 之二；必需 (essential)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >必選項設定 (dataset)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>此標簽頁定義購物流程中，「要求顧客手動選取」的選項。可以包含多組，每個組合都是單選，yup 會驗證這些「必需選項」是否已經勾選。範例：買 pizza 時，餅皮有厚、薄、芝心等三種，顧客必須三選一，前兩者不加價，選擇芝心的話，大比薩加80，中比薩加50，小比薩加20。
+</h4>
+</div>
+</div>
+
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >2.屬性群組 (Property) 之三；加價購 (addon)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >加價購設定 (dataset)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>此標簽頁定義可以「加價購」的選項，可以包含多組，每個組合可定義單選或複選。範例：買 pizza 時，可以加價購買火腿、起司、香腸等等配料，大比薩加80，中比薩加50，小比薩加20。
+</h4>
+</div>
+</div>
+
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >2.屬性群組 (Property) 之四；選擇 (option)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >選擇項設定 (dataset)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>此標簽頁定義可以「免費選擇」的項目。可以包含多組，每個組合可定義單選或複選。範例：買飲料時，可以選擇(正常、多冰、少冰)、(正常、少糖、微糖、無糖)，這些選項都是免費。
+</h4>
+</div>
+</div>
+
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >2.屬性群組 (Property) 之五；贈品 (service)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >贈品設定 (dataset)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>此標簽頁定義「免費贈品」的項目，可以包含多組。與上一「選擇 (option)」標簽頁的不同是：「選擇」有免費項目供顧客挑選、「贈品」則描述免費附贈的物品。另外，「贈品」可以依據「基本資料設定」的「大小 (size)」分別定義、「選擇」則與「大小 (size)」無關。
+</h4>
+</div>
+</div>
+
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >3.附餐 (set-menu)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >附餐設定 (dataset)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+<ul>
+     <li>此標簽頁定義「附餐」的項目。附餐可以包含多組，其價錢已經隱含在商品(套餐)定價中，所以附餐均不包括價格設定。</li>
+     <li>每組附餐先選擇「商品標簽(Select product group)」，再選擇商品。勾選商品名稱前的選擇鍵，此商品會顯示於產品資訊內。</li>
+     <li>附餐數量可以依據「大小/類別/型態設定 (Size/Type/Model)」而調整，如範例裡，買L(大)送3、買M(中)送2、買S(小)送1，訂購時 yup 會計算其數目是否正確。</li>
+     <li>勾選之商品若具備「大小/類別/型態設定 (Size/Type/Model)」與「必需 (essential)」之設定，則該設定項會一併列示，管理者可以指定其中之選項，空白不指定則讓顧客自由挑選。</li>
+     </ul>
+</h4>
+</div>
+</div>
+
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >4.商品標簽 (tag)</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-c">
+<div style="font-family:微軟正黑體;font-weight: bold;text-align:left;line-height:0;margin-left:5px;line-height:20px;color:#3B5998">
+<h4 >商品標簽設定 (select the tag)</h4>
+</div>
+<div style="font-family:細明體;font-weight: normal;margin-left:5px;line-height:20px;color:gray;">
+<h4>
+<ul>
+     <li>此標簽頁可讓管理者定義該商品將會出現在哪些「商品標簽 (tag)」。</li>
+     <li>勾選商品標簽後方的選擇鍵，此商品就會顯示於該標簽內。</li>
+     <li>同一商品可勾選一個以上的標簽。</li>
+     </ul>
+</h4>
+</div>
+</div>
+
+
+
+</div>
+               
+        
+        	</div> <!-- #container -->
+        
+        </div>
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+			});
+		});		
+    });	
+</script> 	
+             
+</div>
+</body>
+</html>
