@@ -198,6 +198,8 @@
 		$mason.masonry({isAnimated: true});		
 		$_page.one('pageshow',function(event2){			
 			$mason.masonry('reload');
+			$_page.find('#menu .ui-float-right a').removeClass('probe_current');
+			$_page.find('#menu #probe_solution a').addClass('probe_current');
 		});		
     });	
 </script>             

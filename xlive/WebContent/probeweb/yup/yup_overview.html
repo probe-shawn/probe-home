@@ -100,9 +100,10 @@
                     最尖端的劃時代零售業工具。而且支援多使用者(multi-user)、多分店(multi-store)、甚至可擴充到網路購物平台(eCommerce)，讓銷售服務完全拋開任何限制。</h4>
                       </div>
                       
+                      <!-- 
                       <div style="position:relative;float:right;padding-left:20px;padding-top:90px;height:200px;">
                       <img src="/images/probeweb/upos/buy-now.png">
-                      </div>
+                      </div> -->
                       
                   </div>
                   
@@ -168,6 +169,8 @@
 		$mason.masonry({isAnimated: true});		
 		$_page.one('pageshow',function(event2){			
 			$mason.masonry('reload');
+			$_page.find('#menu .ui-float-right a').removeClass('probe_current');
+			$_page.find('#menu #probe_solution a').addClass('probe_current');
 		});		
     });	
 </script>             

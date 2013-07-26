@@ -17,7 +17,7 @@
 
         
 <div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
-	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+	<div data-role="header" data-position="fixed" style="background:#f2f2f2;border:hidden;color:#3B5998">       
          <div class="header-box">
             <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
             	<ul>                  
@@ -33,18 +33,13 @@
 	</div> 	 	
 	<div style="background:#f2f2f2;margin:0;padding:0">
         
-            <div>
-                  <div  
-                       style="line-height:40px;background-image:url('/images/probeweb/product/imall_header.jpg');">
-                  <h2>yup 的 coupon 平台 VS PXhome 購物平台的「X客」</h2>
-             
+<div class='ui-mason-3'>
+<div style="background-image:url('/images/probeweb/bgspec.jpg');font-family:'微軟正黑體';
+            	      width:100%;height:150px;color:white;font-size:40px;padding-top:80px;padding-left:20px;">規格內容</div>
                       
-                  </div>
-                      
-                      <div >
-                      <h3  align="center">coupon 功能比較表：yup VS 「X客」<a href="/probeweb/yup/spec_all.html">  back</a></h3>
+<div ><h3  align="center">coupon 功能比較表：yup VS 「X客 (Lxker)」<a href="/probeweb/yup/spec_all.html">  back</a></h3>
   <h4>
-  <table width="60%" border="1" align="center" cellpadding="5" cellspacing="0" style="border:#CCC; margin:0 auto;">
+  <table width="90%" border="1" align="center" cellpadding="5" cellspacing="0" style="border:#CCC; margin:0 auto;">
   <tr>
     <th align="center" height="35px" width="70%" style="border:1px solid #CCC; border-collapse:collapse;" scope="col">功能項目內容描述</th>
     <th align="center"  width="15%" style="border:1px solid #CCC; border-collapse:collapse;" scope="col">yup</th>
@@ -314,6 +309,8 @@
 		$_page.one('pageshow',function(event2){			
 			$mason.imagesLoaded(function(){
 				$mason.masonry();
+				$_page.find('#menu .ui-float-right a').removeClass('probe_current');
+				$_page.find('#menu #probe_solution a').addClass('probe_current');
 			});
 		});		
     });	
