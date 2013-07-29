@@ -17,7 +17,7 @@
 
 <body>
 <div  data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
-	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+	<div data-role="header" data-position="fixed" style="background:#f2f2f2;border:hidden;color:#3B5998">       
          <div class="header-box">
             <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
             	<ul>
@@ -39,6 +39,12 @@
        
         
             <div class="ui-mason-3">
+            
+            <div  style="background-image:url('/images/probeweb/bgspec.jpg');font-family:'微軟正黑體';
+            	      width:100%;height:150px;color:white;font-size:40px;padding-top:80px;padding-left:20px;">jLIVE Builder™</div>
+            	      
+            	  <div class="mbox ui-col-b"></div>
+            	  
             	  <div class="mbox ui-col-c">
                        <div style="position:relative;width:100%; margin-top:50px;
                               max-width:960px;height:200px;background:#3B5998;">
@@ -78,6 +84,8 @@
 		$_page.one('pageshow',function(event2){			
 			$mason.imagesLoaded(function(){
 				$mason.masonry();
+				$_page.find('#menu .ui-float-right a').removeClass('probe_current');
+				$_page.find('#menu #probe_solution a').addClass('probe_current');
 			});
 		});		
     });	
