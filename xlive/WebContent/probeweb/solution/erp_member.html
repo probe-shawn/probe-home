@@ -16,7 +16,7 @@
 
 <body>
 <div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
-	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+	<div data-role="header" data-position="fixed" style="background:#f2f2f2;border:hidden;color:#3B5998">       
          <div class="header-box">
             <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
             	<ul>
@@ -31,26 +31,49 @@
         <h1 style="display:none">休閒俱樂部</h1>  
         <div id="nav_history"></div>     
 	</div> 	
-        <h2>休閒俱樂部(繁中)</h2>
-         
+
+
+
+<div data-role="content">
     
-    <div data-role="content">
-        
-<div><img class="" style="cursor:default;"  src="/images/probeweb/solution/erp_member.jpg" alt="" />
-</div>
-<div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;">
+<div class='ui-mason-2' >
+<div style="background-image:url('/images/probeweb/bgspec.jpg');font-family:'微軟正黑體';
+            	      width:100%;height:150px;color:white;font-size:40px;padding-top:80px;padding-left:20px;">雲端 ERP</div>
+
+<div class="mbox ui-col-c" style="width:100%;height:30px;"></div>
+
+<div class="mbox ui-col-b">   	 	
+    
+	<div style="left:6px ; top:6px;">
+    <img src="/images/probeweb/solution/erp_member.jpg" style="" >
+	</div>
+</div>	
+<div class="mbox ui-col-a">  
+    <div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+<h2> 休閒俱樂部 (繁中)</h2><a href="/solution.html">  back</a>
+
 <h4>》系統說明</h4>
-<h5 style="color:black;font-weight: normal;">
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<h4>
+<div style="color:black;margin:10px;">
 <ul>
 <li>管理作業系統：會員基本資料維護、場地出租作業、清潔費作業系統等七個子系統。</li>
 <li>櫃台作業系統：POS作業系統、結帳作業、場地管理作業等五個子系統。</li>
 <li>報表作業：營業收入明細表、營業額分析表、營業收入日報表等十五個報表。</li>
 <li>基本資料維護：使用者權限設定、使用者群組設定、程式模組維護等九個子系統。</li>
-</ul></h5>
-        
+</ul>
+</div>
+</h4>
+	
+</div>
 
-         </div>
-	</div>
+</div> <!-- mason -->
+</div> <!-- content -->
+
+
 <style>    
     .mbox img{
 	width:100%;
@@ -64,6 +87,8 @@
 		$_page.one('pageshow',function(event2){			
 			$mason.imagesLoaded(function(){
 				$mason.masonry();
+				$_page.find('#menu .ui-float-right a').removeClass('probe_current');
+				$_page.find('#menu #probe_solution a').addClass('probe_current');
 			});
 		});		
     });	

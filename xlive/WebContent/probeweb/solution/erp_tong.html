@@ -15,8 +15,8 @@
 </head>
 
 <body>
-<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
-	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+<div data-role="page" data-position="fixed" data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header" data-position="fixed" style="background:#f2f2f2;border:hidden;color:#3B5998">       
          <div class="header-box">
             <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
             	<ul>
@@ -32,19 +32,36 @@
         <div id="nav_history"></div>     
 	</div>
 
-<h2>鑄鋁業 ERP (繁中)</h2>
-
 
 <div data-role="content">
     
+<div class='ui-mason-2' >
+<div style="background-image:url('/images/probeweb/bgspec.jpg');font-family:'微軟正黑體';
+            	      width:100%;height:150px;color:white;font-size:40px;padding-top:80px;padding-left:20px;">雲端 ERP</div>
+
+<div class="mbox ui-col-c" style="width:100%;height:30px;"></div>
+
+<div class="mbox ui-col-b">   	 	
     
-<div><img class="" style="cursor:default;"  src="../../images/probeweb/solution/tong02.jpg" alt="" />
+	<div style="left:6px ; top:6px;">
+    <img src="/images/probeweb/solution/erp_tong.jpg" style="" >
+	</div>
+</div>	
+<div class="mbox ui-col-a">  
+    <div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+<h2>鑄鋁業 ERP (繁中)</h2><a href="/solution.html">  back</a>
+<h4>》 代表性客戶：東庚企業股份有限公司</h4>
+<h4>》 公司簡介</h4>
+<div style="color:black;margin:10px">
+<h4>東庚企業股份有限公司，主要經營項目是家具五金、運動健身器材、嬰兒車、機械、五金零件、電扇零件等專業製造電鍍加工與內外銷。 目前員工人數約600人，工廠面積12000坪，年營業額30億新台幣。
+</h4>
 </div>
-<div style="font-family:微軟正黑體;color:#FF4500;font-weight: bold;">
-<h4>》 代表性客戶。公司簡介</h4>
-<h5 style="color:black;font-weight: normal;">東庚企業股份有限公司，主要經營項目是家具五金、運動健身器材、嬰兒車、機械、五金零件、電扇零件等專業製造電鍍加工與內外銷。 目前員工人數約600人，工廠面積12000坪，年營業額30億新台幣。 
-</h5></div>
-           
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<h4>
+<div style="color:black;margin:10px;">
 <div data-role="collapsible-set">
 
 <div data-role="collapsible" data-collapsed="true">
@@ -410,12 +427,23 @@
 </div>
            
 
-         </div>
-	</div>
+</div> <!-- data-role -->
+</div>
+</h4>
+	
+</div>
+
+</div> <!-- mason -->
+</div> <!-- content -->
+
+
+
+
 <style>    
     .mbox img{
 	width:100%;
 }
+
 </style>  
 <script language="Javascript"> 
 	$(document).one("pageload",function(event,data){
@@ -425,6 +453,8 @@
 		$_page.one('pageshow',function(event2){			
 			$mason.imagesLoaded(function(){
 				$mason.masonry();
+				$_page.find('#menu .ui-float-right a').removeClass('probe_current');
+				$_page.find('#menu #probe_solution a').addClass('probe_current');
 			});
 		});		
     });	

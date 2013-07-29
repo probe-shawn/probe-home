@@ -16,7 +16,7 @@
 
 <body>
 <div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
-	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+	<div data-role="header" data-position="fixed" style="background:#f2f2f2;border:hidden;color:#3B5998">       
          <div class="header-box">
             <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
             	<ul>
@@ -30,20 +30,35 @@
         </div>
         <h1 style="display:none">旅遊網站</h1>  
         <div id="nav_history"></div>     
+	</div> 
+
+
+<div data-role="content">
+    
+<div class='ui-mason-2' >
+<div style="background-image:url('/images/probeweb/bgspec.jpg');font-family:'微軟正黑體';
+            	      width:100%;height:150px;color:white;font-size:40px;padding-top:80px;padding-left:20px;">雲端 ERP</div>
+
+<div class="mbox ui-col-c" style="width:100%;height:30px;"></div>
+
+<div class="mbox ui-col-b">   	 	
+    
+	<div style="left:6px ; top:6px;">
+    <img src="/images/probeweb/solution/erp_star.jpg" style="" >
 	</div>
-        <h2>旅遊網站 ERP (繁中)</h2>
-         
-    
-    <div data-role="content">
-    
-    
-<div><img class="" style="cursor:default;"  src="/images/probeweb/solution/erp_star.jpg" alt="" />
-</div>
-<div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+</div>	
+<div class="mbox ui-col-a">  
+    <div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+<h2>旅遊網站 ERP (繁中)</h2><a href="/solution.html">  back</a>
 <h4>》 代表性客戶：燦星旅遊網</h4>
 
-<h5>
-<ul style="color:black;font-weight: normal;">
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<h4>
+<div style="color:black;margin:10px;">
+<ul>
 <li>網頁流量：每天20萬人上網</li>
 
 <li>2004年9月已成台灣流量最大旅遊網，2007年1月燦星旅遊網持續為台灣網路上最大的旅遊網站。
@@ -61,10 +76,16 @@
 <li>2008年3月辦理現金增資轉投資公司燦星旅遊網旅行社新台幣六仟萬元，投資總額為新台幣一億二仟萬元，(總計117家實體門市)。 
 </li>
 </ul>
-</h5>
+</div>
+</h4>
+	
+</div>
 
-         </div>
-	</div>
+</div> <!-- mason -->
+</div> <!-- content -->
+
+
+
 <style>    
     .mbox img{
 	width:100%;
@@ -78,6 +99,8 @@
 		$_page.one('pageshow',function(event2){			
 			$mason.imagesLoaded(function(){
 				$mason.masonry();
+				$_page.find('#menu .ui-float-right a').removeClass('probe_current');
+				$_page.find('#menu #probe_solution a').addClass('probe_current');
 			});
 		});		
     });	

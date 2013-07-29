@@ -16,7 +16,7 @@
 
 <body>
 <div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
-	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+	<div data-role="header" data-position="fixed" style="background:#f2f2f2;border:hidden;color:#3B5998">       
          <div class="header-box">
             <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
             	<ul>
@@ -30,18 +30,35 @@
         </div>
         <h1 style="display:none">汽車買賣加盟業</h1>  
         <div id="nav_history"></div>     
-	</div> 	
-      
-    <div data-role="content">
-    
-    
-<div><img class="" style="cursor:default;"  src="../../images/probeweb/solution/erp_car.jpg" alt="" />
-</div>
-<div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
-<h2>》 代表性客戶：有羿科技</h2>
+	</div> 	      
 
+
+<div data-role="content">
+    
+<div class='ui-mason-2' >
+<div style="background-image:url('/images/probeweb/bgspec.jpg');font-family:'微軟正黑體';
+            	      width:100%;height:150px;color:white;font-size:40px;padding-top:80px;padding-left:20px;">雲端 ERP</div>
+
+<div class="mbox ui-col-c" style="width:100%;height:30px;"></div>
+
+<div class="mbox ui-col-b">   	 	
+    
+	<div style="left:6px ; top:6px;">
+    <img src="/images/probeweb/solution/erp_car.jpg" style="" >
+	</div>
+</div>	
+<div class="mbox ui-col-a">  
+    <div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+<h2>汽車買賣加盟業 ERP (繁中)</h2><a href="/solution.html">  back</a>
+<h4>》 代表性客戶：有羿科技</h4>
+
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<h4>
+<div style="color:black;margin:10px;">
 <ul>
-<h5 style="color:black;font-weight: normal;">
 <li>車輛管理：車輛買賣管理，車輛配備輸入，進售車獎金統計等16個子系統。</li>
 
 <li>帳務管理：收入與支出作業、票據管理、分類帳管理等16個子系統。</li>
@@ -53,11 +70,16 @@
 <li>同業聯盟：聯盟管理、聯盟車輛、聯盟規章等3個仔細統。</li>
 
 <li>BOSS專區：帳務審核、到期應收帳款、總體營運分析報告等19個子系統。</li>
-</h5></ul>
-        
+</ul>
+</div>
+</h4>
+	
+</div>
 
-         </div>
-	</div>
+</div> <!-- mason -->
+</div> <!-- content -->
+
+
 <style>    
     .mbox img{
 	width:100%;
@@ -71,6 +93,8 @@
 		$_page.one('pageshow',function(event2){			
 			$mason.imagesLoaded(function(){
 				$mason.masonry();
+				$_page.find('#menu .ui-float-right a').removeClass('probe_current');
+				$_page.find('#menu #probe_solution a').addClass('probe_current');
 			});
 		});		
     });	

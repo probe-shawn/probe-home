@@ -16,7 +16,7 @@
 
 <body>
 <div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
-	<div data-role="header"  style="background:#f2f2f2;border:hidden;color:#3B5998">       
+	<div data-role="header" data-position="fixed" style="background:#f2f2f2;border:hidden;color:#3B5998">       
          <div class="header-box">
             <div data-role="navbar" data-iconpos="left" style="width:120px;float:right;">
             	<ul>
@@ -32,26 +32,43 @@
         <div id="nav_history"></div>     
 	</div> 	
       
-    <div data-role="content">
     
+
+<div data-role="content">
     
-<div><img class="" style="cursor:default;"  src="/images/probeweb/solution/box_mcu.jpg" alt="" />
-</div>
-<div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+<div class='ui-mason-2' >
+<div style="background-image:url('/images/probeweb/bgspec.jpg');font-family:'微軟正黑體';
+            	      width:100%;height:150px;color:white;font-size:40px;padding-top:80px;padding-left:20px;">雲端 ERP</div>
+
+<div class="mbox ui-col-c" style="width:100%;height:30px;"></div>
+
+<div class="mbox ui-col-b">   	 	
+    
+	<div style="left:6px ; top:6px;">
+    <img src="/images/probeweb/solution/erp_mcu.jpg" style="" >
+	</div>
+</div>	
+<div class="mbox ui-col-a">  
+    <div style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;cursor:default;text-align:left;">
+<h2>健康檢查促進系統 ERP (繁中)</h2><a href="/solution.html">  back</a>
 <h4>》 代表性客戶：壢新醫院尊爵高級健檢中心</h4>
 <h4>》 公司簡介</h4>
-<h5>
+<h4>
 <div style="color:black;">
 <p>秉持著對服務的承諾，在軟硬體設施上以最人性化的訴求，讓您在舒適、溫馨、典雅的環境中，接受完整、高品質的健康檢查服務，誠摯的邀請您感受我們專業、貼心的服務。</p>
 <p>為您量身訂做客制化的服務設計，給您頂級的貴賓禮遇。病檢分離、隱密雅致的空間規劃，讓您享有安全又舒適的健檢環境。</p>
 <p>每日受檢人數限額，讓所有受檢者在最有效率與品質的保障下完成。</p>
 <p>全程專業護理師單一帶檢，免除您排隊等候的無奈，讓您享有尊榮的服務。專職 高檢 醫師，提供您 2 次詳盡且專業的健康評估及報告說明。</p>
 </div>
-</h5>
-<h4>》 系統規格</h4>
-<div style="color:black;">
+</h4>
+</div>
+</div>
+
+<div class="mbox ui-col-a">
+<h4>
+<div style="color:black;margin:10px;">
 <ul>
-<h5>
+
 <li>尊爵健檢</li>
 	<ul>
     <li>櫃檯</li>
@@ -382,11 +399,16 @@
         </ul>
     </ul>
 <li>公用程式共計50支。</li>
-</h5></ul>
-</div>      
+</ul>
+</div>
+</h4>
+	
+</div>
 
-</div>
-</div>
+</div> <!-- mason -->
+</div> <!-- content -->
+
+
 <style>    
     .mbox img{
 	width:100%;
@@ -400,6 +422,8 @@
 		$_page.one('pageshow',function(event2){			
 			$mason.imagesLoaded(function(){
 				$mason.masonry();
+				$_page.find('#menu .ui-float-right a').removeClass('probe_current');
+				$_page.find('#menu #probe_solution a').addClass('probe_current');
 			});
 		});		
     });	
