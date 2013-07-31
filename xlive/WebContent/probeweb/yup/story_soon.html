@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+<div data-role="page"  data-fullscreen="true" style="background:#f2f2f2">	
+	<div data-role="header" data-position="fixed" style="background:#f2f2f2;border:hidden;color:#3B5998">       
+        
+	</div> 
+      
+    
+<div data-role="content"  style="background:#f2f2f2;margin:0;padding:0;width:100%;">        
+       
+<div class="ui-mason-2">
+            
+<div style="background-image:url('/images/probeweb/bgspec.jpg');font-family:'微軟正黑體';background-repeat:no-repeat;
+            	      width:100%;height:150px;color:white;font-size:40px;padding-top:80px;padding-left:20px;">實境故事</div>
+<div class="mbox ui-col-c" style="font-family:微軟正黑體;line-height:30px;color:#FF4500;font-weight: bold;text-align:left;">
+<div><h4>
+<a href='/index.html'>&rsaquo;&rsaquo; 首頁 </a>
+<a href='/product.html'>&rsaquo; 產品.服務 </a>
+<a href='/probeweb/yup/yup.html'>&rsaquo; yup </a>
+<a href='/probeweb/yup/story_all.html'>&rsaquo; 實境故事 </a>
+</h4></div>
+<h3>Coming soon...</h3><a href="/probeweb/yup/story_all.html">  back</a>
+</div>
+                
+<div class="mbox ui-col-b"></div>                  
+     <div class="mbox ui-col-a" style="margin-top:10px;margin-bottom:10px;max-width:600px;">
+     <img src="/images/probeweb/soon.png">
+     </div>
+     <div class="mbox ui-col-a">     
+     </div>
+
+               
+</div> <!-- mason -->         
+</div> <!-- #container -->
+        
+        
+<style>    
+    .mbox img{
+	width:100%;
+}
+</style>  
+<script language="Javascript"> 
+	$(document).one("pageload",function(event,data){
+		var $_page=$("div[data-role='page'][data-url='"+data.dataUrl+"']");	
+		var $mason=$_page.find('.ui-mason-2,.ui-mason-3');
+		$mason.masonry({isAnimated: true});		
+		$_page.one('pageshow',function(event2){			
+			$mason.imagesLoaded(function(){
+				$mason.masonry();
+				$_page.find('#menu .ui-float-right a').removeClass('probe_current');
+				$_page.find('#menu #probe_solution a').addClass('probe_current');
+			});
+		});		
+    });	
+</script> 	
+             
+</div>
+</body>
+</html>
