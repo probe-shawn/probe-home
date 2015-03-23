@@ -5,6 +5,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.SocketException;
+import java.net.URL;
 import java.util.Hashtable;
 import java.util.logging.Level;
 
@@ -126,7 +130,7 @@ public class aWebInformation implements xContextObjectImp {
 		String file_name = "/WEB-INF"+(name.startsWith("/")?"":"/")+name+".json";
 		InputStream json_stream=servletContext.getResourceAsStream(file_name);
 		if(json_stream == null){
-			file_name = "/WEB-INF"+(name.startsWith("/")?"":"/")+name+"/$.xml";
+			file_name = "/WEB-INF"+(name.startsWith("/")?"":"/")+name+"/$.json";
 			json_stream=servletContext.getResourceAsStream(file_name);
 			//is_$ = true;
 		}
@@ -190,99 +194,69 @@ public class aWebInformation implements xContextObjectImp {
 	public static boolean isWebObjectExisted(String object_path) throws aMethodException{
 		return getJSONObject(object_path) != null;
 	}
-/*	
-	public static boolean processInternetWebObjectMethod(String server_url,String object_url, String method_name,xDefaultMethod default_method) throws xMethodException{
-		Element[] xlive_process=aWebInformation.createElements("xlive.method");
-		xlive_process[xlive_process.length-1].setAttribute("name", method_name);
-		Element arguments=null;
-		try {
-			arguments=(Element)default_method.getServiceContext().getArguments("./return", XPathConstants.NODE);
-			arguments=(Element)arguments.getParentNode();
-			if(arguments != null)xlive_process[xlive_process.length-1].appendChild(arguments.cloneNode(true));
-		} catch (XPathExpressionException e) {
-			e.printStackTrace();
-		} catch (NullPointerException e) {
-			e.printStackTrace();
-		}
+	
+	
+	public static boolean processInternetWebObjectMethod(String server_url,String object_url, String method_name,aDefaultMethod default_method) throws aMethodException, JSONException{
+		JSONObject json = new JSONObject(default_method.getServiceContext().getClientJSO().toString());
+		json.put("method",method_name);
+		json.put("_return_", new JSONObject(default_method.getServiceContext().getReturnJSO().toString()));
 		//
 		String target_object_url=object_url.replaceAll("\\.","/");
 	    boolean valid=true;
-	    String connection_url=server_url+"/xlive/web/"+target_object_url;
+	    String connection_url="http://"+server_url+"/xlive/jso/"+target_object_url;
         URL url = null;
         HttpURLConnection connection = null;
-        String why=null;
+        String why="";
         try {
-            DataOutputStream output = null;
             url = new URL(connection_url);
             connection = (HttpURLConnection)url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoInput(true);
             connection.setDoOutput(true);
             connection.setUseCaches(false);
-            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            connection.setRequestProperty("Content-Type", "multipart/form-data");
             connection.setRequestProperty("X-XLive-Version", "1.0");
-            connection.setRequestProperty("X-XLive-Content", "xml");
-            connection.setRequestProperty("X-XLive-ServerCode", xServerConfig.getServerCode());
-            output = new DataOutputStream(connection.getOutputStream());
-    	    TransformerFactory.newInstance().newTransformer().transform(new DOMSource(xlive_process[0]), new StreamResult(output));
-            output.flush();
-            output.close();
-            output = null;
-            InputStream in = new DataInputStream(connection.getInputStream());
-			Document return_document=new xXmlDocument().createDocument(in);
-			Element return_root=return_document.getDocumentElement();
-			if("register".equals(method_name) && ("probe.service".equals(object_url) ||"probe/service".equals(object_url))) {
-				xServerConfig.setRegisterReturnNode((Element)return_root.cloneNode(true));
-			}
-			return_document.renameNode(return_root, null,"return");
-			XPath xp = XPathFactory.newInstance().newXPath();
-			Element arguments_return_node=null;
-			try {
-				arguments_return_node = (Element)xp.evaluate("./return", arguments, XPathConstants.NODE);
-			} catch (XPathExpressionException e) {
-				e.printStackTrace();
-			}
-			if(arguments_return_node!=null) 
-				 arguments.replaceChild(arguments.getOwnerDocument().adoptNode(return_root), arguments_return_node);
-			else arguments.appendChild(arguments.getOwnerDocument().adoptNode(return_root));
-            in.close();
-        }catch(SocketException se){
-        	se.printStackTrace();
+            connection.setRequestProperty("X-Content", "json");
+            connection.setRequestProperty("xsessionid", "8788dy");
+            connection.setRequestProperty("X-XLive-ServerCode", aServerConfig.getServerCode());
+            OutputStreamWriter output_writer = new OutputStreamWriter(connection.getOutputStream(),"UTF-8");
+            json.write(output_writer);
+            output_writer.close();
+            output_writer = null;
+            JSONObject reponse_jso = new JSONObject(xUtility.streamToString(connection.getInputStream(),"UTF-8"));
+            JSONObject return_jso = default_method.getServiceContext().getReturnJSO();
+            for(String key : JSONObject.getNames(reponse_jso)) {
+            	return_jso.put(key, reponse_jso.get(key));
+            }
+         }catch(SocketException e){
+        	e.printStackTrace();
         	valid=false;
-        	why="SocketException :"+se.getLocalizedMessage();
-        }catch(MalformedURLException mle) {
-        	mle.printStackTrace();
+        	why="SocketException :"+e.getLocalizedMessage();
+        }catch(MalformedURLException e) {
+        	e.printStackTrace();
         	valid=false;
-        	why="MalformedURLException :"+mle.getLocalizedMessage();
-        }catch(IOException ioe) {
-        	ioe.printStackTrace();
+        	why="MalformedURLException :"+e.getLocalizedMessage();
+        }catch(IOException e) {
+        	e.printStackTrace();
         	valid=false;
-        	why="IOException :"+ioe.getLocalizedMessage();
-    	}catch(TransformerConfigurationException tcx){
-    		tcx.printStackTrace();
+        	why="IOException :"+e.getLocalizedMessage();
+    	}catch(Exception e) {
+    		e.printStackTrace();
     		valid=false;
-    		why = "TransformerConfigurationException :"+tcx.getLocalizedMessage();
-    	}catch(TransformerException te){
-    		te.printStackTrace();
-    		valid=false;
-    		why = "TransformerException :"+te.getLocalizedMessage();
-    	}catch(Exception ex) {
-    		ex.printStackTrace();
-    		valid=false;
-    		why="Exception :"+ex.getLocalizedMessage();
+    		why="Exception :"+e.getLocalizedMessage();
         }finally {
            	try {if(connection != null) connection.disconnect();}catch(Exception econ){}
         }
-        Element[] rets=aWebInformation.createElements("arguments.return."+method_name+".valid", String.valueOf(valid));
-        default_method.getServiceContext().argumentsOperation(rets[0], "append", false);
-        rets=aWebInformation.createElements("arguments.return."+method_name+".why", why);
-        default_method.getServiceContext().argumentsOperation(rets[0], "append", false);
+        
+        JSONObject return_jso = default_method.getServiceContext().getReturnJSO();
+        JSONObject method_response = new JSONObject();
+        method_response.put("valid", valid);
+        method_response.put("why", why);
+        return_jso.put(method_name, method_response);
+        return_jso.put("valid", valid);
+        return_jso.put("why", why);
 		return valid;
 	}
-*/	
-	
-	
-	
 	
 	public static void responseNotReadyMessage(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException, JSONException{
 		JSONObject msg = new JSONObject("{'system':'System is not ready'}");

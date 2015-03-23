@@ -801,10 +801,12 @@ standard deployment descriptor.
   </listener>
   -->
   <servlet>
-    <servlet-name>xGAEDispatcherServlet</servlet-name>
-    <servlet-class>xlive.xGAEDispatcherServlet</servlet-class>
+    <servlet-name>aGAEDispatcherServlet</servlet-name>
+    <servlet-class>xlive.aGAEDispatcherServlet</servlet-class>
     <load-on-startup>0</load-on-startup>
   </servlet>
+  
+  
   <servlet>
     <servlet-name>xGAEUploadServlet</servlet-name>
     <servlet-class>xlive.xGAEUploadServlet</servlet-class>
@@ -815,26 +817,9 @@ standard deployment descriptor.
     <servlet-class>xlive.xGAEDownloadServlet</servlet-class>
     <load-on-startup>0</load-on-startup>
   </servlet>
-  <servlet>
-    <servlet-name>xFBiMallServlet</servlet-name>
-    <servlet-class>xlive.xFBiMallServlet</servlet-class>
-    <load-on-startup>0</load-on-startup>
-  </servlet>
-  <servlet>
-    <servlet-name>xFBRedirectServlet</servlet-name>
-    <servlet-class>xlive.xFBRedirectServlet</servlet-class>
-    <load-on-startup>0</load-on-startup>
-  </servlet>
-  <servlet>
-    <servlet-name>xFBPagesServlet</servlet-name>
-    <servlet-class>xlive.xFBPagesServlet</servlet-class>
-    <load-on-startup>0</load-on-startup>
-  </servlet>
-   <servlet>
-    <servlet-name>xTSMailServlet</servlet-name>
-    <servlet-class>xlive.xTSMailServlet</servlet-class>
-    <load-on-startup>0</load-on-startup>
-  </servlet>
+  
+   
+   
    <servlet>
   	<servlet-name>xChannelConnectedServlet</servlet-name>
     <servlet-class>xlive.xChannelConnectedServlet</servlet-class>
@@ -848,18 +833,10 @@ standard deployment descriptor.
   <servlet>
   	<servlet-name>aUtf8Servlet</servlet-name>
     <servlet-class>xlive.aUtf8Servlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
+    <load-on-startup>0</load-on-startup>
   </servlet>
   
-  <servlet>
-    <servlet-name>xProbeServlet</servlet-name>
-    <servlet-class>xlive.xProbeServlet</servlet-class>
-     <init-param>
-      <param-name>resource_encoding</param-name>
-      <param-value></param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
+  
   <servlet>
     <servlet-name>aProbeServlet</servlet-name>
     <servlet-class>xlive.aProbeServlet</servlet-class>
@@ -871,17 +848,12 @@ standard deployment descriptor.
   </servlet>
   
   
-  <servlet>
-    <servlet-name>aFBYupServlet</servlet-name>
-    <servlet-class>xlive.aFBYupServlet</servlet-class>
-    <load-on-startup>0</load-on-startup>
-  </servlet>
-  
   
   <servlet-mapping>
-    <servlet-name>xGAEDispatcherServlet</servlet-name>
+    <servlet-name>aGAEDispatcherServlet</servlet-name>
     <url-pattern>/xlive/*</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>xGAEUploadServlet</servlet-name>
     <url-pattern>/_gaeupload</url-pattern>
@@ -890,60 +862,15 @@ standard deployment descriptor.
     <servlet-name>xGAEDownloadServlet</servlet-name>
     <url-pattern>/gae/*</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>xFBiMallServlet</servlet-name>
-    <url-pattern>/imall/*</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>xFBiMallServlet</servlet-name>
-    <url-pattern>/mall/*</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>xFBRedirectServlet</servlet-name>
-    <url-pattern>/_fbred</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>xFBPagesServlet</servlet-name>
-    <url-pattern>/pages/*</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>xFBPagesServlet</servlet-name>
-    <url-pattern>/pages</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>xProbeServlet</servlet-name>
-    <url-pattern>/web/*</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>xProbeServlet</servlet-name>
-    <url-pattern>/ws/*</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>aUtf8Servlet</servlet-name>
-    <url-pattern>*.html</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>aUtf8Servlet</servlet-name>
-    <url-pattern>*.htm</url-pattern>
-  </servlet-mapping>
+  
+  
+  
+  
   <servlet-mapping>
     <servlet-name>aProbeServlet</servlet-name>
     <url-pattern>/jso/*</url-pattern>
   </servlet-mapping>
-   <servlet-mapping>
-    <servlet-name>aFBYupServlet</servlet-name>
-    <url-pattern>/ayup/*</url-pattern>
-  </servlet-mapping>
   
-  <servlet-mapping>
-   <servlet-name>xTSMailServlet</servlet-name>
-   <url-pattern>/_ah/mail/ts*</url-pattern>
-  </servlet-mapping>
-  
-  <servlet-mapping>
-   <servlet-name>xTSMailServlet</servlet-name>
-   <url-pattern>/_ah/mail/*</url-pattern>
-  </servlet-mapping>
   
   <servlet-mapping>
    <servlet-name>xChannelConnectedServlet</servlet-name>

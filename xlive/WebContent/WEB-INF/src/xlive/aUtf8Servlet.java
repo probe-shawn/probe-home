@@ -58,8 +58,8 @@ public class aUtf8Servlet extends HttpServlet {
       	String res_encoding = System.getProperty("xlive.resource.default_encoding"); 
       	if(res_encoding == null || res_encoding.trim().length()==0) res_encoding=resourceEncoding;
       	InputStreamReader input_stream_reader=(res_encoding !=null && res_encoding.trim().length()>0)?
-      			new InputStreamReader(xResourceManager.getResourceAsStream(res_path),res_encoding) :
-      			new InputStreamReader(xResourceManager.getResourceAsStream(res_path));
+      			new InputStreamReader(aResourceManager.getResourceAsStream(res_path),res_encoding) :
+      			new InputStreamReader(aResourceManager.getResourceAsStream(res_path));
       	OutputStreamWriter output_stream_writer= new OutputStreamWriter(response.getOutputStream(), "utf-8");
       	char[]cbuf=new char[10240];
       	int length=-1;
@@ -67,7 +67,7 @@ public class aUtf8Servlet extends HttpServlet {
       	input_stream_reader.close();
       	output_stream_writer.close();
       }else{
-    	  	InputStream input_stream=xResourceManager.getResourceAsStream(res_path);
+    	  	InputStream input_stream=aResourceManager.getResourceAsStream(res_path);
           	OutputStream output_stream= response.getOutputStream();
           	byte[] bytes=new byte[10240];
           	int length=-1;

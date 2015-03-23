@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import xlive.method.logger.xLogger;
-
-import java.util.logging.Level;
+import org.json.JSONException;
 
 
 @SuppressWarnings("serial")
@@ -21,7 +19,7 @@ public class aProbeServlet extends HttpServlet {
   }
   public void init(ServletConfig config) throws ServletException {
       super.init(config);
-      //new xResourceManager(getServletContext());
+      new aResourceManager(getServletContext());
       new aServerConfig(getServletContext());
       new aWebInformation(getServletContext());
   }
@@ -38,11 +36,14 @@ public class aProbeServlet extends HttpServlet {
 	  return;
   }
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	  if(!xWebInformation.getSystemInitialized()){
-		  xWebInformation.responseNotReadyMessage(request, response);
+	  if(!aWebInformation.getSystemInitialized()){
+		  try {
+			aWebInformation.responseNotReadyMessage(request, response);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 		  return;
 	  }
-	  long time1=System.currentTimeMillis();
 	  boolean do_next_process = true;
 	  aServiceContext service_context=null;
 	  try{
@@ -57,10 +58,9 @@ public class aProbeServlet extends HttpServlet {
 	  }
 	  try{
 		  if(service_context != null){
-			  String session_id=service_context.getSessionId();
+			 // String session_id=service_context.getSessionId();
 			  service_context.responseService();
 			  service_context.dispose();
-			  xLogger.log(Level.FINE, session_id, "aProbeServlet", "doPost", "elapseTime : "+(System.currentTimeMillis()-time1), 0);
 		  }
 	  }catch(aSystemException se){
 		  se.printStackTrace();

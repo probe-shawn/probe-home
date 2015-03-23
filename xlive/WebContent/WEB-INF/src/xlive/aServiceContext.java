@@ -8,6 +8,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.*;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.util.*;
 import java.util.logging.Level;
 
@@ -54,6 +56,25 @@ public class aServiceContext {
 		customizeResponse=true;
 		return response;
 	}
+	public boolean isURL(String url){
+        try {
+            InetAddress ia = InetAddress.getLocalHost();
+            String ip = ia.getHostAddress();
+            if(ip.startsWith(url)) return true;
+	      	Enumeration<NetworkInterface> n = NetworkInterface.getNetworkInterfaces();
+	        for (; n.hasMoreElements();) {
+              	NetworkInterface e = (NetworkInterface)n.nextElement();
+                Enumeration<InetAddress> a = e.getInetAddresses();
+                for (; a.hasMoreElements();){
+                    InetAddress addr = (InetAddress)a.nextElement();
+                    ip = addr.getHostAddress();
+                    if(ip.startsWith(url)) return true;
+                }
+	          }
+          }catch(Exception e){}
+		return false;
+	}
+	
 	private void httpRequestInformation(HttpServletRequest http_request, HttpServletResponse http_response) throws aSystemException {
 		request=http_request;
 		response=http_response;
@@ -123,6 +144,12 @@ public class aServiceContext {
 					}
 				}
 			}
+			//
+			JSONObject ret = clientJSO.optJSONObject("_return_"); // previous web/jso
+			if(ret != null) {
+				this.returnJSO = ret;
+				clientJSO.remove("_return_");
+			}
 			
 		}catch(JSONException e){
 			e.printStackTrace();
@@ -138,6 +165,9 @@ public class aServiceContext {
 	}
 	public JSONObject getReturnJSO(){
 		return returnJSO;
+	}
+	public void setReturnJSO(JSONObject return_jso){
+		returnJSO=return_jso;
 	}
 	public void logMethodException(aMethodException method_exception){
 		methodException=method_exception;

@@ -1,0 +1,462 @@
+	body {
+		font-family: ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif;
+	}
+	
+	/*header*/
+	#page_header, #page_header *{
+		transition: all 500ms linear;
+		-webkit-transition: all 500ms linear;
+		-mos-transition: all 500ms linear;
+		-ms-transition: all 500ms linear;
+		-o-transition: all 500ms linear;
+	}
+	#page_header {
+		position:absolute;
+		left:0px;
+		top:0px;
+		width:100%;
+		z-index:100;
+		height:120px;
+	}
+	.black-design #page_header {
+		background:rgba(0,0,0,0.2);
+	}
+	.white-design #page_header {
+		background:rgba(255,255,255,0.2);
+	}
+	.probe-logo {
+		position:absolute;
+		left:8px;
+		bottom:8px;
+		min-height:60px;
+		padding-left:72px;
+		background:url(/xlive/images/head_foot/probe_logo.gif) no-repeat left center;
+		cursor:default;
+	}
+	.probe-logo #name{
+		position:relative;
+		left:0px;
+		top:0px;
+		line-height:28px;
+		font-size:20px;
+		text-align: left;
+		cursor:default;
+	}
+	.black-design .probe-logo #name {
+		color:rgba(255,255,255,0.9);
+	}
+	.white-design .probe-logo #name {
+		color:rgba(0,0,0,0.9);
+	}
+	.probe-logo #e_name{
+		position:relative;
+		left:0px;
+		font-size:16px;
+		font-style: italic;
+		cursor:default;
+	}
+	.black-design .probe-logo #e_name {
+		color:rgba(255,255,255,0.7);
+	}
+	.white-design .probe-logo #e_name {
+		color:rgba(0,0,0,0.7);
+	}
+	.ellipsis, .header-menu {
+		position:absolute;
+		right:12px;
+		bottom:8px;
+	}
+	.ellipsis #bars, .header-menu .menu-item{
+		display:inline;
+		padding:8px;
+		font-size:18px;
+		cursor:pointer;
+	}
+	
+	.black-design .ellipsis #bars,
+	.black-design .page-menu .menu-item,
+	.black-design .share-menu .share-item,
+	.black-design .header-menu .menu-item {
+		color:rgba(255,255,255,0.7);
+	}
+	.white-design .ellipsis #bars,
+	.white-design .page-menu .menu-item,
+	.white-design .share-menu .share-item,
+	.white-design .header-menu .menu-item {
+		color:rgba(0,0,0,0.7);
+	}
+	.black-design .ellipsis #bars:hover,
+	.black-design .page-menu .menu-item:hover,
+	.black-design .share-menu .share-item:hover,
+	.black-design .header-menu .menu-item:hover {
+		color:rgba(255,255,255,0.9);
+	}
+	.white-design .ellipsis #bars:hover,
+	.white-design .page-menu .menu-item:hover,
+	.white-design .share-menu .share-item:hover,
+	.white-design .header-menu .menu-item:hover {
+		color:rgba(0,0,0,0.9);
+	}
+	.black-design .page-menu .menu-item.selected,
+	.black-design .header-menu .menu-item.selected {
+		color:rgba(255,255,255,1);
+		text-shadow: 0 0 15px #FFF;
+		font-weight:bold;
+	}
+	.white-design .page-menu .menu-item.selected,
+	.white-design .header-menu .menu-item.selected {
+		color:rgba(0,0,0,1);
+		text-shadow: 0 0 15px #0;
+		font-weight:bold;
+	}
+	/**share-menu**/
+	.share-menu {
+		position:absolute;
+		top:12px;
+		right:16px;
+	}
+	.share-menu .share-item{
+		display:inline;
+		font-size:16px;
+		cursor:pointer;
+	}
+	/**page menu**/
+	.page-menu {
+		transition: all 350ms linear;
+		-webkit-transition: all 350ms linear;
+		-mos-transition: all 350ms linear;
+		-ms-transition: all 350ms linear;
+		-o-transition: all 350ms linear;
+		position:absolute;
+		left:0px;
+		top:0px;
+		width:100%;
+		height:100%;
+		z-index:101;
+		background-color:rgba(0,0,0,0.01);
+   		-webkit-transform: translate(100%,0); 
+   		-moz-transform: translate(100%,0); 
+   		-ms-transform: translate(100%,0); 
+   		-o-transform: translate(100%,0); 
+		transform: translate(100%,0);
+	}
+	.page-menu.expand {
+   		-webkit-transform: translate(0,0); 
+   		-moz-transform: translate(0,0); 
+   		-ms-transform: translate(0,0); 
+   		-o-transform: translate(0,0); 
+		transform: translate(0,0);
+	}
+	.page-menu #menu_box {
+		position:absolute;
+		top:120px;
+		right:0px;
+		padding:12px;
+	}
+	.black-design .page-menu #menu_box{
+		border:1px solid rgba(255,255,255,0.8);
+		background-color: rgba(0,0,0,0.6);
+	}
+	.white-design .page-menu #menu_box{
+		border:1px solid rgba(0,0,0,0.8);
+		background-color: rgba(255,255,255,0.8);
+	}
+	.scroll-up .page-menu #menu_box {
+		top:72px;
+	}
+	#menu_box .menu-item {
+		font-size:18px;
+		padding:8px 20px 6px 8px;
+		cursor:pointer;
+	}
+	.black-design #menu_box .menu-item {
+		border-bottom:1px solid rgba(255,255,255,0.3);
+	}
+	.white-design #menu_box .menu-item {
+		border-bottom:1px solid rgba(0,0,0,0.3);
+	}
+	/**to_top**/
+	#to_top {
+		position:fixed;
+		right:16px;
+		bottom:16px;
+		font-size:20px;
+		-webkit-border-radius:3px;
+		-moz-border-radius:3px;
+		-ms-border-radius:3px;
+		-o-border-radius:3px;
+		border-radius:3px;
+		cursor:pointer;
+	}
+	.black-design #to_top {
+		border:1px solid rgba(255,255,255,0.8);
+		background-color: rgba(0,0,0,0.6);
+	}
+	.white-design #to_top {
+		border:1px solid rgba(0,0,0,0.8);
+		background-color: rgba(255,255,255,0.8);
+	}
+
+	/* scroll up header*/
+	.scroll-up.black-design #page_header {
+		background:rgba(0,0,0,0.8);
+		height:72px;
+	} 
+	.scroll-up.white-design #page_header {
+		background:rgba(255,255,255,0.8);
+		height:72px;
+	} 
+	.scroll-up .probe-logo {
+		bottom:4px;
+		background:url(/xlive/images/head_foot/probe_logo.gif) no-repeat left center;
+	}
+	.scroll-up .probe-logo #name{
+		line-height:28px;
+		font-size:18px;
+	}
+	.scroll-up .probe-logo #e_name{
+		font-size:14px;
+	}
+	.scroll-up .header-menu {
+		bottom:4px;
+	}
+	.scroll-up .header-menu .menu-item{
+		padding:4px;
+		font-size:16px;
+	}
+	.scroll-content{
+		position:relative;
+		margin-top:120px;
+	}
+	.scroll-up .scroll-content{
+		margin-top:72px;
+	}
+	.background {
+		position:absolute;width:100%;height:100%;
+		background-repeat:no-repeat;
+		background-position:center;
+		background-size:cover;
+		opacity:0;
+		transition: all 500ms ease-in-out;
+		-webkit-transition: all 500ms ease-in-out;
+		-mos-transition: all 500ms ease-in-out;
+		-ms-transition: all 500ms ease-in-out;
+		-o-transition: all 500ms ease-in-out;
+	}
+	.center-960 {
+		position:relative;width:100%;max-width:960px;margin:0 auto;
+		clear:both;
+	}
+	.half-960 {
+		position:relative;
+		display:inline-block;
+		width:50%;
+		float:left;
+	}
+	.ellipsis {
+		display:none;
+	}
+	.quart-960 {
+		position:relative;
+		display:inline-block;
+		width:25%;
+		float:left;
+	}
+	.min-height-680 {
+		min-height:680px;
+	}
+	.black-design {
+		color:rgba(255,255,255,0.7);
+		text-shadow:none !important;
+	}
+	.white-design {
+		color:rgba(0,0,0,0.7);
+		text-shadow:none !important;
+	}
+	.h1,h1 {
+       font-size:48px;
+	   font-weight:normal !important;
+	   line-height:150%;
+	}
+	.h2,h2 {
+       font-size:32px;
+	   font-weight:normal !important;
+	    line-height:150%;
+	}
+	.h3,h3 {
+       font-size:28px;
+	   font-weight:normal !important;
+	    line-height:150%;
+	}
+	.h4,h4 {
+       font-size:20px;
+	   font-weight:normal !important;
+	    line-height:200%;
+	}
+	.h5,h5 {
+       font-size:16px;
+	   font-weight:normal !important;
+	   line-height:200%;
+	}
+	.h6,h6 {
+       font-size:13px;
+	   font-weight:normal !important;
+	   line-height:200%;
+	}
+	.indent-1 {
+		padding-left:16px;
+	}
+	.indent-2 {
+		padding-left:32px;
+	}
+	.indent-3 {
+		padding-left:48px;
+	}
+	.indent-4 {
+		padding-left:64px;
+	}
+	.indent-5 {
+		padding-left:80px;
+	}
+	.ml-indent-1 {
+		margin-left:16px;
+	}
+	.ml-indent-2 {
+		margin-left:32px;
+	}
+	.ml-indent-3 {
+		margin-left:48px;
+	}
+	.ml-indent-4 {
+		margin-left:64px;
+	}
+	.ml-indent-5 {
+		margin-left:80px;
+	}
+	.marker {
+		position:relative;
+		height:30px;
+		clear:both;
+	}
+	.footer-item-title {
+		cursor:default;
+	}
+	.footer-item-title:hover {
+	}
+	.footer-item-item{
+		cursor:pointer;
+	}
+	.footer-item-item:hover {
+		color:rgba(0,0,0,1);
+	}
+	.full-background {
+		position:relative;
+		width:100%;
+		background-color:rgba(239,239,239,0.9);
+	}
+	.content-padding {
+		padding:16px 48px;
+	}
+	
+	.session-title {
+		position:absolute;
+		font-family:'Rock Salt', cursive;
+		top:-32px;
+		right:16px;
+		color:rgba(0,0,0,0.5);
+		text-align:right;
+		font-size:48px;
+	}
+	.session-directory {
+		font-size:18px;
+		cursor:pointer;
+		line-height:32px;
+	}
+	.white-design .session-directory>div:hover{
+		color:rgba(0,0,0,1);
+	}
+	.black-design .session-directory>div:hover{
+		color:rgba(1,1,1,1);
+	}
+
+	@media screen and (max-width: 680px) {
+		.half-960 {
+			width:100%;
+		}
+		.quart-960 {
+			width:50%;
+		}
+		.header-menu {
+			display:none;
+		}
+		.ellipsis {
+			display:block;
+		}
+	}
+	
+	@media screen and (max-width: 500px) {
+		.quart-960 {
+			width:100%;
+		}
+		.h1,h1 {
+	       font-size:42px !important;
+		}
+		.h2,h2 {
+	       font-size:30px !important;
+		}
+		.h3,h3 {
+	       font-size:24px !important;
+		}
+		.h4,h4 {
+	       font-size:18px !important;
+		}
+		.h5,h5 {
+	       font-size:14px !important;
+		}
+		.h6,h6 {
+	       font-size:12px !important;
+		}
+		.content-padding {
+			padding:16px;
+		}
+		.indent-1 {
+			padding-left:8px;
+		}
+		.indent-2 {
+			padding-left:16px;
+		}
+		.indent-3 {
+			padding-left:32px;
+		}
+		.indent-4 {
+			padding-left:48px;
+		}
+		.indent-5 {
+			padding-left:64px;
+		}
+		.ml-indent-1 {
+			margin-left:8px;
+		}
+		.ml-indent-2 {
+			margin-left:16px;
+		}
+		.ml-indent-3 {
+			margin-left:32px;
+		}
+		.ml-indent-4 {
+			margin-left:48px;
+		}
+		.ml-indent-5 {
+			margin-left:64px;
+		}
+		.session-title {
+			font-size:38px;
+		}
+		.session-directory{
+			font-size:16px;
+			line-height:28px;
+		}
+		
+	}
+	
+	
