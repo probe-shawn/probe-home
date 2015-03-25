@@ -3,25 +3,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
 
 <head>
+
+<title>PROBE-solutions</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="yup,yupmenu,o2o,POS,web POS,線上開店,電子商務,網路購物,LBS,solomo,行動購物,手機購物,雲端運算,雲端服務,雲端購物,GAE,java">
+<meta name="keywords" content="yup,yupmenu,o2o,POS,web POS,線上開店,電子商務,網路購物,LBS,solomo,行動購物,手機購物,雲端運算,雲端服務,雲端購物,GAE,java">
+
+<meta property="og:site_name" content="solutions@probe-technologies"/>
+<meta property="og:title" content="cloud service, probe technologies" />
+<meta property="og:description" content="波峯軟體 : 解決方案\n solutions@probe technologies." />
+<meta property="og:url" content="http://probe-home.appspot.com/solutions.html" />
+<meta property="og:image" content="http://probe-home.appspot.com/images/solutions/cover.png"/>
+
 	<script>
-	window.location="http://"+window.location.host+'/index.html'+'?page='+window.location.pathname.substr(1);
+	var hash=window.location.hash||'';
+	window.location="http://"+window.location.host+'/index.html'+'?page='+window.location.pathname.substr(1)+hash;
 	</script>
 
 
 </head>
 
 <body style="margin:0;padding:0;overflow:hidden;text-shadow:none !important"> 
-	<div data-role="page" id="index_solution" class="white-design marker_1" style="margin:0;padding:0;overflow:hidden;"> 
-		<div id="marker_1" class="background" style="background-image:url(/xlive/images/solutions/head_background.jpg);"></div>
+	<div data-role="page" id="index_solution" class="white-design marker_top" style="margin:0;padding:0;overflow:hidden;"> 
+		<div id="marker_top" class="background" style="background-image:url(/xlive/images/solutions/head_background.jpg);"></div>
 		<div id="jlive" class="background" style="background-image:url(/xlive/images/solutions/ide.jpg);"></div>
 		<div id="apserver" class="background" style="background-image:url(/xlive/images/solutions/apserver.jpg);"></div>
 		<div id="docbuilder" class="background" style="background-image:url(/xlive/images/solutions/docbuilder.jpg);"></div>
+		<div id="deploy" class="background" style="background-image:url(/xlive/images/solutions/deploy.jpg);"></div>
 		<div id="marker_footer_2" class="background" style="background-image:url(/xlive/images/head_foot/foot_background.jpg);"></div>
 		
 		<div id="iscroll" class="iscroll" style="position:relative;overflow:hidden;">
    			<div class="scroll-content">
    			
-   				<div id="marker_1" class="marker change-background" data-design="white-design"></div>
+   				<div id="marker_top" class="marker change-background" data-design="white-design"></div>
    				<div class="center-960" style="min-height:240px">
    					<div class="half-960 indent-1">
    						<h1 class="item-title"><i class="fa fa-gears fa-1x"></i>&nbsp;Solutions</h1>
@@ -29,7 +45,7 @@
 	   						<div data-href="solutions.html#jlive" class="item-item"><i class="fa fa-fw fa-gear fa-1x"></i>&nbsp;jLIVE Builder</div>
 	   						<div data-href="solutions.html#apserver" class="item-item"><i class="fa fa-fw fa-server fa-1x"></i>&nbsp;Application server</div>
 	   						<div data-href="solutions.html#docbuilder" class="item-item"><i class="fa fa-fw fa-file-text-o fa-1x"></i>&nbsp;Document Builder</div>
-	   						<div data-href="solutions.html" class="item-item"><i class="fa fa-fw fa-suitcase fa-1x"></i>&nbsp;Outsourcing</div>
+	   						<div data-href="solutions.html#deploy" class="item-item"><i class="fa fa-fw fa-code fa-1x"></i>&nbsp;jLIVE deploy</div>
    						</div>
    					</div>
    					<div style="clear:both;"></div>
@@ -439,8 +455,9 @@
 									<div class="h6 indent-1" style="text-indent:16px">
 										在 jLIVE Builder™ 應用程式控制面版，選取專案，輸入主要 HTTP 後，核取 (check) 2nd MW_HTTP 並按下設定鍵。在 2nd MW_HTTP property 設定視窗中，建立異地 jLIVE™ middle ware 。設計師可以按下測試連結建立的 jLIVE™ middle ware。在按下確定鍵後，系統會嘗試連結每一個已建立的  jLIVE™ middle ware，並回覆連結的結果訊息。如果遠端jLIVE™ middle ware 未開機無法連結或有任何的錯誤，系統會出現測試連結失敗訊息視窗，並詢問設計師是否暫時忽略連線結果繼續設定作業。
 									</div>
+									<!--
 									<div class="ml-indent-1" style="background-repeat:no-repeat;background-image:url(/xlive/images/solutions/apserver/ch15_03_createmw.gif);height:362px;background-position:left center;background-size:contain;"></div>
-									
+									-->
 								</div>
 								<div id="apserver_feature_2" class="marker" style=""></div>
 								<div class="indent-3">
@@ -450,7 +467,9 @@
 									<div class="h6 indent-1" style="text-indent:16px">
 										建立異地 jLIVE™ middle ware 後，使用異地 jLIVE™ middle ware 的資料庫系統 ，只要在新增資料庫時選擇此資料庫系統安置在那一個  jLIVE™ middle ware 即可。MW_HTTP 的選項中列示所有可用的異地 jLIVE™ middle ware 別名，其中 --default-- 為主要 jLIVE™ middle ware 的別名。
 									</div>
+									<!--
 									<div class="ml-indent-1" style="background-repeat:no-repeat;background-image:url(/xlive/images/solutions/apserver/ch15_03_mwdb.gif);height:258px;background-position:left center;background-size:contain;"></div>
+									-->
 								</div>
 							<div id="apserver_console" class="marker" style="height:0px;"></div> 
 							<h4 class="indent-2"><i class="fa fa-fw fa-bookmark fa-1x"></i>
@@ -459,12 +478,15 @@
 							<h5 class="indent-3" style="text-indent:16px;">
 								系統管理師可以使用瀏覽器經由 jLIVE™ middle ware 管理介面，調整 jLIVE™ middle ware 組態及管理線上使用者。在瀏覽器網址列輸入： http://HOST:IP/servlet/com.probe.jslive.ProbeServlet/  (例如：http://localhost:8080/servlet/com.probe.jslive.ProbeServlet/ ) 即可開啟管理介面的登入畫面。
 							</h5>
+							<!--
 							<div class="ml-indent-3" style="background-repeat:no-repeat;background-image:url(/xlive/images/solutions/apserver/ch15_02_log.gif);height:271px;background-position:left center;background-size:contain;"></div>
-							
+							-->
 							<h5 class="indent-3" style="text-indent:16px;">
 								目前線上人數管理 (Online user statistic)：系統管理師可以按選 Sel 核取方塊後，按下 Remove selection user ，移除使用者。
 							</h5>
+							<!--
 							<div class="ml-indent-3" style="background-repeat:no-repeat;background-image:url(/xlive/images/solutions/apserver/ch15_02_user.gif);height:353px;background-position:left center;background-size:contain;"></div>
+							-->
 						</div>
 					</div>		
 					<div style="clear:both;height:72px"></div>	
@@ -482,60 +504,107 @@
    							<h3><i class="fa fa-fw fa-file-text-o fa-1x"></i>Document Builder™</h3>
 							<div class="indent-1 session-directory">
 								<div data-href="solutions.html#docbuilder_feature" ><i class="fa fa-fw fa-bookmark-o fa-1x"></i>&nbsp;功能特色</div>
-								<div data-href="solutions.html#docbuilder_console" ><i class="fa fa-fw fa-bookmark-o fa-1x"></i>&nbsp;產品架構</div>
+								<div data-href="solutions.html#docbuilder_structure" ><i class="fa fa-fw fa-bookmark-o fa-1x"></i>&nbsp;產品架構</div>
 							</div>
-							<div class="h5 indent-2" style="text-indent:16px;">
-							</div>
+							<h5 class="indent-2" style="text-indent:16px;">
+								jLive Document Builder™ 應用程式技術文件系統，執行時將以 HTML　產生應用程式首頁、系統規格、執行環境、資料庫系統、資 料表格檔案結構及索引資訊、參用表格的程式模組、視窗、選單、 資料來源、事件、元件屬性設定、報表模組及所有列印元件屬性設 定、文件產生時，系統快照每個視窗畫面並存成 PNG　檔案，提供 視窗畫面圖片檔超連結至元件屬性設定文件。 產生應用系統文件時， jLive Document Builder™系統會根據作業 系統語系，將該語系文件格式　(document pattern)建立至應用程 式系統檔案目錄中。所有產生的文件將會根據文件格式輸出，文 件格式是　HTML　檔案格式，在充分了解結構後，可以客製編排輸 出格式。
+							</h5>
+							<div class="ml-indent-2" style="background-repeat:no-repeat;background-image:url(/xlive/images/solutions/docbuilder/doc_01.png);height:510px;background-position:left center;background-size:contain;"></div>
+							
 							<div id="docbuilder_feature" class="marker" style="height:0px;"></div> 
 							<h4 class="indent-2"><i class="fa fa-fw fa-bookmark fa-1x"></i>
 								功能特色
 							</h4>
-							
-							
-							
-							
 							<div class="indent-3 session-directory">
-								<div data-href="solutions.html#apserver_feature_1" ><i class="fa fa-fw fa-bookmark-o fa-1x"></i>&nbsp;建立異地 jLIVE™ middle ware</div>
-								<div data-href="solutions.html#apserver_feature_2" ><i class="fa fa-fw fa-bookmark-o fa-1x"></i>&nbsp;使用異地 jLIVE™ middle ware 的資料庫系統 </div>
+								<div data-href="solutions.html#docbuilder_feature_1" ><i class="fa fa-fw fa-bookmark-o fa-1x"></i>&nbsp;執行技術文件產生系統</div>
+								<div data-href="solutions.html#docbuilder_feature_2" ><i class="fa fa-fw fa-bookmark-o fa-1x"></i>&nbsp;技術文件首頁屬性設定 </div>
+								<div data-href="solutions.html#docbuilder_feature_3" ><i class="fa fa-fw fa-bookmark-o fa-1x"></i>&nbsp;技術文件視窗屬性設定 </div>
+								<div data-href="solutions.html#docbuilder_feature_4" ><i class="fa fa-fw fa-bookmark-o fa-1x"></i>&nbsp;技術文件選項設定 </div>
 							</div>
 							<h5 class="indent-3" style="text-indent:16px;">
-								跨國性與多分公司的企業，資料庫系統通常是獨立存在於各據點，網際網路應用程式不但要能處理單一據點資料處理，還要能適時地同時存取各據點的資料訊息。 jLIVE Builder™ 允許在開發應用程式時，同時連接異地的應用伺服器 (jLIVE™ middle ware)，並存取異地應用伺服器所連結的資料庫系統，跨國性與多分公司的企業，隨時可透過應用程式，統計、分析、處理各據點資料。
+								jLIVE Document Builder™ 應用程式技術文件產生系統，使用時需另購授權，否則只能輸出範例應用程式 Northwind_sample 的技術文件。 jLIVE Document Builder 應用程式技術文件系統，執行時將以 HTML 產生以下文件
 							</h5>
-							<div class="ml-indent-3" style="background-repeat:no-repeat;background-image:url(/xlive/images/solutions/apserver/ch15_03_multimw.gif);height:424px;background-position:left center;background-size:contain;"></div>
-								<div id="apserver_feature_1" class="marker" style=""></div>
-								<div class="indent-3">
-									<div class="h4"><i class="fa fa-fw fa-bookmark fa-1x"></i>
-										建立異地 jLIVE™ middle ware
-									</div>
-									<div class="h6 indent-1" style="text-indent:16px">
-										在 jLIVE Builder™ 應用程式控制面版，選取專案，輸入主要 HTTP 後，核取 (check) 2nd MW_HTTP 並按下設定鍵。在 2nd MW_HTTP property 設定視窗中，建立異地 jLIVE™ middle ware 。設計師可以按下測試連結建立的 jLIVE™ middle ware。在按下確定鍵後，系統會嘗試連結每一個已建立的  jLIVE™ middle ware，並回覆連結的結果訊息。如果遠端jLIVE™ middle ware 未開機無法連結或有任何的錯誤，系統會出現測試連結失敗訊息視窗，並詢問設計師是否暫時忽略連線結果繼續設定作業。
-									</div>
-									<div class="ml-indent-1" style="background-repeat:no-repeat;background-image:url(/xlive/images/solutions/apserver/ch15_03_createmw.gif);height:362px;background-position:left center;background-size:contain;"></div>
-									
-								</div>
-								<div id="apserver_feature_2" class="marker" style=""></div>
-								<div class="indent-3">
-									<div class="h4"><i class="fa fa-fw fa-bookmark fa-1x"></i>
-										使用異地 jLIVE™ middle ware 的資料庫系
-									</div>
-									<div class="h6 indent-1" style="text-indent:16px">
-										建立異地 jLIVE™ middle ware 後，使用異地 jLIVE™ middle ware 的資料庫系統 ，只要在新增資料庫時選擇此資料庫系統安置在那一個  jLIVE™ middle ware 即可。MW_HTTP 的選項中列示所有可用的異地 jLIVE™ middle ware 別名，其中 --default-- 為主要 jLIVE™ middle ware 的別名。
-									</div>
-									<div class="ml-indent-1" style="background-repeat:no-repeat;background-image:url(/xlive/images/solutions/apserver/ch15_03_mwdb.gif);height:258px;background-position:left center;background-size:contain;"></div>
-								</div>
-							<div id="apserver_console" class="marker" style="height:0px;"></div> 
-							<h4 class="indent-2"><i class="fa fa-fw fa-bookmark fa-1x"></i>
-								管理介面
-							</h4>
-							<h5 class="indent-3" style="text-indent:16px;">
-								系統管理師可以使用瀏覽器經由 jLIVE™ middle ware 管理介面，調整 jLIVE™ middle ware 組態及管理線上使用者。在瀏覽器網址列輸入： http://HOST:IP/servlet/com.probe.jslive.ProbeServlet/  (例如：http://localhost:8080/servlet/com.probe.jslive.ProbeServlet/ ) 即可開啟管理介面的登入畫面。
-							</h5>
-							<div class="ml-indent-3" style="background-repeat:no-repeat;background-image:url(/xlive/images/solutions/apserver/ch15_02_log.gif);height:271px;background-position:left center;background-size:contain;"></div>
+							<div class="h5 indent-4">
+									<div><i class="fa fa-fw fa-file-o"></i>&nbsp;應用程式首頁</div>
+									<div><i class="fa fa-fw fa-file-o"></i>&nbsp;應用規格及執行環境</div>
+									<div><i class="fa fa-fw fa-file-o"></i>&nbsp;資料庫系統</div>
+									<div><i class="fa fa-fw fa-file-o"></i>&nbsp;資料庫表格檔案結構及索引資訊</div>
+									<div><i class="fa fa-fw fa-file-o"></i>&nbsp;參用資料庫表格的程式模組</div>
+									<div><i class="fa fa-fw fa-file-o"></i>&nbsp;視窗、選單、資料來源、事件、元件屬性設定</div>
+									<div><i class="fa fa-fw fa-file-o"></i>&nbsp;報表模組及所有列印元件屬性設定</div>
+							</div>
+							<div class="h5 indent-3" style="text-indent:16px;">	
+								<p>第一次產生該應用系統文件時，jLIVE Document Builder™ 系統會根據作業系統 (OS) 語系，將該語系文件格式 (document pattern) 建立至應用程式系統檔案目錄中。所有產生的文件將會根據文件格式 (document pattern)　輸出，文件格式 (document pattern) 是 HTML 檔案格式，設計師在充分了解結構後，可以自行編排輸出格式。
+								<p>jLIVE Document Builder™ 文件產生時，系統內部會將每個視窗畫面快照 (snapshot) 存成 jpg 檔案，並提供視窗畫面圖片檔超連結 (map) 至元件屬性設定文件。由於系統快速運作及使用資源量大，當系統記憶體資源不足時，系統會出現記憶體不足的訊息視窗，並立即執行資源回收 (garbage collection) ，系統在獲得足夠記憶體後，繼續作業。在大系統文件產生時，設計師可以按下取消鍵，取消作業，已經產出的文件不會刪除，但上下頁的超連結，由於尚未作業完成所以可能不正確。							
+							</div>
 							
-							<h5 class="indent-3" style="text-indent:16px;">
-								目前線上人數管理 (Online user statistic)：系統管理師可以按選 Sel 核取方塊後，按下 Remove selection user ，移除使用者。
-							</h5>
-							<div class="ml-indent-3" style="background-repeat:no-repeat;background-image:url(/xlive/images/solutions/apserver/ch15_02_user.gif);height:353px;background-position:left center;background-size:contain;"></div>
+							<div id="docbuilder_feature_1" class="marker" style=""></div>
+							<div class="indent-3">
+								<div class="h4"><i class="fa fa-fw fa-bookmark"></i>
+									執行技術文件產生系統
+								</div>
+								<div class="h6 indent-1" style="text-indent:16px">
+									在 jLIVE Builder™ 控制面版上選擇應用程式，並於右側應用程式設定面版上，按下 jLIVE document builder 按鍵。設定作業的首頁、視窗、選項屬性後，按下開始鍵即開始文件輸出作業。
+								</div>
+							</div>
+							
+							<div id="docbuilder_feature_2" class="marker" style=""></div>
+							<div class="indent-3">
+								<div class="h4"><i class="fa fa-fw fa-bookmark"></i>
+									應用規格及執行環境
+								</div>
+								<div class="h6 indent-1" style="text-indent:16px">
+									技術文件首頁，提供類似文件的封面。在首頁中貼上客戶、應用系統及開發公司(者)的名稱及圖示 (icon) ，並在應用系統名稱及圖示上加入超連結至系統規格技術文件頁 (index2.html)。首頁編排、對齊方式及其他資訊可以自行更改 pattern 檔。
+								</div>
+							</div>
+							<div id="docbuilder_feature_3" class="marker" style=""></div>
+							<div class="indent-3">
+								<div class="h4"><i class="fa fa-fw fa-bookmark"></i>
+									技術文件視窗屬性設定
+								</div>
+								<div class="h6 indent-1" style="text-indent:16px">
+									選擇要輸出技術文件的視窗模組。設計師可以只選取部份修改的視窗模組輸出，如果設定 [重新編排所有 HTML 上下頁超連結] 屬性，系統作業時會按應用程式控制面版的視窗節點次序，連結相關的上下頁。
+								</div>
+							</div>
+							<div id="docbuilder_feature_4" class="marker" style=""></div>
+							<div class="indent-3">
+								<div class="h4"><i class="fa fa-fw fa-bookmark"></i>
+									技術文件選項設定
+								</div>
+								<div class="h6 indent-1" style="text-indent:16px">
+									選項設定包括是否產生資料庫檔案結構，參照資料表格的視窗與事件‧‧‧。由於查詢資料庫及掃瞄設計的 HTML 及重新編排 HTML 超連結的作業，皆很耗時且須大量資源，沒有更動的部份可以選擇更新不輸出。
+								</div>
+							</div>
+							
+							
+							<div id="docbuilder_structure" class="marker" style="height:0px;"></div> 
+							<h4 class="indent-2"><i class="fa fa-fw fa-bookmark fa-1x"></i>
+								產品架構
+							</h4>
+							<div class="h5 indent-3" style="text-indent:16px;">
+								<p>jLIVE Document Builder™ 系統，預設各語系的文件格式檔 (document pattern) ，安裝於 jLIVE /doc/jlive_pattern 目錄下。
+								<p>各語系有其相對文件格式檔 (document pattern)，系統找不到相對文件格式檔時，採用 default 目錄。第一次產生該應用系統文件時，LIVE Document Builder 系統會根據作業系統 (OS) 語系，將該語系文件格式 (document pattern) 建立至應用程式系統檔案目錄中。
+								<p>文件格式檔 (document pattern) 計有四個目錄，24 個 HTML 檔。每個輸出的文件皆根據這些文件格式檔的定義，擷取資料及格式化。資料庫以 db_dbname.html 定義，例如：資料庫別名為 jNorthDB，其相對產生的文件為 db_jNorthDB.html，而在此資料庫中每個資料表格 (table) 則以 tbl_tblname.html 定義，例如：資料表格名稱為 Prodcut，其相對產生的文件為 jNorthDB_Product.html。在產生資料表格 (table) 文件中，表格結構 (table structure) 及索引 (index) 資訊如何配置，則根據 tbl_element_pattern.html 中的定義。
+								<p>所以設計師可以根據檔案命名，得知每個文件是由那些文件格式檔所產生。其中以 element_pattern 結尾的格式檔，都是屬於細部描述及重覆使用的格式，例如：編輯方塊元件 (edit component) 的輸出格式，只有一式位於 comp_element_pattern.html。
+								<p>以編輯 HTML 的編輯器開啟文件格式檔 (document pattern) ，最上層以 HTML表格 將文件定位於瀏覽器中央並限制其寬度為 600 ，設計師可以更改為適合使用的寬度。所有格式檔 HTML 以書籤 (book marker) 標記所要填入的資訊，書籤標記的名稱不可更改，但可刪除，設計師可以自行刪除一些認為不需輸出的資訊，以得到較簡潔的文件。除了書籤標記外，圖檔、文字、排列方式與對齊，皆為可更改項目，亦可自行以 HTML 加入其他資訊。
+								<p>書籤標記命名皆以 p_ 起頭。以 _clone 為結尾的書籤標記，表示在此 HTML 區段會因為資料需要，而重覆以相同定義產出，例如：db_dbname.html 中，每個資料表 (table) 列示的書籤標記為 p_tblname_clone。以 _annex 為結尾的書籤標記，表示在此 HTML 區段會插入由相對名稱格式檔 _element_pattern 中，以 _pat 為結尾的書籤標記所定義的資訊與格式。例如：tabl_tblname.html 中，關於索引的資訊其書籤標記為 p_index_annex ，而其所插入的資訊， 以書籤標記 p_index_pat 定義於 tbl_element_pattern.html 中。							
+							</div>
+						</div>
+					</div>		
+					<div style="clear:both;height:72px"></div>	
+   				</div>
+   				
+   				
+   				<!-- ----- deploy -------- -->
+   				<div id="deploy" class="marker change-background" data-design="white-design" style="height:180px;"></div> 
+   				<div class="full-background response-size" data-h="500" style="min-height:500px">
+					<div class="center-960 white-design content-padding">  	
+						<div class="session-title" style="position:absolute;text-shadow: 0 0 8px #fff;">jLIVE Deploy</div>
+						<div id="deploy_content">
+   							<h3><i class="fa fa-fw fa-server fa-1x"></i>jLIVE Deploy</h3>
+							<div class="h5 indent-2" style="text-indent:16px;">
+								Contact us.
+							</div>
 						</div>
 					</div>		
 					<div style="clear:both;height:72px"></div>	
@@ -543,11 +612,9 @@
    				
    				
    				
-   				
-   				
    				<!--common module footer page ------------------------------->
    				<div id="marker_footer_1" class="marker"></div>
-   				<div style="position:relative;background-position:top center;background-repeat:no-repeat;background-size:cover;background-image:url(/xlive/images/head_foot/footer.png);width:100%;height:500px;">
+   				<div class="response-size" data-h="545" style="position:relative;background-position:bottom center;background-repeat:no-repeat;background-size:contain;background-image:url(/xlive/images/head_foot/footer.png);width:100%;min-height:545px;">
    				</div>
    				<div id="marker_footer_2" class="marker change-background" data-design="white-design" style="height:0px;"></div>
    				<div style="position:relative;background:rgba(239,239,239,1);width:100%;min-height:500px;color:rgba(0,0,0,0.6);padding-bottom:32px;">
@@ -591,7 +658,7 @@
   					<div style="clear:both;height:32px;"></div>
   					<div style="position:absolute;width:100%;left:0px;bottom:15px;">
   						<div  class="center-960" style="font-size:10px;width:100%;text-align:center">
-  							Copyright © probe.com.tw Design Development - All rights Reserved
+  							Copyright © probe.com.tw - All rights Reserved
   						</div>
   					</div>
    				</div>
@@ -669,7 +736,7 @@
 			.white-design .item-item:hover {
 				color:rgba(0,0,0,1);
 			}
-			.marker_1 #marker_1.background{
+			.marker_top #marker_top.background{
 				opacity:1;
 			}
 			.jlive #jlive.background{
@@ -679,6 +746,9 @@
 				opacity:1;
 			}
 			.docbuilder #docbuilder.background{
+				opacity:1;
+			}
+			.deploy #deploy.background{
 				opacity:1;
 			}
 			.marker_footer_2 #marker_footer_2.background{

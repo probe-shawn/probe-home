@@ -1,6 +1,14 @@
-define(['iscroll'],function(){
+define(['app/system','iscroll'],function(SYSTEM){
 	var _resize=function($page){
 		var win=$(window);
+		$page.find('.response-size').each(function(){
+			var $one=$(this),h=$one.attr('data-h'),w=$one.attr('data-w')||960;
+			var ow=$one.outerWidth();
+			if(+h > 0 && +w > +ow){
+				h = h*ow/w;
+				$one.css('min-height',h);
+			}
+		});
 		$page.find('.iscroll').each(function(){
 			var $one=$(this),top = $one.offset().top;
 			$one.css('height',win.height()-top);
@@ -14,6 +22,7 @@ define(['iscroll'],function(){
 			markers.push({top:$one.position().top,marker:$one});
 			markersIds+=' '+$one.attr('id');
 		});
+		
 		$page.data('markers', markers);
 		$page.data('markersIds',markersIds);
 	};
@@ -96,6 +105,47 @@ define(['iscroll'],function(){
 				return false;
 			});
 			
+			$page.find('.share-menu .share-item').on('tap', function(){
+				var href='',u = 'http://probe-home.appspot.com'+window.location.pathname;
+				var marker = _self._closestMarker();
+				if(marker){
+					var marker_id=marker.attr('id');
+					if(!marker_id.startsWith('marker_')) u += '#'+marker_id;
+				}
+				if(a$.browser.androidSDK && window.deviceInterface){
+					window.deviceInterface.share(u);
+					return false;
+				}
+				var id = $(this).attr('id');
+				if(id=='fb'){
+					href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(u);
+				}else if(id=='line'){
+					href='http://line.me/R/msg/text/?'+ encodeURIComponent(u);
+				}else if(id=='gplus'){
+					href ='https://plus.google.com/share?url='+encodeURIComponent(u);
+				}else if(id=='twitter'){
+					href ='https://twitter.com/intent/tweet?url='+encodeURIComponent(u);
+				}else if(id=='linkedin'){
+					href = 'http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(u);
+				}
+				window.open(href,'_blank');
+				//////
+				return false;
+			});
+		},
+		_closestMarker:function(){
+			var	$page = $.mobile.pageContainer.pagecontainer('getActivePage');
+			var iscroll=$page.find('.iscroll').data('iscroll');
+			var min_dist =300000,markers=$page.data('markers')||[], marker=null;
+			var this_y = iscroll.y;
+			$.each(markers, function(i,v){
+				var dist=Math.abs(v.top+this_y);
+				if(dist < min_dist){
+					min_dist = dist;
+					marker = v.marker;
+				}
+			});
+			return marker;
 		},
 		scrollToHash:function($page,hash){
 			setTimeout(function(){

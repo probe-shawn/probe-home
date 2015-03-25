@@ -22,8 +22,9 @@ function($,$$,c,ALIVE) {
 		//$.ajaxSetup({cache: false});
 		SYSTEM.start().done(function(){
 			var page = a$.qString()['page'];
-			page = (page) ? page : 'home.html';
-			$.mobile.pageContainer.pagecontainer('change',page, {transition:'pop'});
+			var hash = window.location.hash;
+			page = (page) ? page+hash : 'home.html';
+			$.mobile.pageContainer.pagecontainer('change',page, {transition:'pop',dataUrl:(hash!='')?page:''});
 		});
 	});
 });

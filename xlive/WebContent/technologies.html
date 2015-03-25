@@ -3,37 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
 
 <head>
+
+<title>PROBE-technologies</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="yup,yupmenu,o2o,POS,web POS,線上開店,電子商務,網路購物,LBS,solomo,行動購物,手機購物,雲端運算,雲端服務,雲端購物,GAE,java">
+<meta name="keywords" content="yup,yupmenu,o2o,POS,web POS,線上開店,電子商務,網路購物,LBS,solomo,行動購物,手機購物,雲端運算,雲端服務,雲端購物,GAE,java">
+
+<meta property="og:site_name" content="technologies@probe-technologies"/>
+<meta property="og:title" content="cloud service, probe technologies" />
+<meta property="og:description" content="波峯軟體 : 技術支援\n technologies@probe technologies." />
+<meta property="og:url" content="http://probe-home.appspot.com/technologies.html" />
+<meta property="og:image" content="http://probe-home.appspot.com/images/technologies/cover.png"/>
+
 	<script>
-	window.location="http://"+window.location.host+'/index.html'+'?page='+window.location.pathname.substr(1);
+	var hash=window.location.hash||'';
+	window.location="http://"+window.location.host+'/index.html'+'?page='+window.location.pathname.substr(1)+hash;
 	</script>
 
 
 </head>
 
 <body style="margin:0;padding:0;overflow:hidden;text-shadow:none !important"> 
-	<div data-role="page" id="index_technologies" class="black-design marker_1" style="margin:0;padding:0;overflow:hidden;"> 
-		<div id="marker_1" class="background" style="background-image:url(/xlive/images/technologies/background-1.jpg);"></div>
+	<div data-role="page" id="index_technologies" class="black-design marker_top" style="margin:0;padding:0;overflow:hidden;"> 
+		<div id="marker_top" class="background" style="background-image:url(/xlive/images/technologies/background-1.jpg);"></div>
+		<div id="cloud_computing" class="background" style="background-image:url(/xlive/images/technologies/cloud_computing.jpg);"></div>
 		<div id="marker_footer_2" class="background" style="background-image:url(/xlive/images/head_foot/foot_background.jpg);"></div>
 		
 		<div id="iscroll" class="iscroll" style="position:relative;overflow:hidden;">
    			<div class="scroll-content">
-   				<div id="marker_1" class="marker change-background" data-design="black-design"></div>
-   				<div class="center-960 min-height-680" >
+   				<div id="marker_top" class="marker change-background" data-design="black-design"></div>
+   				<div class="center-960" style="min-height:680px;">
    					<div class="half-960 indent-1">
    						<h1 data-href="technologies.html" class="item-title"><i class="fa fa-wrench fa-1x"></i>&nbsp;Technologies</h1>
     					<div class="indent-2 h3">
-	   						<div data-href="technologies.html#java" class="item-item"><i class="fa fa-fw fa-coffee fa-1x"></i>&nbsp;Java</div>
-	   						<div data-href="technologies.html#gae" class="item-item"><i class="fa fa-fw fa-google fa-1x"></i>&nbsp;GAE</div>
-	   						<div data-href="technologies.html#android" class="item-item"><i class="fa fa-fw fa-android fa-1x"></i>&nbsp;Android, IOS</div>
-	   						<div data-href="technologies.html#saas" class="item-item"><i class="fa fa-fw fa-cloud fa-1x"></i>&nbsp;SAAS</div>
+	   						<div data-href="technologies.html#cloud_computing" class="item-item"><i class="fa fa-fw fa-cloud fa-1x"></i>&nbsp;Cloud Computing</div>
+	   						<div data-href="technologies.html#Mobile first" class="item-item"><i class="fa fa-fw fa-mobile fa-1x"></i>&nbsp;Mobile First</div>
+	   						<div data-href="technologies.html#saas" class="item-item"><i class="fa fa-fw fa-sitemap fa-1x"></i>&nbsp;SAAS</div>
    						</div>
    					</div>
+   				</div>
+   				
+  				<!-- ----- cloud_computing -------- -->
+   				<div id="cloud_computing" class="marker change-background" data-design="white-design" style="height:180px;"></div> 
+   				<div class="full-background response-size" data-h="500" style="min-height:500px">
+					<div class="center-960 white-design content-padding">  	
+						<div class="session-title" style="position:absolute;text-shadow: 0 0 8px #fff;">Cloud Computing</div>
+						<div id="cloud_computing_content">
+   							<h3><i class="fa fa-fw fa-server fa-1x"></i>Cloud Computing</h3>
+							<div class="h5 indent-2" style="text-indent:16px;">
+							</div>
+						</div>
+					</div>		
+					<div style="clear:both;height:72px"></div>	
    				</div>
    				
    				
    				<!--common module footer page ------------------------------->
    				<div id="marker_footer_1" class="marker"></div>
-   				<div style="position:relative;background-position:top center;background-repeat:no-repeat;background-size:cover;background-image:url(/xlive/images/head_foot/footer.png);width:100%;height:500px;">
+   				<div class="response-size" data-h="545" style="position:relative;background-position:bottom center;background-repeat:no-repeat;background-size:contain;background-image:url(/xlive/images/head_foot/footer.png);width:100%;min-height:545px;">
    				</div>
    				<div id="marker_footer_2" class="marker change-background" data-design="white-design" style="height:0px;"></div>
    				<div style="position:relative;background:rgba(239,239,239,1);width:100%;min-height:500px;color:rgba(0,0,0,0.6);padding-bottom:32px;">
@@ -77,7 +106,7 @@
   					<div style="clear:both;height:32px;"></div>
   					<div style="position:absolute;width:100%;left:0px;bottom:15px;">
   						<div  class="center-960" style="font-size:10px;width:100%;text-align:center">
-  							Copyright © probe.com.tw Design Development - All rights Reserved
+  							Copyright © probe.com.tw - All rights Reserved
   						</div>
   					</div>
    				</div>
@@ -155,26 +184,15 @@
 			.white-design .item-item:hover {
 				color:rgba(0,0,0,1);
 			}
-			.marker_1 #marker_1.background{
+			.marker_top #marker_top.background{
 				opacity:1;
 			}
-			.marker_footer_1 #marker_footer_1.background{
+			.cloud_computing #cloud_computing.background{
 				opacity:1;
 			}
 			.marker_footer_2 #marker_footer_2.background{
 				opacity:1;
 			}
-			#marker_1.background:after {
-				position:absolute;
-				content:'';
-				width:100%;
-				height:100%;
-				left:0px;
-				top:0px;
-				background-color:rgba(0,0,0,0.3);
-				opacity:inherit;
-			}
-			
 		</style>
    		
 	
