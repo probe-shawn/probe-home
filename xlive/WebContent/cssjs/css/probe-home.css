@@ -196,7 +196,13 @@
 		border:1px solid rgba(0,0,0,0.8);
 		background-color: rgba(255,255,255,0.8);
 	}
-
+	/*
+	.scroll-up #to_top {
+		display:block;
+	}
+	*/
+	
+	
 	/* scroll up header*/
 	.scroll-up.black-design #page_header {
 		background:rgba(0,0,0,0.8);
@@ -237,11 +243,11 @@
 		background-position:center;
 		background-size:cover;
 		opacity:0;
-		transition: all 500ms ease-in-out;
-		-webkit-transition: all 500ms ease-in-out;
-		-mos-transition: all 500ms ease-in-out;
-		-ms-transition: all 500ms ease-in-out;
-		-o-transition: all 500ms ease-in-out;
+		transition: all 800ms ease-in-out;
+		-webkit-transition: all 800ms ease-in-out;
+		-mos-transition: all 800ms ease-in-out;
+		-ms-transition: all 800ms ease-in-out;
+		-o-transition: all 800ms ease-in-out;
 	}
 	.center-960 {
 		position:relative;width:100%;max-width:960px;margin:0 auto;
@@ -354,6 +360,14 @@
 		width:100%;
 		background-color:rgba(239,239,239,0.9);
 	}
+/*
+	.white-design .full-background {
+		background-color:rgba(239,239,239,0.9);
+	}
+	.black-design .full-background {
+		background-color:rgba(16,16,16,0.9);
+	}
+*/	
 	.content-padding {
 		padding:16px 48px;
 	}
