@@ -392,6 +392,57 @@
 	.black-design .session-directory>div:hover{
 		color:rgba(1,1,1,1);
 	}
+	.emphasize {
+		tansform : scale(0.5);
+		-webkit-transform : scale(0.5);
+		-mos-transform : scale(0.5);
+		-ms-transform : scale(0.5);
+		-o-transform : scale(0.5);
+		opacity:0.5;
+		/*
+		transition: all 500ms ease ;
+		-webkit-transition: all 500ms ease;
+		-mos-transition: all 500ms ease;
+		-ms-transition: all 500ms ease;
+		-o-transition: all 500ms ease;
+		*/
+	}
+	.emphasize.effect {
+		transform : scale(1);
+		-webkit-transform : scale(1);
+		-mos-transform : scale(1);
+		-ms-transform : scale(1);
+		-o-transform : scale(1);
+		opacity:1;
+		
+		transition: all 500ms ease ;
+		-webkit-transition: all 500ms ease;
+		-mos-transition: all 500ms ease;
+		-ms-transition: all 500ms ease;
+		-o-transition: all 500ms ease;
+	} 
+	.emphasize.x {
+		tansform : scale(0.5, 1);
+		-webkit-transform : scale(0.5,1);
+		-mos-transform : scale(0.5,1);
+		-ms-transform : scale(0.5,1);
+		-o-transform : scale(0.5,1);
+		opacity:1;
+	}
+	.emphasize.x.effect {
+		transform : scale(1,1);
+		-webkit-transform : scale(1,1);
+		-mos-transform : scale(1,1);
+		-ms-transform : scale(1,1);
+		-o-transform : scale(1,1);
+		opacity:1;
+		
+		transition: all 500ms ease ;
+		-webkit-transition: all 500ms ease;
+		-mos-transition: all 500ms ease;
+		-ms-transition: all 500ms ease;
+		-o-transition: all 500ms ease;
+	} 
 
 	@media screen and (max-width: 680px) {
 		.half-960 {

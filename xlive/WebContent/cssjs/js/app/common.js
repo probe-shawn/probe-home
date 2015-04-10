@@ -2,17 +2,21 @@ define(['app/system','iscroll'],function(SYSTEM){
 	var _resize=function($page){
 		var win=$(window);
 		$page.find('.response-size').each(function(){
-			var $one=$(this),h=$one.attr('data-h'),w=$one.attr('data-w')||960;
+			var $one=$(this),h=$one.attr('data-h'),w=$one.attr('data-w')||960,max_h=$one.attr('data-max-h');
 			var ow=$one.outerWidth();
 			if(+h > 0 && +w > +ow){
 				h = h*ow/w;
+				if(max_h && h>max_h){
+					h=max_h;
+				}
 				$one.css('min-height',h);
 			}
 		});
+		var scroll=null;
 		$page.find('.iscroll').each(function(){
 			var $one=$(this),top = $one.offset().top;
 			$one.css('height',win.height()-top);
-			var scroll=$one.data('iscroll');
+			scroll=$one.data('iscroll');
 			if(scroll) scroll.refresh();
 		});
 		var markers = new Array();
@@ -22,9 +26,14 @@ define(['app/system','iscroll'],function(SYSTEM){
 			markers.push({top:$one.position().top,marker:$one});
 			markersIds+=' '+$one.attr('id');
 		});
-		
 		$page.data('markers', markers);
 		$page.data('markersIds',markersIds);
+		//
+		var emphasize = new Array();
+		$page.find('.iscroll .emphasize').each(function(){
+			emphasize.push($(this));
+		});
+		$page.data('emphasize', emphasize);
 	};
 	$(window).on('resize',function(){
 		var	$page = $.mobile.pageContainer.pagecontainer('getActivePage');
@@ -75,7 +84,13 @@ define(['app/system','iscroll'],function(SYSTEM){
 				scroll.on('scrollEnd', function(){
 					var $p=$(this.scroller).closest('[data-role="page"]');
 					if(this.y==0)$p.removeClass('scroll-up');
-					
+					var emphasize=$p.data('emphasize')||[], wrap_h=this.wrapperHeight;
+					$.each(emphasize,function(i,v) {
+						var top = v.offset().top, height=v.outerHeight();bottom=top+height;
+						if(top <= wrap_h && bottom >= 0) {
+							if((Math.min(bottom, wrap_h)-Math.max(top,0))/height >= 0.5) v.addClass('effect');
+						} else v.removeClass('effect');
+					});
 				});
 			});
 			$page.find('.ellipsis #bars').on('tap', function(e){
