@@ -12,6 +12,9 @@ define(['app/system','iscroll'],function(SYSTEM){
 				$one.css('min-height',h);
 			}
 		});
+		$page.find('.masonry').each(function(){
+			$(this).masonry('reload');
+		});
 		var scroll=null;
 		$page.find('.iscroll').each(function(){
 			var $one=$(this),top = $one.offset().top;
@@ -46,6 +49,10 @@ define(['app/system','iscroll'],function(SYSTEM){
 				var scroller = new IScroll(this,options);
 				scroller.refresh();
 				$(this).data('iscroll',scroller);
+			});
+			
+			$page.find('.masonry').each(function(){
+				$(this).masonry();
 			});
 		},
 		on:function($page){

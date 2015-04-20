@@ -8,15 +8,17 @@ requirejs.config({
     	jqm: ['jquery.mobile-1.4.5','http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min'],
  		cookie:'jquery.cookie',
  	   	alive:'alive',
- 	   	iscroll:'iscroll-probe'
+ 	   	iscroll:'iscroll-probe',
+ 	   	masonry:'jquery.masonry'
     },
 	shim: {
 	    'jqm': ['jquery'],
 	    'alive':['jqm'],
-	    'cookie':['jquery']
+	    'cookie':['jquery'],
+	    'masonry':['jquery']
 	}
 });
-requirejs(['jquery','jqm','cookie','alive'],
+requirejs(['jquery','jqm','cookie','alive','masonry'],
 function($,$$,c,ALIVE) {
 	require(['app/system'],function(SYSTEM){
 		//$.ajaxSetup({cache: false});
