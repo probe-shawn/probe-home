@@ -1,7 +1,7 @@
 requirejs.config({
     baseUrl: (location.host.indexOf('localhost')>=0)?'/cssjs/js/lib':'/cssjs-build/js/lib',
     //baseUrl: (location.host.indexOf('localhost')>=0)?'/cssjs/js/lib':'/cssjs/js/lib',
-    urlArgs: 'bust='+(new Date().getTime()),
+    //urlArgs: 'bust='+(new Date().getTime()),
     paths: {
     	app:'../app',
         jquery:['jquery-1.11.2','http://code.jquery.com/jquery-1.11.2.min'],

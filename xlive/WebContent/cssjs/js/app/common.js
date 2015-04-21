@@ -1,4 +1,7 @@
 define(['app/system','iscroll'],function(SYSTEM){
+	var is_mobile = a$.browser.ios || a$.browser.android;
+	
+	
 	var _resize=function($page){
 		var win=$(window);
 		$page.find('.response-size').each(function(){
@@ -88,7 +91,9 @@ define(['app/system','iscroll'],function(SYSTEM){
 						}
 					}
 				});
+				
 				scroll.on('scrollEnd', function(){
+					
 					var $p=$(this.scroller).closest('[data-role="page"]');
 					if(this.y==0)$p.removeClass('scroll-up');
 					var emphasize=$p.data('emphasize')||[], wrap_h=this.wrapperHeight;
@@ -96,9 +101,14 @@ define(['app/system','iscroll'],function(SYSTEM){
 						var top = v.offset().top, height=v.outerHeight();bottom=top+height;
 						if(top <= wrap_h && bottom >= 0) {
 							if((Math.min(bottom, wrap_h)-Math.max(top,0))/height >= 0.5) v.addClass('effect');
-						} else v.removeClass('effect');
+						} else {
+							if(!is_mobile) v.removeClass('effect');
+						}
 					});
+					
 				});
+				
+				
 			});
 			$page.find('.ellipsis #bars').on('tap', function(e){
 				var $p=$(this).closest('[data-role="page"]');
@@ -173,13 +183,14 @@ define(['app/system','iscroll'],function(SYSTEM){
 			setTimeout(function(){
 				if(hash){
 					var iscroll= $page.find('.iscroll').data('iscroll');
-					var target = $page.find('.marker'+hash)[0];
+					var $markers=$page.find('.marker'+hash);
+					var target = $markers.length > 0 ? $markers[0] : null;
 					if(iscroll && target) {
 						if(iscroll.y == 0) iscroll.scrollToElement(target,800,0,-120);
 						else iscroll.scrollToElement(target,800,0,-72);
 					}
 				}
-			},10);
+			},100);
 		},
 		resize:function($page){
 			_resize($page);
