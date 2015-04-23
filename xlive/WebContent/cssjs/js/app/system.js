@@ -8,17 +8,19 @@ define([], function(){
 			try{$.mobile.loading(true_false ?'show':'hide');}catch(e){}
 		},
 		initial:function(){
+			/*
 			var $page=$('div[data-role="page"]');
 			this._system_service();
-			window.history.pushState({});
+			window.history.pushState({}, "", "");
 			$.mobile.pageContainer.on('pagecontainerbeforechange',function(e,ui){
 				if(ui.toPage && (typeof ui.toPage==="string") && (ui.toPage.indexOf('index.html') >= 0 || ui.toPage.indexOf('.htm') < 0)) {
 					if(ui.prevPage && ui.prevPage[0] == $page[0]){
 						e.preventDefault();
-						window.history.pushState({});
+						window.history.pushState({}, "", "");
 					}
 				}
 			});
+			*/
 		},
 		_system_service:function(){
 			var _self=this;

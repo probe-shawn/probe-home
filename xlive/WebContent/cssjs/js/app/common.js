@@ -186,8 +186,10 @@ define(['app/system','iscroll'],function(SYSTEM){
 					var $markers=$page.find('.marker'+hash);
 					var target = $markers.length > 0 ? $markers[0] : null;
 					if(iscroll && target) {
-						if(iscroll.y == 0) iscroll.scrollToElement(target,800,0,-120);
-						else iscroll.scrollToElement(target,800,0,-72);
+						try{
+							if(iscroll.y == 0) iscroll.scrollToElement(target,800,0,-120);
+							else iscroll.scrollToElement(target,800,0,-72);
+						}catch(e){alert('catch :'+e);}
 					}
 				}
 			},100);
