@@ -623,17 +623,12 @@ input,textarea {
 	display:none;
 }
 */
-.ai-open-sans-font {
-	font-family:'Open Sans Condensed','Arial Narrow', serif;
-}
-.ai-font{
-	font-family: ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif;
-}
 .a-folder{
 	position:relative;
 	display:block;
+	/*
 	font-family:'Open Sans Condensed','Arial Narrow', serif;
-	
+	*/
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-ms-font-smoothing: antialiased;
