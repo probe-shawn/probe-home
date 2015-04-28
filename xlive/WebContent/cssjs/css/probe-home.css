@@ -1,10 +1,15 @@
 	body {
 		/*
-		font-family: ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif;
+		font-family: ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, "Microsoft JhengHei", "微軟正黑體", sans-serif;
 		*/
-		font-family:FLiHei, "華康儷黑", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+		font-family: Meiryo, MS PGothic, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+	   /*
+		font-family:'Open Sans Condensed', 'Arial Narrow', serif, FLiHei, "華康儷黑", "Microsoft JhengHei", "微軟正黑體";
+		*/
 	}
-	
+.ai-open-sans-font {
+	    font-family:'Open Sans Condensed', 'Arial Narrow', serif;
+}
 	/*header*/
 	#page_header, #page_header *{
 		transition: all 500ms linear;
