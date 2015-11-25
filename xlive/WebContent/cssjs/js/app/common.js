@@ -48,7 +48,7 @@ define(['app/system','iscroll'],function(SYSTEM){
 	return {	
 		plug:function($page){
 			$page.find('.iscroll').each(function(){
-				var options= {click:true,probeType:3, scrollbars: true,mouseWheel: true,interactiveScrollbars: true,shrinkScrollbars: 'scale',fadeScrollbars: true};
+				var options= {tap:true,probeType:3, scrollbars: true,mouseWheel: true,interactiveScrollbars: true,shrinkScrollbars: 'scale',fadeScrollbars: true};
 				if(window.PointerEvent) options.disableTouch=true;
 				var scroller = new IScroll(this,options);
 				scroller.refresh();
@@ -120,7 +120,7 @@ define(['app/system','iscroll'],function(SYSTEM){
 			$page.find('.page-menu').on('tap', function(e){
 				if($(this).closest('#menu_box').length==0) $(this).removeClass('expand');
 			});
-			$page.find('[data-href]').on('tap', function(){
+			$page.find('[data-href]').on('tap click ', function(){
 				var $p=$(this).closest('[data-role="page"]');
 				var href = $(this).attr('data-href'), ss = href.split('html');
 				var data_url = ss[1] ? href : '';
