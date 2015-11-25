@@ -49,8 +49,10 @@ define(['app/system','iscroll'],function(SYSTEM){
 		plug:function($page){
 			$page.find('.iscroll').each(function(){
 				var options= {click:true,probeType:3, scrollbars: true,mouseWheel: true,interactiveScrollbars: true,shrinkScrollbars: 'scale',fadeScrollbars: true};
+				if(window.PointerEvent) options.disableTouch=true;
 				var scroller = new IScroll(this,options);
 				scroller.refresh();
+				if(window.PointerEvent) $(this).css('touch-action', 'none');
 				$(this).data('iscroll',scroller);
 			});
 			

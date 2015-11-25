@@ -318,6 +318,11 @@ define([], function(){
 		},
 		start:function(){
 			this.initial();
+			if(window.PointerEvent){
+				$(window).css('touch-action','none');
+				$(document).css('touch-action','none');
+			}
+			
 			var dfd=$.Deferred();
 			if(START.js && START.func){
 				require([START.js],function(aSTART){
